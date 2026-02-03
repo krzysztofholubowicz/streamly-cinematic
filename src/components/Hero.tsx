@@ -1,120 +1,92 @@
 import { motion } from 'framer-motion';
-import { Play, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/hero-studio.jpg';
-
-const stats = [
-  { value: '100+', label: 'Produkcji rocznie' },
-  { value: '500+', label: 'Godzin wideo rocznie' },
-  { value: '24/7', label: 'Wsparcie na miejscu' },
-];
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-end pb-20 md:pb-32">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Film production studio"
+          alt="Streamly Production Studio"
           className="w-full h-full object-cover"
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/40" />
+        <div 
+          className="absolute inset-0"
+          style={{ background: 'var(--gradient-hero)' }}
+        />
       </div>
 
-      {/* Light leak effects */}
-      <div className="light-leak w-[600px] h-[600px] -top-40 -right-40 animate-glow-pulse" />
-      <div className="light-leak w-[400px] h-[400px] bottom-20 left-20 opacity-50 animate-glow-pulse animation-delay-400" />
-
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
-        <div className="max-w-4xl">
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-primary font-medium tracking-widest uppercase text-sm mb-6"
-          >
-            Warsaw-based Production Studio
-          </motion.p>
-
-          {/* Main Title */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="hero-title text-foreground mb-6"
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="hero-title text-foreground mb-8"
           >
-            Produkcja wideo, która{' '}
-            <span className="text-gradient-primary">zmienia perspektywę</span>
+            Film
+            <br />
+            Production
+            <br />
+            <span className="text-muted-foreground">Studio</span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-12"
           >
-            Tworzymy programy TV, materiały video, reklamy, relacje z eventów i transmisje
-            online – zawsze z pasją do detalu i profesjonalizmem na każdym etapie.
+            Tworzymy programy TV, materiały video, reklamy, 
+            relacje z eventów i transmisje online.
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 mb-16"
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
-            <a
-              href="#kontakt"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg btn-glow transition-all duration-300 hover:scale-105"
-            >
+            <a href="#kontakt" className="btn-primary">
               Zamów produkcję
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
-              href="#realizacje"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-foreground/20 text-foreground font-semibold rounded-lg transition-all duration-300 hover:border-primary/50 hover:bg-primary/10"
-            >
-              <Play className="w-5 h-5" />
-              Zobacz jak pracujemy
+            <a href="#realizacje" className="btn-outline">
+              Zobacz realizacje
             </a>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-3 gap-8 max-w-lg"
-          >
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center sm:text-left">
-                <p className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
           </motion.div>
         </div>
 
-        {/* Bottom tagline */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="absolute bottom-10 left-6 right-6"
+          transition={{ duration: 0.8, delay: 1 }}
+          className="grid grid-cols-3 gap-8 mt-20 pt-8 border-t border-border/30 max-w-2xl"
         >
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground/60 text-center">
-            Warszawa • Programy TV • Video Marketing • Transmisje Live • Relacje z Eventów
-          </p>
+          {[
+            { number: '100+', label: 'Produkcji rocznie' },
+            { number: '500+', label: 'Godzin wideo' },
+            { number: '15', label: 'Lat doświadczenia' },
+          ].map((stat, index) => (
+            <div key={index}>
+              <span className="stat-number text-3xl md:text-5xl">{stat.number}</span>
+              <p className="text-xs md:text-sm text-muted-foreground mt-2 uppercase tracking-wider">{stat.label}</p>
+            </div>
+          ))}
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 right-8 hidden md:block"
+      >
+        <div className="scroll-indicator" />
+      </motion.div>
     </section>
   );
 };
