@@ -2,11 +2,8 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { SocialProof } from '@/components/SocialProof';
 import { Services } from '@/components/Services';
-import { LiveStreaming } from '@/components/LiveStreaming';
-import { Process } from '@/components/Process';
 import { Portfolio } from '@/components/Portfolio';
-import { Equipment } from '@/components/Equipment';
-import { KPO } from '@/components/KPO';
+import { StreamlyStudio } from '@/components/StreamlyStudio';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 
@@ -18,11 +15,8 @@ const Index = () => {
         <Hero />
         <SocialProof />
         <Services />
-        <LiveStreaming />
-        <Process />
         <Portfolio />
-        <Equipment />
-        <KPO />
+        <StreamlyStudio />
         <Contact />
       </main>
       <Footer />

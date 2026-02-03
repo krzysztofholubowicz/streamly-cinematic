@@ -2,72 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Streamly Production - Cinematic Dark Theme
-   Inspired by A24, Burnish Creative, premium film production
-   Deep blacks with warm amber film lighting accents
+/* Streamly Production - A24 / MVSM Inspired
+   Pure monochrome with single accent
+   Typography-first, editorial design
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    /* Core backgrounds - deep cinematic black */
-    --background: 20 10% 4%;
-    --foreground: 40 20% 95%;
+    /* Pure monochrome base */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
 
-    /* Cards with subtle warmth */
-    --card: 20 8% 7%;
-    --card-foreground: 40 20% 95%;
+    /* Cards - subtle elevation */
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 20 8% 7%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Primary - warm amber/gold (film lighting) */
-    --primary: 38 100% 50%;
-    --primary-foreground: 20 10% 4%;
+    /* Primary - single pure white accent */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 2%;
 
-    /* Secondary - cool teal for contrast */
-    --secondary: 195 90% 45%;
-    --secondary-foreground: 40 20% 95%;
+    /* Secondary - mid gray */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    /* Muted tones */
-    --muted: 20 6% 12%;
-    --muted-foreground: 40 10% 55%;
+    /* Muted */
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 50%;
 
-    /* Accent - subtle warm */
-    --accent: 20 8% 15%;
-    --accent-foreground: 40 20% 95%;
+    /* Accent */
+    --accent: 0 0% 8%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 20 10% 15%;
-    --input: 20 10% 12%;
-    --ring: 38 100% 50%;
+    --border: 0 0% 12%;
+    --input: 0 0% 8%;
+    --ring: 0 0% 100%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
 
-    /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(38 100% 50%), hsl(28 100% 55%));
-    --gradient-secondary: linear-gradient(135deg, hsl(195 90% 45%), hsl(180 80% 40%));
-    --gradient-hero: linear-gradient(180deg, transparent 0%, hsl(20 10% 4% / 0.3) 40%, hsl(20 10% 4% / 0.85) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(20 8% 10%) 0%, hsl(20 8% 6%) 100%);
-    
-    --glow-primary: 0 0 60px hsl(38 100% 50% / 0.3);
-    --glow-secondary: 0 0 40px hsl(195 90% 45% / 0.2);
-    
-    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
-    --shadow-elevated: 0 50px 100px -20px hsl(0 0% 0% / 0.7);
+    /* Custom tokens - editorial minimal */
+    --gradient-hero: linear-gradient(180deg, transparent 0%, hsl(0 0% 2% / 0.5) 50%, hsl(0 0% 2%) 100%);
+    --shadow-soft: 0 30px 60px -15px hsl(0 0% 0% / 0.7);
 
     /* Sidebar */
-    --sidebar-background: 20 10% 4%;
-    --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 38 100% 50%;
-    --sidebar-primary-foreground: 20 10% 4%;
-    --sidebar-accent: 20 8% 12%;
-    --sidebar-accent-foreground: 40 20% 95%;
-    --sidebar-border: 20 10% 15%;
-    --sidebar-ring: 38 100% 50%;
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 2%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 0 0% 100%;
   }
 }
 
@@ -82,111 +74,177 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Instrument Sans', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Syne', system-ui, sans-serif;
     @apply font-bold tracking-tight;
   }
 }
 
 @layer components {
-  /* Hero title styling */
+  /* A24-style hero title */
   .hero-title {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: clamp(3rem, 12vw, 8rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  /* Section title */
+  .section-title {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 700;
     letter-spacing: -0.03em;
-    line-height: 1.05;
+    line-height: 1;
   }
 
-  /* Gradient text */
-  .text-gradient-primary {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Eyebrow text */
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium;
   }
 
-  .text-gradient-secondary {
-    background: var(--gradient-secondary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Editorial card - no radius, hard edges */
+  .editorial-card {
+    @apply bg-card border border-border;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Glass card effect */
-  .glass-card {
-    background: hsl(20 8% 7% / 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(40 20% 95% / 0.08);
+  .editorial-card:hover {
+    @apply border-foreground/30;
+    transform: translateY(-4px);
   }
 
-  /* Cinematic card with glow */
-  .cinematic-card {
-    background: var(--gradient-card);
-    border: 1px solid hsl(40 20% 95% / 0.06);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Project card with image */
+  .project-card {
+    @apply relative overflow-hidden;
+    aspect-ratio: 16/10;
   }
 
-  .cinematic-card:hover {
-    border-color: hsl(38 100% 50% / 0.4);
-    transform: translateY(-8px);
-    box-shadow: var(--glow-primary), var(--shadow-card);
-  }
-
-  /* Nav link underline effect */
-  .nav-link {
-    @apply relative;
-  }
-
-  .nav-link::after {
+  .project-card::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 origin-right transition-transform duration-300;
+    @apply absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60;
+    transition: opacity 0.5s ease;
   }
 
-  .nav-link:hover::after {
+  .project-card:hover::after {
+    opacity: 0.8;
+  }
+
+  /* Minimal nav */
+  .nav-item {
+    @apply text-sm uppercase tracking-[0.15em] text-muted-foreground transition-colors duration-300;
+  }
+
+  .nav-item:hover {
+    @apply text-foreground;
+  }
+
+  /* Divider */
+  .divider {
+    @apply w-full h-px bg-border;
+  }
+
+  /* Stats display */
+  .stat-number {
+    font-family: 'Syne', system-ui, sans-serif;
+    @apply text-5xl md:text-7xl font-bold tracking-tighter;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-20 md:py-32 px-6 md:px-12 lg:px-20;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-foreground text-background px-8 py-4 text-sm uppercase tracking-[0.15em] font-medium;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    @apply bg-foreground/90;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    @apply border border-foreground/30 text-foreground px-8 py-4 text-sm uppercase tracking-[0.15em] font-medium;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline:hover {
+    @apply border-foreground bg-foreground/5;
+  }
+
+  /* Text link with underline */
+  .text-link {
+    @apply relative inline-block;
+  }
+
+  .text-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-current scale-x-0 origin-right transition-transform duration-300;
+  }
+
+  .text-link:hover::after {
     @apply scale-x-100 origin-left;
   }
 
-  /* Film grain overlay */
-  .film-grain::before {
-    content: '';
-    @apply absolute inset-0 pointer-events-none opacity-[0.03];
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  /* Grid container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
   }
 
-  /* Light leak effect */
-  .light-leak {
-    @apply absolute pointer-events-none;
-    background: radial-gradient(ellipse at center, hsl(38 100% 50% / 0.15) 0%, transparent 70%);
-    filter: blur(60px);
+  /* Scroll indicator */
+  .scroll-indicator {
+    @apply w-px h-16 bg-gradient-to-b from-foreground/50 to-transparent;
   }
 
-  /* Section styling */
-  .section-padding {
-    @apply py-24 md:py-32 px-6 md:px-12;
+  /* Image grayscale hover effect */
+  .img-hover {
+    @apply grayscale transition-all duration-700;
   }
 
-  /* Button glow */
-  .btn-glow {
-    box-shadow: 0 0 30px hsl(38 100% 50% / 0.3), 0 4px 20px hsl(0 0% 0% / 0.3);
+  .img-hover:hover {
+    @apply grayscale-0;
   }
 
-  .btn-glow:hover {
-    box-shadow: 0 0 50px hsl(38 100% 50% / 0.5), 0 8px 30px hsl(0 0% 0% / 0.4);
+  /* Marquee animation */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  /* Fade up reveal */
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
 }
 
 @layer utilities {
-  /* Smooth text rendering */
   .text-balance {
     text-wrap: balance;
   }
-
-  /* Animation delays */
-  .animation-delay-200 { animation-delay: 200ms; }
-  .animation-delay-400 { animation-delay: 400ms; }
-  .animation-delay-600 { animation-delay: 600ms; }
 }
