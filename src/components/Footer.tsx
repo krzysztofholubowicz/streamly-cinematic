@@ -41,11 +41,11 @@ export const Footer = () => {
             © 2026 Streamly Production. Wszystkie prawa zastrzeżone.
           </p>
           <p className="text-xs text-muted-foreground max-w-md">
-            Projekt współfinansowany ze środków Unii Europejskiej w ramach
-            Krajowego Planu Odbudowy i Zwiększania Odporności.
+
+
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };

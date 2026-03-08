@@ -3,19 +3,19 @@ import { Play } from 'lucide-react';
 import { useCountUp } from '@/hooks/use-count-up';
 
 const features = [
-  {
-    tag: 'LIVE',
-    title: 'Transmisja w jakości broadcastowej',
-  },
-  {
-    tag: 'VOD',
-    title: 'Biblioteka materiałów 24/7',
-  },
-  {
-    tag: 'ANALYTICS',
-    title: 'Dane o widowni w czasie rzeczywistym',
-  },
-];
+{
+  tag: 'LIVE',
+  title: 'Transmisja w jakości broadcastowej'
+},
+{
+  tag: 'VOD',
+  title: 'Biblioteka materiałów 24/7'
+},
+{
+  tag: 'ANALYTICS',
+  title: 'Dane o widowni w czasie rzeczywistym'
+}];
+
 
 export const StreamlyStudio = () => {
   const viewerStat = useCountUp(2400, 2000);
@@ -30,9 +30,9 @@ export const StreamlyStudio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="eyebrow block mb-4"
-            >
-              Wasza platforma VOD
+              className="eyebrow block mb-4">TWOJA PLATFORMA VOD
+
+
             </motion.span>
 
             <motion.h2
@@ -40,8 +40,8 @@ export const StreamlyStudio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="section-title mb-8"
-            >
+              className="section-title mb-8">
+              
               Streamly Studio
             </motion.h2>
 
@@ -50,11 +50,11 @@ export const StreamlyStudio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-muted-foreground leading-relaxed mb-10 text-lg"
-            >
-              Własna platforma streamingowa pod Twoją marką. Bez logo YouTube'a.
-              Bez algorytmów, które decydują za Ciebie. Pełna kontrola nad treścią,
-              widownią i danymi.
+              className="text-muted-foreground leading-relaxed mb-10 text-lg">Bez algorytmów, które decydują za Ciebie.
+Pełna kontrola nad treścią, widownią i danymi.
+
+
+
             </motion.p>
 
             <motion.a
@@ -63,8 +63,8 @@ export const StreamlyStudio = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               href="#kontakt"
-              className="btn-primary inline-flex items-center gap-3"
-            >
+              className="btn-primary inline-flex items-center gap-3">
+              
               Poproś o demo
             </motion.a>
           </div>
@@ -74,8 +74,8 @@ export const StreamlyStudio = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-5"
-          >
+            className="space-y-5">
+            
             {/* Browser mockup */}
             <div className="browser-mockup">
               <div className="browser-mockup-bar">
@@ -94,27 +94,27 @@ export const StreamlyStudio = () => {
               </div>
             </div>
 
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.tag}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="feature-card flex items-center gap-5"
-              >
+            {features.map((feature, index) =>
+            <motion.div
+              key={feature.tag}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              className="feature-card flex items-center gap-5">
+              
                 <span className="eyebrow min-w-[80px]">{feature.tag}</span>
                 <p className="text-foreground font-medium">{feature.title}</p>
               </motion.div>
-            ))}
+            )}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="glass-card p-6 text-center"
-            >
+              className="glass-card p-6 text-center">
+              
               <p className="text-muted-foreground text-sm mb-2">Aktywnych widzów miesięcznie</p>
               <span ref={viewerStat.ref as React.RefObject<HTMLSpanElement>} className="stat-number text-4xl text-foreground">
                 {viewerStat.count >= 1000 ? `${(viewerStat.count / 1000).toFixed(1)}K+` : `${viewerStat.count}+`}
@@ -123,6 +123,6 @@ export const StreamlyStudio = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };

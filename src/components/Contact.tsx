@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const projectTypes = [
-  'Program TV',
-  'Kampania video',
-  'Transmisja live',
-  'Produkcja VOD',
-  'Film korporacyjny',
-];
+'Program TV',
+'Kampania video',
+'Transmisja live',
+'Produkcja VOD',
+'Film korporacyjny'];
+
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,8 +31,8 @@ export const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="section-title mb-6"
-            >
+              className="section-title mb-6">
+              
               Porozmawiajmy o Twoim projekcie.
             </motion.h2>
 
@@ -41,8 +41,8 @@ export const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-muted-foreground leading-relaxed mb-12 text-lg"
-            >
+              className="text-muted-foreground leading-relaxed mb-12 text-lg">
+              
               Opisz swój pomysł — odezwiemy się w ciągu 2 godzin z wstępną propozycją.
             </motion.p>
 
@@ -51,12 +51,12 @@ export const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
-            >
+              className="space-y-6">
+              
               <div>
                 <span className="eyebrow block mb-2">Email</span>
-                <a href="mailto:hello@streamlyproduction.pl" className="text-lg hover:text-muted-foreground transition-colors">
-                  hello@streamlyproduction.pl
+                <a href="mailto:hello@streamlyproduction.pl" className="text-lg hover:text-muted-foreground transition-colors">hello@streamlyproduction.com
+
                 </a>
               </div>
               <div>
@@ -83,8 +83,8 @@ export const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="space-y-6"
-          >
+            className="space-y-6">
+            
             <div>
               <label className="eyebrow block mb-2">Imię i nazwisko</label>
               <input
@@ -92,8 +92,8 @@ export const Contact = () => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className={inputClass}
-              />
+                className={inputClass} />
+              
             </div>
 
             <div>
@@ -103,8 +103,8 @@ export const Contact = () => {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className={inputClass}
-              />
+                className={inputClass} />
+              
             </div>
 
             <div>
@@ -117,13 +117,13 @@ export const Contact = () => {
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
                   backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'right 0 center',
-                }}
-              >
+                  backgroundPosition: 'right 0 center'
+                }}>
+                
                 <option value="" disabled>Wybierz typ projektu</option>
-                {projectTypes.map(type => (
-                  <option key={type} value={type} className="bg-background text-foreground">{type}</option>
-                ))}
+                {projectTypes.map((type) =>
+                <option key={type} value={type} className="bg-background text-foreground">{type}</option>
+                )}
               </select>
             </div>
 
@@ -135,8 +135,8 @@ export const Contact = () => {
                 placeholder="Opisz swój projekt..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className={`${inputClass} resize-none`}
-              />
+                className={`${inputClass} resize-none`} />
+              
             </div>
 
             <button type="submit" className="btn-primary w-full text-center mt-4">
@@ -145,6 +145,6 @@ export const Contact = () => {
           </motion.form>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
