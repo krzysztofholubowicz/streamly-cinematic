@@ -34,17 +34,15 @@ export const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border'
+          ? 'bg-background/70 backdrop-blur-2xl border-b border-border'
           : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="font-display text-2xl font-bold gradient-text">
+        <Link to="/" className="font-display text-2xl font-bold text-foreground">
           Streamly
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             link.href.startsWith('/') && !link.href.includes('#') ? (
@@ -66,20 +64,18 @@ export const Header = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-2 text-foreground">
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border"
+            className="lg:hidden bg-background/95 backdrop-blur-2xl border-b border-border"
           >
             <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (

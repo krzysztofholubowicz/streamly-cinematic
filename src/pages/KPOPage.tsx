@@ -35,14 +35,13 @@ const KPOPage = () => {
 
       <main className="pt-32">
         <div className="section-padding pb-0">
-          <Link to="/" className="inline-flex items-center gap-3 text-muted-foreground hover:text-teal transition-colors">
+          <Link to="/" className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm uppercase tracking-[0.15em]">Powrót</span>
           </Link>
         </div>
 
-        {/* Hero */}
-        <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14,165,233,0.05), rgba(168,85,247,0.05))' }}>
+        <section className="section-padding">
           <div className="max-w-5xl kpo-container pl-8">
             <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="eyebrow block mb-6">
               Projekt współfinansowany z UE
@@ -62,7 +61,6 @@ const KPOPage = () => {
 
         <div className="divider" />
 
-        {/* Project Data */}
         <section className="section-padding">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
@@ -72,10 +70,10 @@ const KPOPage = () => {
                   <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }}
                     className="editorial-card p-5 flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-teal mt-0.5 shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
                     <div>
                       <span className="text-xs text-muted-foreground uppercase tracking-wider">{item.label}</span>
-                      <p className={`mt-1 ${item.highlight ? 'stat-number text-2xl gradient-text' : 'text-foreground font-medium'}`}>
+                      <p className={`mt-1 ${item.highlight ? 'stat-number text-2xl text-foreground' : 'text-foreground font-medium'}`}>
                         {item.value}
                       </p>
                     </div>
@@ -107,7 +105,6 @@ const KPOPage = () => {
 
         <div className="divider" />
 
-        {/* Benefits */}
         <section className="section-padding">
           <span className="eyebrow block mb-8">Korzyści dla klientów</span>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -122,7 +119,6 @@ const KPOPage = () => {
           </div>
         </section>
 
-        {/* EU Logos */}
         <section className="section-padding border-t border-border">
           <div className="flex flex-wrap items-center justify-center gap-12 mb-8">
             {['Unia Europejska', 'Krajowy Plan Odbudowy', 'PARP'].map((logo) => (

@@ -10,14 +10,14 @@ export const Hero = () => {
         <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }} />
       </div>
 
-      {/* Floating orbs */}
+      {/* Floating orbs – subtle white */}
       <div
         className="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] rounded-full floating-orb pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)', filter: 'blur(120px)' }}
+        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)', filter: 'blur(120px)' }}
       />
       <div
         className="absolute bottom-[-80px] right-[-80px] w-[500px] h-[500px] rounded-full floating-orb-delayed pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)', filter: 'blur(120px)' }}
+        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)', filter: 'blur(120px)' }}
       />
 
       {/* Content */}
@@ -69,7 +69,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.9 }}
             className="text-xs text-muted-foreground uppercase tracking-[3px] font-medium"
           >
-            Warszawa | Programy TV | Video Marketing | Transmisje Live | Relacje z Eventów
+            Warszawa · Programy TV · Video Marketing · Transmisje Live · Relacje z Eventów
           </motion.p>
         </div>
 
@@ -86,7 +86,7 @@ export const Hero = () => {
             { number: '24/7', label: 'Wsparcie na miejscu' },
           ].map((stat, index) => (
             <div key={index}>
-              <span className="stat-number text-3xl md:text-5xl gradient-text">{stat.number}</span>
+              <span className="stat-number text-3xl md:text-5xl text-foreground">{stat.number}</span>
               <p className="text-xs md:text-sm text-muted-foreground mt-2 uppercase tracking-wider">{stat.label}</p>
             </div>
           ))}

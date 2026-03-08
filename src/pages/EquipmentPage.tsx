@@ -74,13 +74,15 @@ const EquipmentPage = () => {
     console.log(formData);
   };
 
+  const inputClass = "w-full bg-transparent border border-border rounded-2xl px-4 py-3.5 text-foreground focus:border-foreground/30 outline-none transition-colors placeholder:text-muted-foreground/30";
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
 
       <main className="pt-32">
         <div className="section-padding pb-0">
-          <Link to="/" className="inline-flex items-center gap-3 text-muted-foreground hover:text-teal transition-colors">
+          <Link to="/" className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm uppercase tracking-[0.15em]">Powrót</span>
           </Link>
@@ -106,15 +108,14 @@ const EquipmentPage = () => {
 
         <div className="divider" />
 
-        {/* Category tabs */}
         <section className="section-padding py-8">
           <div className="flex flex-wrap gap-3">
             {equipmentCategories.map((cat) => (
               <button key={cat.id} onClick={() => setActiveCategory(cat.id)}
-                className={`px-6 py-3 text-sm uppercase tracking-wider rounded-lg border transition-all duration-300 ${
+                className={`px-6 py-3 text-sm uppercase tracking-wider rounded-full border transition-all duration-300 ${
                   activeCategory === cat.id
-                    ? 'bg-teal text-background border-teal font-bold'
-                    : 'bg-transparent text-muted-foreground border-border hover:border-teal/50'
+                    ? 'bg-foreground text-background border-foreground font-bold'
+                    : 'bg-transparent text-muted-foreground border-border hover:border-foreground/30'
                 }`}>
                 {cat.name}
               </button>
@@ -122,7 +123,6 @@ const EquipmentPage = () => {
           </div>
         </section>
 
-        {/* Equipment Grid */}
         <section className="section-padding pt-0">
           {equipmentCategories.map((category) => (
             <div key={category.id} className={activeCategory === category.id ? 'block' : 'hidden'}>
@@ -136,7 +136,7 @@ const EquipmentPage = () => {
                           className="w-full h-full object-cover img-hover group-hover:scale-105 transition-transform duration-700" />
                       </div>
                     ) : (
-                      <div className="aspect-[4/3] flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(14,165,233,0.08), rgba(168,85,247,0.05))' }}>
+                      <div className="aspect-[4/3] flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.02)' }}>
                         <span className="text-muted-foreground text-sm">Zdjęcie wkrótce</span>
                       </div>
                     )}
@@ -153,7 +153,6 @@ const EquipmentPage = () => {
 
         <div className="divider" />
 
-        {/* Rental Form */}
         <section className="section-padding">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
@@ -164,50 +163,50 @@ const EquipmentPage = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Imię i nazwisko *</label>
                   <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                    className={inputClass} />
                 </div>
                 <div>
                   <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Email *</label>
                   <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                    className={inputClass} />
                 </div>
               </div>
 
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Telefon</label>
                 <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                  className={inputClass} />
               </div>
 
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Sprzęt do wynajęcia *</label>
                 <textarea required rows={3} placeholder="Np. Sony FX9, Aputure 600D..." value={formData.equipment}
                   onChange={(e) => setFormData({ ...formData, equipment: e.target.value })}
-                  className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors resize-none placeholder:text-muted-foreground/40" />
+                  className={`${inputClass} resize-none`} />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Data rozpoczęcia *</label>
                   <input type="date" required value={formData.startDate} onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                    className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                    className={inputClass} />
                 </div>
                 <div>
                   <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Data zakończenia *</label>
                   <input type="date" required value={formData.endDate} onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                    className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                    className={inputClass} />
                 </div>
               </div>
 
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Wiadomość</label>
                 <textarea rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors resize-none" />
+                  className={`${inputClass} resize-none`} />
               </div>
 
               <button type="submit" className="btn-primary w-full text-center">
