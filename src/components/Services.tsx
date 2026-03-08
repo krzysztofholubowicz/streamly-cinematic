@@ -103,9 +103,9 @@ export const Services = () => {
         >
           <span className="eyebrow block mb-4">Usługi</span>
           <h2 className="section-title">
-            Pięć specjalizacji.
+            <span className="gradient-text-gold">Pięć specjalizacji.</span>
             <br />
-            <span className="text-muted-foreground">Jeden standard.</span>
+            <span className="gradient-text-gold">Jeden standard.</span>
           </h2>
         </motion.div>
 
