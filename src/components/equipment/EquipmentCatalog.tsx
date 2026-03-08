@@ -87,6 +87,11 @@ export const EquipmentCatalog = ({ selected, onToggle, onQtyChange }: Props) => 
                     <p className="text-xs text-muted-foreground mt-0.5">
                       Dostępne: {item.quantity} szt.
                     </p>
+                    {item.note && (
+                      <p className="text-xs text-[hsl(var(--accent-warm)/0.8)] mt-1">
+                        {item.note}
+                      </p>
+                    )}
                   </div>
 
                   {/* Quantity selector */}
