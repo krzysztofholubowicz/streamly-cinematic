@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Check, Minus, Plus } from 'lucide-react';
 import { equipmentCategories, type EquipmentItem } from '@/data/equipment';
+import { KeyedImage } from '@/components/equipment/KeyedImage';
 
 export interface SelectedItem {
   item: EquipmentItem;
