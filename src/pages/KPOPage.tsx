@@ -1,139 +1,266 @@
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Camera, Monitor, Mic, Users, GraduationCap, Briefcase, TrendingUp, Tv } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const projectData = [
-  { label: 'Numer umowy', value: 'KPOD.01.03-IW.01-8867/24' },
+const equipment = [
+  'Kamery Sony PMW-FX9 i Sony PMW-FX6',
+  'Obiektywy Sony FE 24-70mm f/2.8 GM, Sony FE 70-200mm f/2.8 GM OSS, Sony FE 16-35mm f/2.8 GM',
+  'Mikser wideo Blackmagic ATEM Television Studio HD8 ISO — do produkcji wielokamerowej i transmisji na żywo',
+  'Monitory podglądowe',
+];
+
+const audiences = [
+  {
+    icon: Users,
+    text: 'Organizatorzy targów, wystaw i kongresów szukający formatu online lub hybrydowego',
+  },
+  {
+    icon: Tv,
+    text: 'Firmy z sektora kultury, edukacji i eventowego potrzebujące profesjonalnej obsługi transmisji',
+  },
+  {
+    icon: Briefcase,
+    text: 'Klienci oczekujący kompleksowej usługi — od sprzętu i transmisji, po platformę zarządzania wydarzeniem',
+  },
+];
+
+const projectDetails = [
+  { label: 'Beneficjent', value: 'Krzysztof Hołubowicz' },
+  { label: 'Nr umowy', value: 'KPOD.01.03-IW.01-8867/24' },
   { label: 'Tytuł projektu', value: 'Rozszerzenie działalności o organizację targów, wystaw i kongresów online oraz hybrydowych' },
-  { label: 'Ostateczny Odbiorca Wsparcia', value: 'KRZYSZTOF HOŁUBOWICZ' },
-  { label: 'Wysokość dofinansowania', value: '402 347,29 zł', highlight: true },
-  { label: 'Instytucja Wdrażająca', value: 'Polska Agencja Rozwoju Przedsiębiorczości (PARP)' },
-  { label: 'Priorytet KPO', value: '1.3 – Cyfryzacja MŚP' },
-  { label: 'Region', value: 'Mazowieckie' },
+  { label: 'Całkowita wartość projektu', value: '642 064,55 zł', highlight: true },
+  { label: 'Dofinansowanie z Unii Europejskiej', value: '469 803,38 zł (90% kosztów kwalifikowalnych)', highlight: true },
+  { label: 'Program', value: 'Inwestycja A1.2.1 KPO – Odporność i konkurencyjność gospodarki' },
+  { label: 'Operator', value: 'Towarzystwo Inwestycji Społeczno-Ekonomicznych S.A. (TISE)' },
+  { label: 'Jednostka wspierająca', value: 'Polska Agencja Rozwoju Przedsiębiorczości (PARP)' },
 ];
 
-const investments = [
-  'Sprzęt broadcastowy nowej generacji',
-  'Rozbudowa platformy Streamly Studio',
-  'Szkolenie zespołu w zakresie produkcji hybrydowej',
-  'Certyfikacja procesów i standardów jakości',
-];
-
-const benefits = [
-  { title: 'Zero ryzyka technicznego', desc: 'Infrastruktura przetestowana na największych eventach w Polsce' },
-  { title: 'Własna platforma streamingowa', desc: 'Pełna kontrola nad transmisją, brak zależności od zewnętrznych platform' },
-  { title: 'Kompleksowa obsługa', desc: 'Od koncepcji eventu przez realizację live po archiwizację w VOD' },
-  { title: 'Doświadczenie potwierdzone liczbami', desc: '15+ lat produkcji dla Polsat, TVP, Impact CEE, UMCS' },
-];
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+};
 
 const KPOPage = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground noise-overlay">
       <Header />
 
       <main className="pt-32">
-        <div className="section-padding pb-0">
+        {/* Back link */}
+        <div className="section-padding !pb-0">
           <Link to="/" className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm uppercase tracking-[0.15em]">Powrót</span>
           </Link>
         </div>
 
-        <section className="section-padding">
-          <div className="max-w-5xl kpo-container pl-8">
-            <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="eyebrow block mb-6">
-              Projekt współfinansowany z UE
+        {/* ── EU Logo Bar ── */}
+        <section className="section-padding !pt-12 !pb-0">
+          <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="max-w-5xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 p-6 rounded-2xl border border-border/60" style={{ background: 'hsl(0 0% 100% / 0.97)' }}>
+              <img src="/images/kpo/kpo-logo.png" alt="Krajowy Plan Odbudowy" className="h-14 md:h-16 object-contain" />
+              <div className="w-px h-10 bg-border/60 hidden md:block" />
+              <img src="/images/kpo/barwy-rp.png" alt="Barwy Rzeczypospolitej Polskiej" className="h-8 md:h-10 object-contain" />
+              <div className="w-px h-10 bg-border/60 hidden md:block" />
+              <img src="/images/kpo/eu-flag.png" alt="Unia Europejska – NextGenerationEU" className="h-10 md:h-12 object-contain" />
+            </div>
+            <p className="text-center mt-4 text-xs text-muted-foreground tracking-wider uppercase">
+              Finansowane przez Unię Europejską — NextGenerationEU
+            </p>
+          </motion.div>
+        </section>
+
+        {/* ── Hero ── */}
+        <section className="section-padding !pb-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.span {...fadeUp} transition={{ duration: 0.6 }} className="eyebrow block mb-6">
+              Projekt KPO
             </motion.span>
 
-            <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="section-title text-foreground mb-8">
-              Inwestujemy w przyszłość
-              <br />
-              <span className="text-muted-foreground">eventów online</span>
+            <motion.h1
+              {...fadeUp}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-display font-bold tracking-tight leading-[1.05] mb-8"
+              style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', letterSpacing: '-1px' }}
+            >
+              Rozszerzamy działalność o organizację targów, wystaw i&nbsp;kongresów{' '}
+              <span className="hero-accent">online oraz hybrydowych</span>
             </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-              Streamly Production realizuje projekt współfinansowany ze środków
-              Unii Europejskiej w ramach Krajowego Planu Odbudowy. Rozbudowujemy
-              infrastrukturę do organizacji profesjonalnych wydarzeń online i hybrydowych.
+            <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Dzięki dofinansowaniu z Krajowego Planu Odbudowy budujemy profesjonalne zaplecze do organizacji wydarzeń w&nbsp;formule online i&nbsp;hybrydowej. Projekt łączy zakup sprzętu audiowizualnego najwyższej klasy z&nbsp;budową własnej platformy streamingowej — tak, aby móc kompleksowo obsługiwać targi, wystawy i&nbsp;kongresy dla klientów z&nbsp;kraju i&nbsp;zagranicy.
             </motion.p>
           </div>
         </section>
 
-        <div className="divider" />
-
-        <section className="section-padding">
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div>
-              <span className="eyebrow block mb-8">Dane projektu</span>
-              <div className="space-y-4">
-                {projectData.map((item, index) => (
-                  <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }}
-                    className="editorial-card p-5 flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
-                    <div>
-                      <span className="text-xs text-muted-foreground uppercase tracking-wider">{item.label}</span>
-                      <p className={`mt-1 ${item.highlight ? 'stat-number text-2xl text-foreground' : 'text-foreground font-medium'}`}>
-                        {item.value}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <span className="eyebrow block mb-8">Cel projektu</span>
-              <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-                Projekt ma na celu rozbudowę infrastruktury technicznej oraz kompetencji
-                Streamly Production w zakresie organizacji profesjonalnych wydarzeń online
-                i hybrydowych. Dzięki wsparciu z KPO inwestujemy w:
-              </p>
-              <div className="space-y-4">
-                {investments.map((item, index) => (
-                  <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start gap-4">
-                    <span className="step-number text-lg">{`0${index + 1}`}</span>
-                    <p className="text-foreground">{item}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="divider" />
-
-        <section className="section-padding">
-          <span className="eyebrow block mb-8">Korzyści dla klientów</span>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="service-card !p-8">
-                <h3 className="font-display font-bold text-lg mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{benefit.desc}</p>
+        {/* ── Sprzęt ── */}
+        <section className="section-padding !pt-0">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+              <motion.div {...fadeUp} transition={{ duration: 0.7 }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'hsl(35 60% 55% / 0.1)', border: '1px solid hsl(35 60% 55% / 0.15)' }}>
+                    <Camera className="w-5 h-5" style={{ color: 'hsl(35 60% 55%)' }} />
+                  </div>
+                  <span className="eyebrow">Co kupujemy?</span>
+                </div>
+                <h2 className="section-title text-foreground mb-6">
+                  Sprzęt audiowizualny
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Sercem inwestycji jest profesjonalny sprzęt do produkcji wideo i&nbsp;transmisji na żywo:
+                </p>
+                <div className="space-y-4">
+                  {equipment.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      {...fadeUp}
+                      transition={{ duration: 0.5, delay: i * 0.08 }}
+                      className="flex items-start gap-4 p-5 rounded-xl border border-border/60 transition-all duration-300 hover:border-accent-warm/30"
+                      style={{ background: 'hsl(30 6% 10% / 0.6)' }}
+                    >
+                      <span className="eyebrow mt-0.5 shrink-0">0{i + 1}</span>
+                      <p className="text-foreground text-sm md:text-base leading-relaxed">{item}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
-            ))}
+
+              <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'hsl(35 60% 55% / 0.1)', border: '1px solid hsl(35 60% 55% / 0.15)' }}>
+                    <Monitor className="w-5 h-5" style={{ color: 'hsl(35 60% 55%)' }} />
+                  </div>
+                  <span className="eyebrow">Platforma</span>
+                </div>
+                <h2 className="section-title text-foreground mb-6">
+                  Platforma streamingowa
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Obok sprzętu budujemy dedykowaną platformę do zarządzania wydarzeniami online. Umożliwi ona transmisję na żywo, panele dyskusyjne oraz analizę zaangażowania — wszystko pod własną domeną i&nbsp;marką klienta.
+                </p>
+
+                {/* Szkolenia */}
+                <div className="mt-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'hsl(35 60% 55% / 0.1)', border: '1px solid hsl(35 60% 55% / 0.15)' }}>
+                      <GraduationCap className="w-5 h-5" style={{ color: 'hsl(35 60% 55%)' }} />
+                    </div>
+                    <span className="eyebrow">Szkolenia i doradztwo</span>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3 text-muted-foreground text-sm leading-relaxed">
+                      <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ background: 'hsl(35 60% 55% / 0.5)' }} />
+                      Szkolenia z zarządzania wydarzeniami (event management), marketingu cyfrowego i&nbsp;sprzedaży
+                    </li>
+                    <li className="flex items-start gap-3 text-muted-foreground text-sm leading-relaxed">
+                      <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ background: 'hsl(35 60% 55% / 0.5)' }} />
+                      Doradztwo strategiczne w&nbsp;zakresie rozwoju firmy i&nbsp;zielonej transformacji produkcji audiowizualnej
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
-        <section className="section-padding border-t border-border">
-          <div className="flex flex-wrap items-center justify-center gap-12 mb-8">
-            {['Unia Europejska', 'Krajowy Plan Odbudowy', 'PARP'].map((logo) => (
-              <div key={logo} className="glass-card px-6 py-3">
-                <span className="text-muted-foreground text-sm font-medium">{logo}</span>
-              </div>
-            ))}
+        {/* ── Dla kogo? ── */}
+        <section className="section-padding border-t border-border/60">
+          <div className="max-w-5xl mx-auto">
+            <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center mb-16">
+              <span className="eyebrow block mb-4">Dla kogo?</span>
+              <h2 className="section-title text-foreground">Odbiorcy projektu</h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {audiences.map((item, i) => (
+                <motion.div
+                  key={i}
+                  {...fadeUp}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="group relative p-8 md:p-10 rounded-2xl border border-border/60 hover:border-accent-warm/30 transition-all duration-500"
+                  style={{ background: 'hsl(30 6% 10% / 0.6)' }}
+                >
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(180deg, hsl(35 60% 55% / 0.03), transparent 60%)' }} />
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ background: 'hsl(35 60% 55% / 0.08)', border: '1px solid hsl(35 60% 55% / 0.12)' }}>
+                      <item.icon className="w-5 h-5" style={{ color: 'hsl(35 60% 55%)' }} />
+                    </div>
+                    <p className="text-foreground text-sm md:text-base leading-relaxed">{item.text}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <p className="text-center text-xs text-muted-foreground max-w-2xl mx-auto">
-            Projekt współfinansowany ze środków Unii Europejskiej w ramach
-            Krajowego Planu Odbudowy i Zwiększania Odporności.
-          </p>
+        </section>
+
+        {/* ── Rezultat ── */}
+        <section className="section-padding border-t border-border/60">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div {...fadeUp} transition={{ duration: 0.7 }}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-8" style={{ background: 'hsl(35 60% 55% / 0.1)', border: '1px solid hsl(35 60% 55% / 0.15)' }}>
+                <TrendingUp className="w-6 h-6" style={{ color: 'hsl(35 60% 55%)' }} />
+              </div>
+              <span className="eyebrow block mb-4">Rezultat</span>
+              <h2 className="section-title text-foreground mb-8">Co z tego wyniknie?</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Po zakończeniu projektu firma dysponuje kompletnym, profesjonalnym zapleczem do obsługi wydarzeń online i&nbsp;hybrydowych — sprzętem, platformą i&nbsp;przeszkoloną kadrą.
+              </p>
+              <p className="text-foreground font-semibold text-lg mt-6">
+                Nowy segment usług i&nbsp;trwała dywersyfikacja przychodów.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ── Dane projektu ── */}
+        <section className="section-padding border-t border-border/60">
+          <div className="max-w-4xl mx-auto">
+            <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center mb-16">
+              <span className="eyebrow block mb-4">Informacje formalne</span>
+              <h2 className="section-title text-foreground">Dane projektu</h2>
+            </motion.div>
+
+            <div className="rounded-2xl border border-border/60 overflow-hidden" style={{ background: 'hsl(30 6% 10% / 0.6)' }}>
+              {projectDetails.map((item, i) => (
+                <motion.div
+                  key={i}
+                  {...fadeUp}
+                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  className={`flex flex-col md:flex-row md:items-start gap-2 md:gap-8 px-8 py-5 ${i !== projectDetails.length - 1 ? 'border-b border-border/40' : ''}`}
+                >
+                  <span className="text-xs text-muted-foreground uppercase tracking-wider md:w-64 shrink-0 pt-0.5">{item.label}</span>
+                  <p className={`leading-relaxed ${item.highlight ? 'stat-number text-xl text-foreground' : 'text-foreground font-medium text-sm md:text-base'}`}>
+                    {item.value}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Footer logos + hashtags ── */}
+        <section className="section-padding border-t border-border/60">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8 p-6 rounded-2xl border border-border/60" style={{ background: 'hsl(0 0% 100% / 0.97)' }}>
+              <img src="/images/kpo/kpo-logo.png" alt="Krajowy Plan Odbudowy" className="h-12 md:h-14 object-contain" />
+              <div className="w-px h-8 bg-border/60 hidden md:block" />
+              <img src="/images/kpo/barwy-rp.png" alt="Barwy Rzeczypospolitej Polskiej" className="h-7 md:h-9 object-contain" />
+              <div className="w-px h-8 bg-border/60 hidden md:block" />
+              <img src="/images/kpo/eu-flag.png" alt="Unia Europejska – NextGenerationEU" className="h-9 md:h-11 object-contain" />
+            </div>
+            <p className="text-xs text-muted-foreground mb-4">
+              Projekt współfinansowany ze środków Unii Europejskiej w ramach Krajowego Planu Odbudowy i&nbsp;Zwiększania Odporności.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {['#FunduszeUE', '#FunduszeEuropejskie', '#NextGenerationEU'].map((tag) => (
+                <span key={tag} className="deliverable-pill">{tag}</span>
+              ))}
+            </div>
+          </div>
         </section>
       </main>
 
