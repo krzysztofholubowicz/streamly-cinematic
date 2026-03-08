@@ -26,7 +26,7 @@ const PrivacyPolicyPage = () => {
               Administratorem danych osobowych Użytkowników Serwisu jest <strong>KRZYSZTOF HOŁUBOWICZ</strong> z siedzibą przy ul. Międzynarodowa 58/60A/165, 03-922 Warszawa, NIP: 7122966925 (dalej: „Administrator").
             </p>
             <p>
-              Kontakt: <a href="mailto:hello@streamlyproduction.pl" className="text-primary hover:underline">hello@streamlyproduction.pl</a>
+              Kontakt: <a href="mailto:hello@streamlyproduction.com" className="text-primary hover:underline">hello@streamlyproduction.com</a>
             </p>
           </section>
 
@@ -80,7 +80,7 @@ const PrivacyPolicyPage = () => {
               <li className="list-disc">Prawo złożenia skargi do Prezesa Urzędu Ochrony Danych Osobowych (UODO)</li>
             </ul>
             <p className="mt-4">
-              Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem: <a href="mailto:hello@streamlyproduction.pl" className="text-primary hover:underline">hello@streamlyproduction.pl</a>
+              Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem: <a href="mailto:hello@streamlyproduction.com" className="text-primary hover:underline">hello@streamlyproduction.com</a>
             </p>
           </section>
 
