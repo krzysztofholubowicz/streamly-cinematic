@@ -80,7 +80,7 @@ const PrivacyPolicyPage = () => {
               <li className="list-disc">Prawo złożenia skargi do Prezesa Urzędu Ochrony Danych Osobowych (UODO)</li>
             </ul>
             <p className="mt-4">
-              Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem: <a href="mailto:hello@streamlyproduction.pl" className="text-primary hover:underline">hello@streamlyproduction.pl</a>
+              Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem: <a href="mailto:hello@streamlyproduction.com" className="text-primary hover:underline">hello@streamlyproduction.com</a>
             </p>
           </section>
 
