@@ -3,6 +3,8 @@ import { Send, ShoppingCart } from 'lucide-react';
 import { equipmentCategories } from '@/data/equipment';
 import { toast } from '@/hooks/use-toast';
 
+const WEB3FORMS_KEY = 'c1726c05-0a55-4555-acf9-de77ebcd42d5';
+
 interface Props {
   selected: Record<string, number>;
   onClearSelection: () => void;
@@ -48,24 +50,41 @@ export const RentalForm = ({ selected, onClearSelection }: Props) => {
 
     setIsSending(true);
 
-    // Build summary
     const summary = selectedItems
       .map((item) => `${item!.name} × ${item!.selectedQty}`)
       .join('\n');
 
-    console.log('Rental inquiry:', { ...formData, equipment: summary });
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Wynajem sprzętu – ${formData.name}`,
+          from_name: formData.name,
+          name: formData.name,
+          email: formData.email,
+          'Telefon': formData.phone || '—',
+          'Data rozpoczęcia': formData.startDate,
+          'Data zakończenia': formData.endDate,
+          'Wybrany sprzęt': summary,
+          message: formData.comment || '—',
+        }),
+      });
 
-    // TODO: Connect to Supabase Edge Function + Resend for email sending
-    await new Promise((r) => setTimeout(r, 1000));
-
-    toast({
-      title: 'Zapytanie wysłane!',
-      description: 'Odpowiemy w ciągu 2 godzin w dni robocze.',
-    });
-
-    setFormData({ name: '', email: '', phone: '', startDate: '', endDate: '', comment: '' });
-    onClearSelection();
-    setIsSending(false);
+      const data = await res.json();
+      if (data.success) {
+        toast({ title: 'Zapytanie wysłane!', description: 'Odpowiemy w ciągu 2 godzin w dni robocze.' });
+        setFormData({ name: '', email: '', phone: '', startDate: '', endDate: '', comment: '' });
+        onClearSelection();
+      } else {
+        throw new Error(data.message);
+      }
+    } catch {
+      toast({ title: 'Błąd wysyłki', description: 'Spróbuj ponownie później.', variant: 'destructive' });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
