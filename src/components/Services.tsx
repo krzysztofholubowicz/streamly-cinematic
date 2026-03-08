@@ -18,7 +18,7 @@ const services = [
     number: '02',
     title: 'Video marketing i kampanie reklamowe',
     description: 'Spoty, które zatrzymują scrollowanie. Kampanie, które sprzedają. Każdy format projektujemy pod konkretny cel — zasięg, konwersja, świadomość marki.',
-    proof: '3x większe zaangażowanie vs. statyczne kreacje',
+    proof: '',
     image: liveProduction,
     size: 'large' as const,
   },
