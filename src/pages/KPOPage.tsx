@@ -5,7 +5,7 @@ import { ArrowLeft, Camera, Monitor, Mic, Users, GraduationCap, Briefcase, Trend
 import { Link } from 'react-router-dom';
 
 const equipment = [
-  'Kamery Sony PMW-FX9 i Sony PMW-FX6',
+  'Kamery Sony FX9 i Sony FX6',
   'Obiektywy Sony FE 24-70mm f/2.8 GM, Sony FE 70-200mm f/2.8 GM OSS, Sony FE 16-35mm f/2.8 GM',
   'Mikser wideo Blackmagic ATEM Television Studio HD8 ISO — do produkcji wielokamerowej i transmisji na żywo',
   'Monitory podglądowe',
