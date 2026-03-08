@@ -12,43 +12,44 @@
 @layer base {
   :root {
     /* Warm dark monochrome – "private screening room" */
-    --background: 30 6% 10%;
-    --foreground: 35 15% 93%;
+    --background: 30 8% 7%;
+    --foreground: 40 20% 95%;
 
-    --card: 30 5% 13%;
-    --card-foreground: 35 15% 93%;
+    --card: 30 6% 11%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 30 5% 13%;
-    --popover-foreground: 35 15% 93%;
+    --popover: 30 6% 11%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 35 15% 93%;
-    --primary-foreground: 30 6% 10%;
+    --primary: 40 20% 95%;
+    --primary-foreground: 30 8% 7%;
 
-    --secondary: 30 4% 15%;
-    --secondary-foreground: 35 15% 93%;
+    --secondary: 30 5% 13%;
+    --secondary-foreground: 40 20% 95%;
 
-    --muted: 30 4% 18%;
-    --muted-foreground: 30 8% 58%;
+    --muted: 30 5% 16%;
+    --muted-foreground: 30 10% 55%;
 
-    --accent: 30 4% 20%;
-    --accent-foreground: 30 10% 90%;
+    --accent: 30 5% 18%;
+    --accent-foreground: 40 20% 95%;
 
-    /* Subtle warm accent – barely perceptible */
-    --accent-warm: 25 12% 65%;
+    /* Warm amber accent – subtle but visible */
+    --accent-warm: 35 60% 55%;
+    --accent-warm-subtle: 35 30% 40%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 30 10% 90%;
+    --destructive-foreground: 40 20% 95%;
 
-    --border: 30 6% 25%;
-    --input: 30 4% 15%;
-    --ring: 30 6% 40%;
+    --border: 30 8% 20%;
+    --input: 30 5% 13%;
+    --ring: 35 30% 40%;
 
     --radius: 0.5rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(180deg, rgba(28,27,25,0.2) 0%, rgba(28,27,25,0.65) 50%, hsl(30 6% 10%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(232,228,223,0.04), rgba(232,228,223,0.01));
-    --shadow-glow: 0 0 60px rgba(232,228,223,0.04);
+    --gradient-hero: linear-gradient(180deg, rgba(18,16,14,0.15) 0%, rgba(18,16,14,0.5) 55%, hsl(30 8% 7%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,245,230,0.04), rgba(255,245,230,0.01));
+    --shadow-glow: 0 0 60px rgba(200,170,120,0.06);
     --shadow-soft: 0 30px 60px rgba(0,0,0,0.4);
 
     /* Sidebar */
@@ -104,11 +105,11 @@
     line-height: 1.1;
   }
 
-  /* Eyebrow text */
+  /* Eyebrow text – amber accent */
   .eyebrow {
     @apply text-xs uppercase font-medium;
     letter-spacing: 0.2em;
-    color: hsl(var(--muted-foreground));
+    color: hsl(var(--accent-warm));
   }
 
   /* Gradient text – subtle warm shimmer */
@@ -119,19 +120,21 @@
     background-clip: text;
   }
 
-  /* Service card – clean, subtle border */
+  /* Service card – clean with subtle amber left border */
   .service-card {
-    background: transparent;
+    background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
+    border-left: 2px solid hsl(var(--accent-warm) / 0.3);
     border-radius: 12px;
     padding: 2.5rem;
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .service-card:hover {
-    border-color: hsl(var(--muted-foreground) / 0.4);
+    border-color: hsl(var(--accent-warm) / 0.3);
+    border-left-color: hsl(var(--accent-warm) / 0.7);
     transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
   }
 
   /* Glass card */
@@ -156,12 +159,12 @@
     background: hsl(var(--card));
   }
 
-  /* Process step number – outline style */
+  /* Process step number – outline amber */
   .step-number {
     font-family: 'Clash Display', system-ui, sans-serif;
     font-size: 4rem;
     font-weight: 700;
-    -webkit-text-stroke: 1px hsl(var(--muted-foreground) / 0.3);
+    -webkit-text-stroke: 1px hsl(var(--accent-warm) / 0.4);
     -webkit-text-fill-color: transparent;
     line-height: 1;
   }
@@ -169,9 +172,9 @@
   /* Deliverable pill */
   .deliverable-pill {
     display: inline-block;
-    background: hsl(var(--muted));
-    color: hsl(var(--muted-foreground));
-    border: 1px solid hsl(var(--border));
+    background: hsl(var(--accent-warm) / 0.1);
+    color: hsl(var(--accent-warm));
+    border: 1px solid hsl(var(--accent-warm) / 0.2);
     border-radius: 100px;
     padding: 0.35rem 1rem;
     font-size: 0.75rem;
@@ -333,32 +336,34 @@
     background: linear-gradient(to left, hsl(var(--background)), transparent);
   }
 
-  /* Feature card */
+  /* Feature card – amber top accent */
   .feature-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
+    border-top: 2px solid hsl(var(--accent-warm) / 0.25);
     border-radius: 12px;
     padding: 2rem;
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .feature-card:hover {
-    border-color: hsl(var(--muted-foreground) / 0.3);
+    border-color: hsl(var(--accent-warm) / 0.2);
+    border-top-color: hsl(var(--accent-warm) / 0.5);
     transform: translateY(-3px);
   }
 
   /* KPO accent border */
   .kpo-container {
-    border-left: 3px solid hsl(var(--muted-foreground) / 0.2);
+    border-left: 3px solid hsl(var(--accent-warm) / 0.3);
   }
 
-  /* Scroll progress bar */
+  /* Scroll progress bar – amber */
   .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
     height: 2px;
-    background: hsl(var(--foreground));
+    background: hsl(var(--accent-warm));
     z-index: 100;
     transition: width 0.1s linear;
   }
@@ -386,7 +391,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: hsl(var(--muted-foreground) / 0.5);
+    background: hsl(var(--accent-warm) / 0.6);
     animation: travelDot 4s linear infinite;
   }
 
