@@ -13,8 +13,8 @@ export const Hero = () => {
           className="w-full h-full object-cover"
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-        />
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }} />
+        
         <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }} />
       </div>
 
@@ -25,19 +25,19 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-title uppercase mb-8"
-          >
-            <span className="text-foreground">Twoja historia.</span>
+            className="hero-title uppercase mb-8">
+            
+            <span className="text-foreground">TWOJA   HISTORIA</span>
             <br />
-            <span className="hero-accent">Nasz obraz.</span>
+            <span className="hero-accent">NASZ OBRAZ</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10"
-          >
+            className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10">
+            
             Studio produkcyjne Streamly. Programy TV, video marketing,
             transmisje live i własna platforma VOD — dla marek,
             które nie idą na kompromisy.
@@ -46,8 +46,8 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
+            transition={{ duration: 0.6, delay: 0.8 }}>
+            
             <a href="#kontakt" className="btn-primary">
               Porozmawiajmy
             </a>
@@ -60,10 +60,10 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator"
-      >
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
+        
         <ChevronDown className="w-5 h-5 text-muted-foreground" />
       </motion.div>
-    </section>
-  );
+    </section>);
+
 };
