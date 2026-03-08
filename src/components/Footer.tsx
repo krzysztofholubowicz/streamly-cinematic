@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <Link to="/" className="font-display text-2xl font-bold text-foreground">
-              Streamly
+              Streamly Production
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm leading-relaxed">
               Streamly Production – realizacje video, transmisje live i własna
