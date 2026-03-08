@@ -7,7 +7,7 @@ const navLinks = [
   { href: '/#realizacje', label: 'Realizacje' },
   { href: '/#uslugi', label: 'Usługi' },
   { href: '/#studio', label: 'Studio' },
-  { href: '/wynajem', label: 'Wynajem' },
+  { href: '/wynajem', label: 'Wynajem sprzętu' },
   { href: '/kpo', label: 'KPO' },
 ];
 
