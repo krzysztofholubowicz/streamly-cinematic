@@ -10,7 +10,7 @@ const services = [
     number: '01',
     title: 'Programy TV i serie wideo',
     description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
-    proof: 'Polsat · TVP · Canal+',
+    proof: '',
     image: studioCamera,
     size: 'large' as const,
   },
