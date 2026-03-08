@@ -56,7 +56,7 @@ const equipmentCategories = [
   {
     id: 'accessories', name: 'Akcesoria',
     items: [
-      { name: 'Statywy Manfrotto', spec: 'Wideo head' },
+      { name: 'Statywy Manfrotto', spec: 'Video head' },
       { name: 'Sony CFexpress Type A', spec: 'Karty pamięci' },
       { name: 'ND Filtry', spec: 'Zmienne' },
     ]

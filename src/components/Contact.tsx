@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const projectTypes = [
   'Program TV',
-  'Kampania wideo',
+  'Kampania video',
   'Transmisja live',
   'Produkcja VOD',
   'Film korporacyjny',
