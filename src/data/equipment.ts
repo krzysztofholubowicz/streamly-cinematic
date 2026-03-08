@@ -38,6 +38,7 @@ export const equipmentCategories: EquipmentCategory[] = [
       { id: 'aputure-300x', name: 'Aputure LS 300X (V-Mount)', quantity: 2, category: 'lighting', image: '/equipment/aputure-600d.jpg', note: 'Opcjonalnie z akumulatorami V-Mount' },
       { id: 'aputure-fresnel', name: 'Aputure Fresnel 2X', quantity: 2, category: 'lighting', image: '/equipment/aputure-fresnel.jpg' },
       { id: 'nanlite-alien', name: 'Nanlite Alien 300C', quantity: 2, category: 'lighting', image: '/equipment/nanlite-alien.jpg', note: 'Opcjonalnie z akumulatorami V-Mount' },
+      { id: 'dedolight-sps5', name: 'Dedolight SPS5 Portable Studio', quantity: 1, category: 'lighting', image: '/equipment/dedolight-sps5.jpg', note: 'Zestaw 4 lamp z softboxami i akcesoriami w walizce transportowej' },
     ],
   },
   {
@@ -62,6 +63,7 @@ export const equipmentCategories: EquipmentCategory[] = [
     name: 'Statywy',
     items: [
       { id: 'sachtler', name: 'Sachtler Activ6 i Activ8', quantity: 4, category: 'tripods', image: '/equipment/sachtler-activ.jpg' },
+      { id: 'vinten-vision-blue', name: 'Vinten Vision Blue5', quantity: 2, category: 'tripods', image: '/equipment/vinten-vision-blue.jpg' },
     ],
   },
 ];
