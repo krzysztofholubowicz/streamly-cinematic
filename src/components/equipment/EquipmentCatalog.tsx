@@ -70,11 +70,11 @@ export const EquipmentCatalog = ({ selected, onToggle, onQtyChange }: Props) => 
 
                   {/* Image */}
                   {item.image && (
-                    <div className="relative w-[4.5rem] h-[4.5rem] rounded-xl flex-shrink-0 hidden sm:block overflow-hidden border border-border/70 bg-gradient-to-br from-card via-muted/70 to-background">
-                      <KeyedImage
+                    <div className="relative w-[4.5rem] h-[4.5rem] rounded-lg flex-shrink-0 hidden sm:block overflow-hidden bg-white">
+                      <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-contain p-1.5 group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain p-1.5 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                       />
                     </div>
                   )}
