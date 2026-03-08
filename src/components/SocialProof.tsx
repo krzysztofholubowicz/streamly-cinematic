@@ -25,25 +25,22 @@ export const SocialProof = () => {
           Zaufanie budujemy na planie, nie w prezentacji.
         </motion.p>
 
-        {/* Client names row */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-start flex-wrap gap-y-3 mb-16"
-        >
-          {clients.map((client, index) => (
-            <span key={client.name} className="flex items-center">
-              <span className="text-xl md:text-2xl font-bold text-foreground">
-                {client.name}
-              </span>
-              {index < clients.length - 1 && (
-                <span className="text-xl md:text-2xl text-muted-foreground mx-4">·</span>
-              )}
-            </span>
-          ))}
-        </motion.div>
+        {/* Client names marquee */}
+        <div className="marquee-container mb-16">
+          <div className="marquee-track">
+            {[...clients, ...clients, ...clients].map((client, index) => (
+              <div
+                key={`${client.name}-${index}`}
+                className="client-card text-center mx-3 min-w-[220px] flex-shrink-0"
+              >
+                <h3 className="font-display font-bold text-xl md:text-2xl text-foreground mb-1">
+                  {client.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">{client.subtitle}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Stats – moved from hero */}
         <motion.div
