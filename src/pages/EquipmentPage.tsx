@@ -76,7 +76,7 @@ const EquipmentPage = () => {
               className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-6"
             >
               Kamery, obiektywy, oświetlenie, dźwięk, realizacja, streaming – cały park maszynowy
-              Streamly Production dostępny dla Twojej produkcji. Sprzęt serwisowany, ubezpieczony, gotowy do pracy.
+              Streamly Production dostępny dla Twojej produkcji.
             </motion.p>
 
             {/* CTA badge */}
