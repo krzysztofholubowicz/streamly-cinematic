@@ -38,7 +38,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10">
             
-            Studio produkcyjne Streamly. Programy TV, video marketing,
+            Studio Streamly Production. Programy TV, video marketing,
             transmisje live i własna platforma VOD — dla marek,
             które nie idą na kompromisy.
           </motion.p>

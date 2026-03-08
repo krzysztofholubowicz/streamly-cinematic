@@ -27,11 +27,10 @@ export const Footer = () => {
           </div>
 
           <div>
-            <span className="eyebrow block mb-4">Social</span>
+            <span className="eyebrow block mb-4">Dokumenty</span>
             <div className="space-y-3">
-              <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
-              <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
-              <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
+              <Link to="/polityka-prywatnosci" className="block text-muted-foreground hover:text-foreground transition-colors">Polityka prywatności</Link>
+              <Link to="/regulamin" className="block text-muted-foreground hover:text-foreground transition-colors">Regulamin</Link>
             </div>
           </div>
         </div>

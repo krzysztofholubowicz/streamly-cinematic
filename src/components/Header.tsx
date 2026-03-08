@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 const navLinks = [
   { href: '/#realizacje', label: 'Realizacje' },
   { href: '/#uslugi', label: 'Usługi' },
-  { href: '/#studio', label: 'Studio' },
+  { href: '/#studio', label: 'Streamly Studio' },
   { href: '/wynajem', label: 'Wynajem sprzętu' },
   { href: '/kpo', label: 'KPO' },
 ];
