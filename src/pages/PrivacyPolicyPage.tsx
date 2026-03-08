@@ -26,7 +26,7 @@ const PrivacyPolicyPage = () => {
               Administratorem danych osobowych Użytkowników Serwisu jest <strong>KRZYSZTOF HOŁUBOWICZ</strong> z siedzibą przy ul. Międzynarodowa 58/60A/165, 03-922 Warszawa, NIP: 7122966925 (dalej: „Administrator").
             </p>
             <p>
-              Kontakt: <a href="mailto:hello@streamlyproduction.pl" className="text-primary hover:underline">hello@streamlyproduction.pl</a>
+              Kontakt: <a href="mailto:hello@streamlyproduction.com" className="text-primary hover:underline">hello@streamlyproduction.com</a>
             </p>
           </section>
 
