@@ -8,7 +8,7 @@ import corporateVideo from '@/assets/services/corporate-video.jpg';
 const services = [
   {
     number: '01',
-    title: 'Programy TV i serie wideo',
+    title: 'Programy TV i serie video',
     description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
     proof: '',
     image: tvProduction,
