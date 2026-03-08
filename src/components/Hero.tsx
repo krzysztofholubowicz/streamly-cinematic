@@ -25,7 +25,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-title text-foreground mb-8"
+            className="hero-title text-foreground mb-8 uppercase"
           >
             Twoja historia.
             <br />
