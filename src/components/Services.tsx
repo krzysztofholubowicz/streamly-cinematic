@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import sonyFx9 from '@/assets/equipment/sony-fx9.jpg';
-import sonyFx6 from '@/assets/equipment/sony-fx6.jpg';
-import blackmagicPocket from '@/assets/equipment/blackmagic-pocket.jpg';
-import atemMini from '@/assets/equipment/atem-mini.jpg';
-import atomosNinja from '@/assets/equipment/atomos-ninja.jpg';
+import tvProduction from '@/assets/services/tv-production.jpg';
+import videoMarketing from '@/assets/services/video-marketing.jpg';
+import liveEvent from '@/assets/services/live-event.jpg';
+import vodPlatform from '@/assets/services/vod-platform.jpg';
+import corporateVideo from '@/assets/services/corporate-video.jpg';
 
 const services = [
   {
@@ -11,7 +11,7 @@ const services = [
     title: 'Programy TV i serie video',
     description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
     proof: '',
-    image: sonyFx9,
+    image: tvProduction,
     size: 'large' as const,
   },
   {
@@ -19,7 +19,7 @@ const services = [
     title: 'Video marketing i kampanie reklamowe',
     description: 'Spoty, które zatrzymują scrollowanie. Kampanie, które sprzedają. Każdy format projektujemy pod konkretny cel — zasięg, konwersja, świadomość marki.',
     proof: '',
-    image: sonyFx6,
+    image: videoMarketing,
     size: 'large' as const,
   },
   {
@@ -27,7 +27,7 @@ const services = [
     title: 'Transmisje live i realizacje eventowe',
     description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Realizujemy na żywo bez marginu na błąd.',
     proof: '',
-    image: atemMini,
+    image: liveEvent,
     size: 'small' as const,
   },
   {
@@ -35,7 +35,7 @@ const services = [
     title: 'Produkcja na platformy VOD',
     description: 'Materiały zoptymalizowane pod Streamly Studio i inne platformy VOD. Kodowanie wieloformatowe, QC, metadata — gotowe do publikacji od razu.',
     proof: '',
-    image: atomosNinja,
+    image: vodPlatform,
     size: 'small' as const,
   },
   {
@@ -43,7 +43,7 @@ const services = [
     title: 'Video korporacyjne i onboarding',
     description: 'Szkolenia, które ludzie oglądają do końca. Onboarding HR, filmy wizerunkowe, komunikacja wewnętrzna.',
     proof: '',
-    image: blackmagicPocket,
+    image: corporateVideo,
     size: 'small' as const,
   },
 ];
