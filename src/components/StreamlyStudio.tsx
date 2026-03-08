@@ -20,10 +20,9 @@ const features = [
 
 export const StreamlyStudio = () => {
   return (
-    <section id="studio" className="section-padding">
+    <section id="studio" className="section-padding border-t border-border">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left - Text */}
           <div>
             <motion.span
               initial={{ opacity: 0, y: 20 }}
@@ -71,13 +70,12 @@ export const StreamlyStudio = () => {
             </motion.a>
           </div>
 
-          {/* Right - Feature Cards */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-5"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -96,7 +94,6 @@ export const StreamlyStudio = () => {
               </motion.div>
             ))}
 
-            {/* Viewers stat */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +102,7 @@ export const StreamlyStudio = () => {
               className="glass-card p-6 text-center"
             >
               <p className="text-muted-foreground text-sm mb-2">Aktywni widzowie</p>
-              <span className="stat-number text-4xl gradient-text">2.4K</span>
+              <span className="stat-number text-4xl text-foreground">2.4K</span>
             </motion.div>
           </motion.div>
         </div>

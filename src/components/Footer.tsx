@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Link to="/" className="font-display text-2xl font-bold gradient-text">
+            <Link to="/" className="font-display text-2xl font-bold text-foreground">
               Streamly
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm leading-relaxed">
@@ -21,20 +21,20 @@ export const Footer = () => {
           <div>
             <span className="eyebrow block mb-4">Nawigacja</span>
             <div className="space-y-3">
-              <a href="/#uslugi" className="block text-muted-foreground hover:text-teal transition-colors">Usługi</a>
-              <a href="/#realizacje" className="block text-muted-foreground hover:text-teal transition-colors">Realizacje</a>
-              <a href="/#studio" className="block text-muted-foreground hover:text-teal transition-colors">Streamly Studio</a>
-              <Link to="/wynajem" className="block text-muted-foreground hover:text-teal transition-colors">Wynajem Sprzętu</Link>
-              <Link to="/kpo" className="block text-muted-foreground hover:text-teal transition-colors">Projekt KPO</Link>
+              <a href="/#uslugi" className="block text-muted-foreground hover:text-foreground transition-colors">Usługi</a>
+              <a href="/#realizacje" className="block text-muted-foreground hover:text-foreground transition-colors">Realizacje</a>
+              <a href="/#studio" className="block text-muted-foreground hover:text-foreground transition-colors">Streamly Studio</a>
+              <Link to="/wynajem" className="block text-muted-foreground hover:text-foreground transition-colors">Wynajem Sprzętu</Link>
+              <Link to="/kpo" className="block text-muted-foreground hover:text-foreground transition-colors">Projekt KPO</Link>
             </div>
           </div>
 
           <div>
             <span className="eyebrow block mb-4">Social</span>
             <div className="space-y-3">
-              <a href="#" className="block text-muted-foreground hover:text-teal transition-colors">LinkedIn</a>
-              <a href="#" className="block text-muted-foreground hover:text-teal transition-colors">Instagram</a>
-              <a href="#" className="block text-muted-foreground hover:text-teal transition-colors">YouTube</a>
+              <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+              <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
+              <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
             </div>
           </div>
         </div>

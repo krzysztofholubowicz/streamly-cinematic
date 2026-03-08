@@ -20,14 +20,14 @@ const steps = [
 
 export const Process = () => {
   return (
-    <section className="section-padding">
+    <section className="section-padding border-t border-border">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <span className="eyebrow block mb-4">Proces</span>
           <h2 className="section-title">
@@ -37,7 +37,7 @@ export const Process = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
@@ -45,9 +45,9 @@ export const Process = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="text-center md:text-left"
+              className="relative"
             >
-              <span className="step-number block mb-4">{step.number}</span>
+              <span className="step-number block mb-6">{step.number}</span>
               <h3 className="font-display text-xl font-bold mb-4 text-foreground">
                 {step.title}
               </h3>

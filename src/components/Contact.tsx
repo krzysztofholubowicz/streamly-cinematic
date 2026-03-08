@@ -11,11 +11,12 @@ export const Contact = () => {
     console.log(formData);
   };
 
+  const inputClass = "w-full bg-transparent border border-border rounded-2xl px-4 py-3.5 text-foreground focus:border-foreground/30 outline-none transition-colors placeholder:text-muted-foreground/30";
+
   return (
-    <section id="kontakt" className="section-padding">
+    <section id="kontakt" className="section-padding border-t border-border">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Left - Info */}
           <div>
             <motion.span initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="eyebrow block mb-4">
               Kontakt
@@ -34,13 +35,13 @@ export const Contact = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="space-y-6">
               <div>
                 <span className="eyebrow block mb-2">Email</span>
-                <a href="mailto:hello@streamlyproduction.pl" className="text-xl hover:text-teal transition-colors">
+                <a href="mailto:hello@streamlyproduction.pl" className="text-xl hover:text-foreground/70 transition-colors">
                   hello@streamlyproduction.pl
                 </a>
               </div>
               <div>
                 <span className="eyebrow block mb-2">Telefon</span>
-                <a href="tel:+48695709701" className="text-xl hover:text-teal transition-colors">
+                <a href="tel:+48695709701" className="text-xl hover:text-foreground/70 transition-colors">
                   +48 695 709 701
                 </a>
               </div>
@@ -55,41 +56,40 @@ export const Contact = () => {
               <div>
                 <span className="eyebrow block mb-2">Znajdź nas</span>
                 <div className="flex gap-6">
-                  <a href="#" className="text-muted-foreground hover:text-teal transition-colors">LinkedIn</a>
-                  <a href="#" className="text-muted-foreground hover:text-teal transition-colors">Instagram</a>
-                  <a href="#" className="text-muted-foreground hover:text-teal transition-colors">YouTube</a>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Right - Form */}
           <motion.form initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-            onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid md:grid-cols-2 gap-5">
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Imię i nazwisko *</label>
                 <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                  className={inputClass} />
               </div>
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Email *</label>
                 <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                  className={inputClass} />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-5">
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Telefon</label>
                 <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors" />
+                  className={inputClass} />
               </div>
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Typ projektu *</label>
                 <input type="text" required placeholder="np. program TV, video marketing, transmisja live" value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors placeholder:text-muted-foreground/40" />
+                  className={inputClass} />
               </div>
             </div>
 
@@ -97,14 +97,14 @@ export const Contact = () => {
               <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Kiedy planujesz realizację? *</label>
               <input type="text" required placeholder="np. marzec 2026" value={formData.timeline}
                 onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors placeholder:text-muted-foreground/40" />
+                className={inputClass} />
             </div>
 
             <div>
               <label className="text-xs uppercase tracking-wider text-muted-foreground block mb-2">Wiadomość *</label>
               <textarea required rows={5} placeholder="Opowiedz nam o swoim pomyśle, wyzwaniach i budżecie..."
                 value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full bg-transparent border border-border rounded-lg px-4 py-3 text-foreground focus:border-teal outline-none transition-colors resize-none placeholder:text-muted-foreground/40" />
+                className={`${inputClass} resize-none`} />
             </div>
 
             <button type="submit" className="btn-primary w-full text-center">

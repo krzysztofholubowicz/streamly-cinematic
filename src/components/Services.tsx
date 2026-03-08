@@ -31,14 +31,14 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="uslugi" className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(18,22,41,0.8), rgba(26,31,53,0.6))' }}>
+    <section id="uslugi" className="section-padding">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <span className="eyebrow block mb-4">Oferta</span>
           <h2 className="section-title mb-6">
@@ -48,12 +48,11 @@ export const Services = () => {
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
             Specjalizujemy się w produkcji programów telewizyjnych, materiałów video marketingowych,
-            reklam, profesjonalnych relacji z eventów i transmisji online – każdy projekt to opowieść,
-            którą musimy opowiedzieć doskonale.
+            reklam, profesjonalnych relacji z eventów i transmisji online.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -62,17 +61,17 @@ export const Services = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="service-card group"
               >
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                  style={{ background: 'linear-gradient(135deg, rgba(14,165,233,0.15), rgba(168,85,247,0.1))' }}>
-                  <Icon className="w-6 h-6 text-teal" />
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 border border-border"
+                  style={{ background: 'rgba(255,255,255,0.03)' }}>
+                  <Icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4 text-foreground">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {service.description}
                 </p>
               </motion.div>
