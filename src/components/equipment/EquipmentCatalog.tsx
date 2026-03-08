@@ -70,11 +70,11 @@ export const EquipmentCatalog = ({ selected, onToggle, onQtyChange }: Props) => 
 
                   {/* Image (if available) */}
                   {item.image && (
-                    <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block bg-muted/30 p-1.5">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   )}
