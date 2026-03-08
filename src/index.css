@@ -105,11 +105,11 @@
     line-height: 1.1;
   }
 
-  /* Eyebrow text */
+  /* Eyebrow text – amber accent */
   .eyebrow {
     @apply text-xs uppercase font-medium;
     letter-spacing: 0.2em;
-    color: hsl(var(--muted-foreground));
+    color: hsl(var(--accent-warm));
   }
 
   /* Gradient text – subtle warm shimmer */
