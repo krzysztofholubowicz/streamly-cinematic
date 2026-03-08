@@ -61,7 +61,7 @@ export const equipmentCategories: EquipmentCategory[] = [
     id: 'tripods',
     name: 'Statywy',
     items: [
-      { id: 'sachtler', name: 'Sachtler System S2064S-FTGS', quantity: 4, category: 'tripods' },
+      { id: 'sachtler', name: 'Sachtler Activ6 i Activ8', quantity: 4, category: 'tripods' },
     ],
   },
 ];
