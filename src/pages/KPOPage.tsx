@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { SEO } from '@/components/SEO';
 import { ArrowLeft, Camera, Monitor, Mic, Users, GraduationCap, Briefcase, TrendingUp, Tv } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -46,6 +47,18 @@ const fadeUp = {
 const KPOPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground noise-overlay">
+      <SEO
+        title="Projekt KPO – Streamly Studio"
+        description="Streamly Production realizuje inwestycję w ramach Krajowego Planu Odbudowy – profesjonalne studio produkcyjne z systemem wielokamerowym i transmisją live."
+        path="/kpo"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Project',
+          name: 'Streamly Studio – Projekt KPO',
+          description: 'Budowa profesjonalnego studia produkcyjnego w ramach Krajowego Planu Odbudowy i Zwiększania Odporności.',
+          funder: { '@type': 'Organization', name: 'Unia Europejska – NextGenerationEU' },
+        }}
+      />
       <Header />
 
       <main className="pt-32">

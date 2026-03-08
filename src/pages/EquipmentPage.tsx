@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { SEO } from '@/components/SEO';
 import { ArrowLeft, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useCallback } from 'react';
@@ -33,6 +34,21 @@ const EquipmentPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Wynajem sprzętu filmowego"
+        description="Profesjonalny sprzęt filmowy do wynajęcia – kamery Sony FX6/FX9, obiektywy, oświetlenie, dźwięk, realizacja i streaming. Dostawa na plan."
+        path="/wynajem"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Wynajem sprzętu filmowego – Streamly Production',
+          description: 'Kamery, obiektywy, oświetlenie, dźwięk, realizacja, streaming – cały park maszynowy Streamly Production dostępny dla Twojej produkcji.',
+          provider: {
+            '@type': 'Organization',
+            name: 'Streamly Production',
+          },
+        }}
+      />
       <Header />
 
       <main className="pt-32">
