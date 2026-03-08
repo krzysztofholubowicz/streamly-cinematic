@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import sonyFx9 from '@/assets/equipment/sony-fx9.jpg';
-import sonyFx6 from '@/assets/equipment/sony-fx6.jpg';
-import blackmagicPocket from '@/assets/equipment/blackmagic-pocket.jpg';
-import atemMini from '@/assets/equipment/atem-mini.jpg';
-import atomosNinja from '@/assets/equipment/atomos-ninja.jpg';
+import tvProduction from '@/assets/services/tv-production.jpg';
+import videoMarketing from '@/assets/services/video-marketing.jpg';
+import liveEvent from '@/assets/services/live-event.jpg';
+import vodPlatform from '@/assets/services/vod-platform.jpg';
+import corporateVideo from '@/assets/services/corporate-video.jpg';
 
 const services = [
   {
