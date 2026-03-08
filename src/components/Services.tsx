@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import studioCamera from '@/assets/studio-camera.jpg';
-import liveProduction from '@/assets/live-production.jpg';
-import cameraCloseup from '@/assets/camera-closeup.jpg';
-import heroStudio from '@/assets/hero-studio.jpg';
-import blackmagic from '@/assets/equipment/blackmagic-pocket.jpg';
+import tvProduction from '@/assets/services/tv-production.jpg';
+import videoMarketing from '@/assets/services/video-marketing.jpg';
+import liveEvent from '@/assets/services/live-event.jpg';
+import vodPlatform from '@/assets/services/vod-platform.jpg';
+import corporateVideo from '@/assets/services/corporate-video.jpg';
 
 const services = [
   {
