@@ -81,10 +81,11 @@ const BentoCard = ({ service, index, className }: { service: typeof services[0];
         {service.description}
       </p>
 
-      {/* Proof line */}
-      <span className="text-[hsl(var(--accent-warm))] text-xs font-medium tracking-wide">
-        {service.proof}
-      </span>
+      {service.proof && (
+        <span className="text-[hsl(var(--accent-warm))] text-xs font-medium tracking-wide">
+          {service.proof}
+        </span>
+      )}
     </div>
 
     {/* Hover border accent */}
