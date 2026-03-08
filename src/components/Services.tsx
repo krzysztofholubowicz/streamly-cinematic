@@ -10,7 +10,7 @@ const services = [
     number: '01',
     title: 'Programy TV i serie wideo',
     description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
-    proof: 'Polsat · TVP · Canal+',
+    proof: '',
     image: studioCamera,
     size: 'large' as const,
   },
@@ -18,7 +18,7 @@ const services = [
     number: '02',
     title: 'Video marketing i kampanie reklamowe',
     description: 'Spoty, które zatrzymują scrollowanie. Kampanie, które sprzedają. Każdy format projektujemy pod konkretny cel — zasięg, konwersja, świadomość marki.',
-    proof: '3x większe zaangażowanie vs. statyczne kreacje',
+    proof: '',
     image: liveProduction,
     size: 'large' as const,
   },
@@ -26,7 +26,7 @@ const services = [
     number: '03',
     title: 'Transmisje live i realizacje eventowe',
     description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Realizujemy na żywo bez marginu na błąd.',
-    proof: 'Impact CEE · 99.9% uptime',
+    proof: '',
     image: cameraCloseup,
     size: 'small' as const,
   },
@@ -34,7 +34,7 @@ const services = [
     number: '04',
     title: 'Produkcja na platformy VOD',
     description: 'Materiały zoptymalizowane pod Streamly Studio i inne platformy VOD. Kodowanie wieloformatowe, QC, metadata — gotowe do publikacji od razu.',
-    proof: 'Natywna integracja z własną platformą VOD',
+    proof: '',
     image: heroStudio,
     size: 'small' as const,
   },
@@ -42,7 +42,7 @@ const services = [
     number: '05',
     title: 'Wideo korporacyjne i onboarding',
     description: 'Szkolenia, które ludzie oglądają do końca. Onboarding HR, filmy wizerunkowe, komunikacja wewnętrzna.',
-    proof: '3x dłuższy czas oglądania',
+    proof: '',
     image: blackmagic,
     size: 'small' as const,
   },
@@ -81,10 +81,11 @@ const BentoCard = ({ service, index, className }: { service: typeof services[0];
         {service.description}
       </p>
 
-      {/* Proof line */}
-      <span className="text-[hsl(var(--accent-warm))] text-xs font-medium tracking-wide">
-        {service.proof}
-      </span>
+      {service.proof && (
+        <span className="text-[hsl(var(--accent-warm))] text-xs font-medium tracking-wide">
+          {service.proof}
+        </span>
+      )}
     </div>
 
     {/* Hover border accent */}
