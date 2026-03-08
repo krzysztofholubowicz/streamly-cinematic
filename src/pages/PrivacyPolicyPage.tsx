@@ -1,11 +1,17 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { SEO } from '@/components/SEO';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicyPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Polityka prywatności"
+        description="Polityka prywatności Streamly Production – informacje o przetwarzaniu danych osobowych, plikach cookies i prawach użytkowników."
+        path="/polityka-prywatnosci"
+      />
       <Header />
       <main className="pt-32 section-padding">
         <Link to="/" className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors mb-12">
