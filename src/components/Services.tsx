@@ -11,7 +11,7 @@ const services = [
     title: 'Programy TV i serie video',
     description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
     proof: '',
-    image: tvProduction,
+    image: sonyFx9,
     size: 'large' as const,
   },
   {
