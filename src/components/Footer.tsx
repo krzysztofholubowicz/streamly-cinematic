@@ -10,7 +10,7 @@ export const Footer = () => {
               Streamly
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm leading-relaxed">
-              Streamly Production – realizacje wideo, transmisje live i własna
+              Streamly Production – realizacje video, transmisje live i własna
               platforma VOD dla marek, które wymagają najwyższego standardu.
             </p>
           </div>
