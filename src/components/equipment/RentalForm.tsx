@@ -3,6 +3,8 @@ import { Send, ShoppingCart } from 'lucide-react';
 import { equipmentCategories } from '@/data/equipment';
 import { toast } from '@/hooks/use-toast';
 
+const WEB3FORMS_KEY = 'c1726c05-0a55-4555-acf9-de77ebcd42d5';
+
 interface Props {
   selected: Record<string, number>;
   onClearSelection: () => void;
