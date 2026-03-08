@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 import studioCamera from '@/assets/studio-camera.jpg';
 import liveProduction from '@/assets/live-production.jpg';
 import cameraCloseup from '@/assets/camera-closeup.jpg';
@@ -14,44 +12,87 @@ const services = [
     description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
     proof: 'Polsat · TVP · Canal+',
     image: studioCamera,
+    size: 'large' as const,
   },
   {
     number: '02',
     title: 'Video marketing i kampanie reklamowe',
     description: 'Spoty, które zatrzymują scrollowanie. Kampanie, które sprzedają. Każdy format projektujemy pod konkretny cel — zasięg, konwersja, świadomość marki.',
-    proof: 'Średnio 3x większe zaangażowanie vs. statyczne kreacje',
+    proof: '3x większe zaangażowanie vs. statyczne kreacje',
     image: liveProduction,
+    size: 'large' as const,
   },
   {
     number: '03',
     title: 'Transmisje live i realizacje eventowe',
-    description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Konferencje, gale, koncerty — realizujemy na żywo bez marginu na błąd.',
+    description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Realizujemy na żywo bez marginu na błąd.',
     proof: 'Impact CEE · 99.9% uptime',
     image: cameraCloseup,
+    size: 'small' as const,
   },
   {
     number: '04',
-    title: 'Produkcja dedykowana na platformy VOD',
+    title: 'Produkcja na platformy VOD',
     description: 'Materiały zoptymalizowane pod Streamly Studio i inne platformy VOD. Kodowanie wieloformatowe, QC, metadata — gotowe do publikacji od razu.',
     proof: 'Natywna integracja z własną platformą VOD',
     image: heroStudio,
+    size: 'small' as const,
   },
   {
     number: '05',
     title: 'Wideo korporacyjne i onboarding',
-    description: 'Szkolenia, które ludzie oglądają do końca. Onboarding HR, filmy wizerunkowe, komunikacja wewnętrzna. Tworzymy materiały, które pracują dla Twojej firmy.',
-    proof: '3x dłuższy czas oglądania niż średnia branżowa',
+    description: 'Szkolenia, które ludzie oglądają do końca. Onboarding HR, filmy wizerunkowe, komunikacja wewnętrzna.',
+    proof: '3x dłuższy czas oglądania',
     image: blackmagic,
+    size: 'small' as const,
   },
 ];
 
+const BentoCard = ({ service, index, className }: { service: typeof services[0]; index: number; className?: string }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: index * 0.08 }}
+    className={`group relative overflow-hidden rounded-xl border border-border bg-card ${className}`}
+  >
+    {/* Background image */}
+    <div className="absolute inset-0">
+      <img
+        src={service.image}
+        alt={service.title}
+        className="w-full h-full object-cover opacity-30 grayscale group-hover:opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
+    </div>
+
+    {/* Content */}
+    <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
+      {/* Number */}
+      <span className="text-[hsl(var(--accent-warm))] font-mono text-xs tracking-widest mb-3 block">
+        {service.number}
+      </span>
+
+      <h3 className="font-display text-lg md:text-xl font-bold text-foreground mb-3 leading-tight">
+        {service.title}
+      </h3>
+
+      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 group-hover:line-clamp-none transition-all">
+        {service.description}
+      </p>
+
+      {/* Proof line */}
+      <span className="text-[hsl(var(--accent-warm))] text-xs font-medium tracking-wide">
+        {service.proof}
+      </span>
+    </div>
+
+    {/* Hover border accent */}
+    <div className="absolute top-0 left-0 w-full h-[2px] bg-[hsl(var(--accent-warm)/0.5)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+  </motion.div>
+);
+
 export const Services = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-
-  const toggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? -1 : index);
-  };
-
   return (
     <section id="uslugi" className="section-padding">
       <div className="container mx-auto">
@@ -71,101 +112,18 @@ export const Services = () => {
           </h2>
         </motion.div>
 
-        {/* Accordion */}
-        <div>
-          {services.map((service, index) => {
-            const isActive = activeIndex === index;
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Row 1: 2 large cards */}
+          <BentoCard service={services[0]} index={0} className="min-h-[340px] md:min-h-[400px]" />
+          <BentoCard service={services[1]} index={1} className="min-h-[340px] md:min-h-[400px]" />
+        </div>
 
-            return (
-              <motion.div
-                key={service.number}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="border-t border-[hsl(var(--border))]"
-              >
-                {/* Row button */}
-                <button
-                  onClick={() => toggle(index)}
-                  className="w-full flex items-center justify-between py-7 group cursor-pointer"
-                >
-                  <div className="flex items-center gap-6 md:gap-10">
-                    <span
-                      className={`font-mono text-sm tracking-widest transition-colors duration-300 ${
-                        isActive
-                          ? 'text-[hsl(var(--accent-warm))]'
-                          : 'text-muted-foreground/40 group-hover:text-muted-foreground'
-                      }`}
-                    >
-                      {service.number}
-                    </span>
-                    <h3
-                      className={`font-display text-xl md:text-[22px] font-bold text-left transition-colors duration-300 ${
-                        isActive
-                          ? 'text-foreground'
-                          : 'text-muted-foreground group-hover:text-foreground'
-                      }`}
-                    >
-                      {service.title}
-                    </h3>
-                  </div>
-
-                  <div
-                    className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
-                      isActive
-                        ? 'border-[hsl(var(--accent-warm)/0.4)] bg-[hsl(var(--accent-warm)/0.1)]'
-                        : 'border-border group-hover:border-muted-foreground/40'
-                    }`}
-                  >
-                    {isActive ? (
-                      <X className="w-3.5 h-3.5 text-[hsl(var(--accent-warm))]" />
-                    ) : (
-                      <Plus className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
-                    )}
-                  </div>
-                </button>
-
-                {/* Expanded content */}
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-10 pl-0 md:pl-[4.5rem] border-l-2 border-[hsl(var(--accent-warm)/0.4)] ml-[0.65rem] md:ml-[0.65rem] md:border-l-0">
-                        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 pl-6 md:pl-0">
-                          {/* Left: text */}
-                          <div className="flex flex-col justify-between">
-                            <p className="text-muted-foreground text-base leading-[1.7] mb-6 max-w-xl">
-                              {service.description}
-                            </p>
-                            <span className="text-[13px] font-medium text-[hsl(var(--accent-warm))]">
-                              {service.proof}
-                            </span>
-                          </div>
-
-                          {/* Right: image */}
-                          <div className="overflow-hidden rounded-[4px] aspect-[16/10]">
-                            <img
-                              src={service.image}
-                              alt={service.title}
-                              className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-          {/* Bottom border */}
-          <div className="border-t border-[hsl(var(--border))]" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          {/* Row 2: 3 smaller cards */}
+          <BentoCard service={services[2]} index={2} className="min-h-[280px] md:min-h-[320px]" />
+          <BentoCard service={services[3]} index={3} className="min-h-[280px] md:min-h-[320px]" />
+          <BentoCard service={services[4]} index={4} className="min-h-[280px] md:min-h-[320px]" />
         </div>
       </div>
     </section>
