@@ -18,7 +18,7 @@ export const equipmentCategories: EquipmentCategory[] = [
     id: 'cameras',
     name: 'Kamery',
     items: [
-      { id: 'sony-fx9', name: 'Sony PXW-FX9', quantity: 2, category: 'cameras', image: '/equipment/sony-fx9.jpg', note: 'W zestawie: rig, akumulatory, karty pamięci, czytnik' },
+      { id: 'sony-fx9', name: 'Sony FX9', quantity: 2, category: 'cameras', image: '/equipment/sony-fx9.jpg', note: 'W zestawie: rig, akumulatory, karty pamięci, czytnik' },
       { id: 'sony-fx6', name: 'Sony FX6', quantity: 2, category: 'cameras', image: '/equipment/sony-fx6.jpg', note: 'W zestawie: rig, akumulatory, karty pamięci, czytnik' },
     ],
   },
