@@ -354,7 +354,7 @@
 
   /* KPO accent border */
   .kpo-container {
-    border-left: 3px solid hsl(var(--muted-foreground) / 0.2);
+    border-left: 3px solid hsl(var(--accent-warm) / 0.3);
   }
 
   /* Scroll progress bar – amber */
