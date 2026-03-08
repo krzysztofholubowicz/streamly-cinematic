@@ -1,29 +1,23 @@
 import { motion } from 'framer-motion';
-import { Film, Smartphone, Radio, Video, Building2 } from 'lucide-react';
 
 const services = [
   {
-    icon: Film,
     title: 'Programy TV i serie wideo',
     description: 'Od scenariusza po mastering — z broadcastową precyzją i terminami, które dotrzymujemy.',
   },
   {
-    icon: Smartphone,
     title: 'Video marketing i kampanie',
     description: 'Spoty, kampanie social, wideo sprzedażowe. Każdy format z myślą o konwersji.',
   },
   {
-    icon: Radio,
     title: 'Transmisje live',
     description: 'Multicam, redundantne łącza, zero marginu na błąd. Impact CEE, Polsat — nam ufają.',
   },
   {
-    icon: Video,
     title: 'Produkcja pod platformy VOD',
     description: 'Materiały gotowe do publikacji — zoptymalizowane, zmasterowane, ready to stream.',
   },
   {
-    icon: Building2,
     title: 'Wideo korporacyjne',
     description: 'Onboarding, szkolenia, komunikacja wewnętrzna. Materiały, które ludzie oglądają do końca.',
   },
@@ -48,40 +42,40 @@ export const Services = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.slice(0, 3).map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index} />
-          ))}
-        </div>
-        <div className="grid md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
-          {services.slice(3).map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index + 3} />
+        <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              className="border-b transition-colors duration-300 hover:bg-[rgba(255,255,255,0.02)]"
+              style={{ borderColor: 'rgba(255,255,255,0.1)' }}
+            >
+              <div className="flex items-start md:items-center py-7 gap-4 md:gap-8">
+                {/* Number */}
+                <span
+                  className="text-sm font-medium shrink-0 w-8 pt-0.5 md:pt-0"
+                  style={{ color: 'hsl(var(--accent-warm))' }}
+                >
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+
+                {/* Name + Description */}
+                <div className="flex flex-col md:flex-row md:items-center flex-1 gap-1 md:gap-0">
+                  <h3 className="font-bold text-foreground text-lg md:text-xl md:w-[320px] shrink-0">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
-
-const ServiceCard = ({ service, index }: { service: typeof services[0]; index: number }) => {
-  const Icon = service.icon;
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="service-card group"
-    >
-      <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6 border border-border">
-        <Icon className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-      </div>
-      <h3 className="font-display text-lg font-bold mb-3 text-foreground">
-        {service.title}
-      </h3>
-      <p className="text-muted-foreground leading-relaxed text-sm">
-        {service.description}
-      </p>
-    </motion.div>
   );
 };
