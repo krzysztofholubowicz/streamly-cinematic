@@ -48,7 +48,7 @@ export const Header = () => {
       >
         <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
           <Link to="/" className="font-display text-2xl font-bold text-foreground hover:opacity-80 transition-opacity">
-            Streamly
+            Streamly Production
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
