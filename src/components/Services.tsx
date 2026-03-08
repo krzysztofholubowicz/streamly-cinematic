@@ -26,7 +26,7 @@ const services = [
     number: '03',
     title: 'Transmisje live i realizacje eventowe',
     description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Realizujemy na żywo bez marginu na błąd.',
-    proof: 'Impact CEE · 99.9% uptime',
+    proof: '',
     image: cameraCloseup,
     size: 'small' as const,
   },
