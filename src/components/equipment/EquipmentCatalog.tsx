@@ -70,11 +70,14 @@ export const EquipmentCatalog = ({ selected, onToggle, onQtyChange }: Props) => 
 
                   {/* Image (if available) */}
                   {item.image && (
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block bg-muted/30 p-1.5">
+                    <div className="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 hidden sm:block">
+                      {/* Gradient background for consistent look */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(30_8%_14%)] to-[hsl(30_6%_9%)]" />
+                      <div className="absolute inset-0 ring-1 ring-inset ring-white/[0.06] rounded-xl" />
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-contain"
+                        className="relative w-full h-full object-contain p-2.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
                       />
                     </div>
                   )}
