@@ -357,13 +357,13 @@
     border-left: 3px solid hsl(var(--muted-foreground) / 0.2);
   }
 
-  /* Scroll progress bar */
+  /* Scroll progress bar – amber */
   .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
     height: 2px;
-    background: hsl(var(--foreground));
+    background: hsl(var(--accent-warm));
     z-index: 100;
     transition: width 0.1s linear;
   }
