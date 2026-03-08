@@ -62,10 +62,12 @@ Pełna kontrola nad treścią, widownią i danymi.
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              href="#kontakt"
+              href="https://www.streamlystudio.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-3">
               
-              Poproś o demo
+              Poznaj platformę
             </motion.a>
           </div>
 
