@@ -68,10 +68,6 @@ const BentoCard = ({ service, index, className }: { service: typeof services[0];
 
     {/* Content */}
     <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
-      {/* Number */}
-      <span className="text-[hsl(var(--accent-warm))] font-mono text-xs tracking-widest mb-3 block">
-        {service.number}
-      </span>
 
       <h3 className="font-display text-lg md:text-xl font-bold text-foreground mb-3 leading-tight">
         {service.title}
