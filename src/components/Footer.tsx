@@ -10,11 +10,8 @@ export const Footer = () => {
               Streamly
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm leading-relaxed">
-              Produkcja wideo, TV, video marketing, transmisje online
-              dla marek, które liczą się z wynikami.
-            </p>
-            <p className="text-muted-foreground mt-3 text-sm">
-              Streamly Studio – platforma VOD do dystrybucji Twoich materiałów wideo
+              Streamly Production – realizacje wideo, transmisje live i własna
+              platforma VOD dla marek, które wymagają najwyższego standardu.
             </p>
           </div>
 
@@ -22,7 +19,7 @@ export const Footer = () => {
             <span className="eyebrow block mb-4">Nawigacja</span>
             <div className="space-y-3">
               <a href="/#uslugi" className="block text-muted-foreground hover:text-foreground transition-colors">Usługi</a>
-              <a href="/#realizacje" className="block text-muted-foreground hover:text-foreground transition-colors">Realizacje</a>
+              <a href="/#realizacje" className="block text-muted-foreground hover:text-foreground transition-colors">Portfolio</a>
               <a href="/#studio" className="block text-muted-foreground hover:text-foreground transition-colors">Streamly Studio</a>
               <Link to="/wynajem" className="block text-muted-foreground hover:text-foreground transition-colors">Wynajem Sprzętu</Link>
               <Link to="/kpo" className="block text-muted-foreground hover:text-foreground transition-colors">Projekt KPO</Link>

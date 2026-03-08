@@ -74,7 +74,7 @@ const EquipmentPage = () => {
     console.log(formData);
   };
 
-  const inputClass = "w-full bg-transparent border border-border rounded-2xl px-4 py-3.5 text-foreground focus:border-foreground/30 outline-none transition-colors placeholder:text-muted-foreground/30";
+  const inputClass = "w-full bg-transparent border-b border-border px-0 py-3.5 text-foreground focus:border-foreground/30 outline-none transition-colors placeholder:text-muted-foreground/30";
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -94,14 +94,18 @@ const EquipmentPage = () => {
               Wynajem sprzętu
             </motion.span>
             <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="section-title text-foreground mb-8">
-              Wynajem sprzętu
+              Sprzęt broadcastowy
               <br />
-              <span className="gradient-text">broadcastowego</span>
+              <span className="gradient-text">do wynajęcia</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Profesjonalny sprzęt dla profesjonalnych realizacji. Kamery, obiektywy, światło,
-              dźwięk, streaming – wszystko, czego potrzebujesz w jednym miejscu.
+              className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-4">
+              Kamery, obiektywy, oświetlenie, dźwięk, streaming – cały park maszynowy
+              Streamly dostępny dla Twojej produkcji. Sprzęt serwisowany, ubezpieczony, gotowy do pracy.
+            </motion.p>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-sm text-muted-foreground">
+              Odpowiedź w 2h · Ceny indywidualnie · Dostawa na plan
             </motion.p>
           </div>
         </section>
@@ -129,7 +133,7 @@ const EquipmentPage = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.items.map((item, index) => (
                   <motion.div key={item.name} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }} className="service-card !p-0 overflow-hidden group">
+                    transition={{ duration: 0.5, delay: index * 0.1 }} className="service-card !p-0 overflow-hidden group !border-l-0">
                     {item.image ? (
                       <div className="aspect-[4/3] overflow-hidden">
                         <img src={item.image} alt={item.name}
@@ -156,8 +160,8 @@ const EquipmentPage = () => {
         <section className="section-padding">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <span className="eyebrow block mb-6">Formularz wynajmu</span>
-              <h2 className="section-title text-3xl mb-6">Zapytaj o dostępność</h2>
+              <span className="eyebrow block mb-6">Sprawdź dostępność</span>
+              <h2 className="section-title text-3xl mb-6">Zapytaj o sprzęt</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Odpowiadamy w ciągu 2 godzin w dni robocze. Ceny dostępne po wysłaniu zapytania.
               </p>
@@ -210,7 +214,7 @@ const EquipmentPage = () => {
               </div>
 
               <button type="submit" className="btn-primary w-full text-center">
-                Wyślij zapytanie
+                Sprawdź dostępność
               </button>
             </form>
           </div>

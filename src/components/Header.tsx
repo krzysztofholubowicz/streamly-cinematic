@@ -4,20 +4,25 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-  { href: '/#uslugi', label: 'Oferta' },
-  { href: '/#realizacje', label: 'Realizacje' },
+  { href: '/#uslugi', label: 'Usługi' },
+  { href: '/#realizacje', label: 'Portfolio' },
   { href: '/#studio', label: 'Streamly Studio' },
-  { href: '/wynajem', label: 'Wynajem Sprzętu' },
-  { href: '/kpo', label: 'Projekt KPO' },
+  { href: '/wynajem', label: 'Wynajem' },
+  { href: '/kpo', label: 'KPO' },
 ];
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,73 +36,79 @@ export const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-background/70 backdrop-blur-2xl border-b border-border'
-          : 'bg-transparent'
-      }`}
-    >
-      <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl font-bold text-foreground">
-          Streamly
-        </Link>
+    <>
+      {/* Scroll progress bar */}
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
 
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            link.href.startsWith('/') && !link.href.includes('#') ? (
-              <Link key={link.href} to={link.href} className="nav-item">
-                {link.label}
-              </Link>
-            ) : (
-              <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)} className="nav-item">
-                {link.label}
-              </a>
-            )
-          ))}
-          <a
-            href="/#kontakt"
-            onClick={() => handleNavClick('/#kontakt')}
-            className="btn-primary py-2.5 px-7 text-xs"
-          >
-            Kontakt
-          </a>
-        </div>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? 'bg-background/70 backdrop-blur-2xl border-b border-border'
+            : 'bg-transparent'
+        }`}
+      >
+        <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+          <Link to="/" className="font-display text-2xl font-extrabold text-foreground hover:opacity-80 transition-opacity">
+            Streamly
+          </Link>
 
-        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-2 text-foreground">
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
+          <div className="hidden lg:flex items-center gap-10">
+            {navLinks.map((link) => (
+              link.href.startsWith('/') && !link.href.includes('#') ? (
+                <Link key={link.href} to={link.href} className="nav-item">
+                  {link.label}
+                </Link>
+              ) : (
+                <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)} className="nav-item">
+                  {link.label}
+                </a>
+              )
+            ))}
+            <a
+              href="/#kontakt"
+              onClick={() => handleNavClick('/#kontakt')}
+              className="btn-primary py-2.5 px-7 text-xs"
+            >
+              Zapytaj o wycenę
+            </a>
+          </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/95 backdrop-blur-2xl border-b border-border"
-          >
-            <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
-              {navLinks.map((link) => (
-                link.href.startsWith('/') && !link.href.includes('#') ? (
-                  <Link key={link.href} to={link.href} onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-lg text-muted-foreground hover:text-foreground transition-colors">
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)}
-                    className="text-lg text-muted-foreground hover:text-foreground transition-colors">
-                    {link.label}
-                  </a>
-                )
-              ))}
-              <a href="/#kontakt" onClick={() => handleNavClick('/#kontakt')} className="btn-primary text-center mt-4">
-                Kontakt
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-2 text-foreground">
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </nav>
+
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: '100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: '100%' }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:hidden fixed inset-0 top-0 bg-background/98 backdrop-blur-2xl z-40"
+            >
+              <div className="flex flex-col items-center justify-center h-full gap-8">
+                {navLinks.map((link) => (
+                  link.href.startsWith('/') && !link.href.includes('#') ? (
+                    <Link key={link.href} to={link.href} onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font-display font-bold text-muted-foreground hover:text-foreground transition-colors">
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)}
+                      className="text-2xl font-display font-bold text-muted-foreground hover:text-foreground transition-colors">
+                      {link.label}
+                    </a>
+                  )
+                ))}
+                <a href="/#kontakt" onClick={() => handleNavClick('/#kontakt')} className="btn-primary mt-4">
+                  Zapytaj o wycenę
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+    </>
   );
 };

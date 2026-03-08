@@ -1,26 +1,30 @@
 import { motion } from 'framer-motion';
+import { Play } from 'lucide-react';
+import { useCountUp } from '@/hooks/use-count-up';
 
 const features = [
   {
     icon: '🔴',
     tag: 'LIVE',
-    title: 'Transmisje na żywo z dowolnego miejsca',
+    title: 'Transmisja z dowolnego miejsca, w jakości broadcastowej',
   },
   {
     icon: '📁',
     tag: 'VOD',
-    title: 'Archiwum wideo dostępne 24/7',
+    title: 'Biblioteka materiałów z dostępem 24/7 i DRM',
   },
   {
     icon: '📊',
     tag: 'ANALYTICS',
-    title: 'Analityka widowni w czasie rzeczywistym',
+    title: 'Dane o widowni w czasie rzeczywistym',
   },
 ];
 
 export const StreamlyStudio = () => {
+  const viewerStat = useCountUp(2400, 2000);
+
   return (
-    <section id="studio" className="section-padding border-t border-border">
+    <section id="studio" className="section-padding border-t border-border relative" style={{ background: 'linear-gradient(180deg, hsl(0 0% 2%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 2%) 100%)' }}>
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
@@ -53,9 +57,9 @@ export const StreamlyStudio = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-muted-foreground leading-relaxed mb-10 text-lg"
             >
-              Własna platforma streamingowa white-label dla Twojej marki.
-              Pełna kontrola nad dystrybucją treści, brak zależności od
-              zewnętrznych platform, profesjonalne narzędzia analityczne.
+              Własna platforma streamingowa pod Twoją marką. Bez logo'ów YouTube'a.
+              Bez algorytmów, które decydują za Ciebie. Pełna kontrola nad treścią,
+              widownią i danymi.
             </motion.p>
 
             <motion.a
@@ -64,9 +68,10 @@ export const StreamlyStudio = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               href="#kontakt"
-              className="btn-primary inline-block"
+              className="btn-primary inline-flex items-center gap-3"
             >
-              Zamów demo
+              <Play className="w-4 h-4" />
+              Poproś o demo
             </motion.a>
           </div>
 
@@ -77,6 +82,24 @@ export const StreamlyStudio = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-5"
           >
+            {/* Browser mockup */}
+            <div className="browser-mockup">
+              <div className="browser-mockup-bar">
+                <div className="browser-dot" style={{ background: '#ff5f57' }} />
+                <div className="browser-dot" style={{ background: '#febc2e' }} />
+                <div className="browser-dot" style={{ background: '#28c840' }} />
+                <span className="text-xs text-muted-foreground ml-3">streamly.studio</span>
+              </div>
+              <div className="p-6 flex items-center justify-center" style={{ minHeight: '160px', background: 'rgba(255,255,255,0.01)' }}>
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center mx-auto mb-3" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                    <Play className="w-6 h-6 text-muted-foreground" />
+                  </div>
+                  <p className="text-xs text-muted-foreground">Live preview</p>
+                </div>
+              </div>
+            </div>
+
             {features.map((feature, index) => (
               <motion.div
                 key={feature.tag}
@@ -99,10 +122,12 @@ export const StreamlyStudio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="glass-card p-6 text-center"
+              className="glass-card p-6 text-center pulse-glow"
             >
-              <p className="text-muted-foreground text-sm mb-2">Aktywni widzowie</p>
-              <span className="stat-number text-4xl text-foreground">2.4K</span>
+              <p className="text-muted-foreground text-sm mb-2">Aktywnych widzów miesięcznie</p>
+              <span ref={viewerStat.ref as React.RefObject<HTMLSpanElement>} className="stat-number text-4xl text-foreground">
+                {viewerStat.count >= 1000 ? `${(viewerStat.count / 1000).toFixed(1)}K+` : `${viewerStat.count}+`}
+              </span>
             </motion.div>
           </motion.div>
         </div>
