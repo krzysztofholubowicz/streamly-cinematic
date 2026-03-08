@@ -55,7 +55,7 @@ export const Contact = () => {
               
               <div>
                 <span className="eyebrow block mb-2">Email</span>
-                <a href="mailto:hello@streamlyproduction.pl" className="text-lg hover:text-muted-foreground transition-colors">hello@streamlyproduction.com
+                <a href="mailto:hello@streamlyproduction.com" className="text-lg hover:text-muted-foreground transition-colors">hello@streamlyproduction.com
 
                 </a>
               </div>
