@@ -120,7 +120,7 @@ export const StreamlyStudio = () => {
                 color: 'hsl(35 60% 55%)',
               }}
             >
-              POZNAJ PLATFORMĘ
+              POZNAJ STREAMLY STUDIO
               <ArrowUpRight className="w-4 h-4" />
             </motion.a>
           </motion.div>
