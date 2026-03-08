@@ -171,8 +171,8 @@ export const Contact = () => {
               
             </div>
 
-            <button type="submit" className="btn-primary w-full text-center mt-4">
-              Wyślij zapytanie
+            <button type="submit" disabled={isSending} className="btn-primary w-full text-center mt-4 disabled:opacity-50">
+              {isSending ? 'Wysyłanie...' : 'Wyślij zapytanie'}
             </button>
           </motion.form>
         </div>
