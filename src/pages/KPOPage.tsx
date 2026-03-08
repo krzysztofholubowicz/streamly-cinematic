@@ -60,7 +60,7 @@ const KPOPage = () => {
         {/* ── EU Logo Bar ── */}
         <section className="section-padding !pt-12 !pb-0">
           <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="max-w-5xl mx-auto">
-            <div className="p-6 rounded-2xl border border-border/60 flex items-center justify-center" style={{ background: 'hsl(0 0% 100% / 0.97)' }}>
+            <div className="px-8 py-5 rounded-2xl flex items-center justify-center bg-white">
               <img src="/images/kpo/kpo-banner.jpg" alt="Krajowy Plan Odbudowy – Rzeczpospolita Polska – Sfinansowane przez Unię Europejską NextGenerationEU" className="w-full max-w-3xl object-contain" />
             </div>
             <p className="text-center mt-4 text-xs text-muted-foreground tracking-wider uppercase">
