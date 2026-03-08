@@ -42,7 +42,7 @@ const services = [
     number: '05',
     title: 'Wideo korporacyjne i onboarding',
     description: 'Szkolenia, które ludzie oglądają do końca. Onboarding HR, filmy wizerunkowe, komunikacja wewnętrzna.',
-    proof: '3x dłuższy czas oglądania',
+    proof: '',
     image: blackmagic,
     size: 'small' as const,
   },
