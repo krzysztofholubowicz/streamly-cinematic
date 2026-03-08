@@ -63,7 +63,7 @@ export const equipmentCategories: EquipmentCategory[] = [
     name: 'Statywy',
     items: [
       { id: 'sachtler', name: 'Sachtler Activ6 i Activ8', quantity: 4, category: 'tripods', image: '/equipment/sachtler-activ.jpg' },
-      { id: 'vinten-vision-blue', name: 'Vinten Vision Blue5', quantity: 2, category: 'tripods', image: '/equipment/vinten-vision-blue.jpg' },
+      { id: 'vinten-vision-blue', name: 'Vinten Vision Blue5', quantity: 1, category: 'tripods', image: '/equipment/vinten-vision-blue.png' },
     ],
   },
 ];
