@@ -34,9 +34,9 @@ export const Process = () => {
         >
           <span className="eyebrow block mb-4">Proces</span>
           <h2 className="section-title">
-            <span className="gradient-text-gold">Trzy etapy.</span>
+            Trzy etapy.
             <br />
-            <span className="gradient-text-gold">Zero niespodzianek.</span>
+            <span className="hero-accent">Zero niespodzianek.</span>
           </h2>
         </motion.div>
 
