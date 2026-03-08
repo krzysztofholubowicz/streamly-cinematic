@@ -172,9 +172,9 @@
   /* Deliverable pill */
   .deliverable-pill {
     display: inline-block;
-    background: hsl(var(--muted));
-    color: hsl(var(--muted-foreground));
-    border: 1px solid hsl(var(--border));
+    background: hsl(var(--accent-warm) / 0.1);
+    color: hsl(var(--accent-warm));
+    border: 1px solid hsl(var(--accent-warm) / 0.2);
     border-radius: 100px;
     padding: 0.35rem 1rem;
     font-size: 0.75rem;
