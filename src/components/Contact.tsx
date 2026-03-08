@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { toast } from '@/hooks/use-toast';
+
+const WEB3FORMS_KEY = 'c1726c05-0a55-4555-acf9-de77ebcd42d5';
 
 const projectTypes = [
 'Program TV',
@@ -13,10 +16,39 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: '', email: '', projectType: '', message: ''
   });
+  const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSending(true);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Nowe zapytanie: ${formData.projectType}`,
+          from_name: formData.name,
+          name: formData.name,
+          email: formData.email,
+          'Typ projektu': formData.projectType,
+          message: formData.message,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        toast({ title: 'Wiadomość wysłana!', description: 'Odpowiemy w ciągu 2 godzin.' });
+        setFormData({ name: '', email: '', projectType: '', message: '' });
+      } else {
+        throw new Error(data.message);
+      }
+    } catch {
+      toast({ title: 'Błąd wysyłki', description: 'Spróbuj ponownie lub napisz na hello@streamlyproduction.com', variant: 'destructive' });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const inputClass = "w-full bg-transparent border-b border-border px-0 py-3.5 text-foreground focus:border-foreground/40 outline-none transition-colors placeholder:text-muted-foreground/30";
