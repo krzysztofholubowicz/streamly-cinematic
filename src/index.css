@@ -336,17 +336,19 @@
     background: linear-gradient(to left, hsl(var(--background)), transparent);
   }
 
-  /* Feature card */
+  /* Feature card – amber top accent */
   .feature-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
+    border-top: 2px solid hsl(var(--accent-warm) / 0.25);
     border-radius: 12px;
     padding: 2rem;
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .feature-card:hover {
-    border-color: hsl(var(--muted-foreground) / 0.3);
+    border-color: hsl(var(--accent-warm) / 0.2);
+    border-top-color: hsl(var(--accent-warm) / 0.5);
     transform: translateY(-3px);
   }
 
