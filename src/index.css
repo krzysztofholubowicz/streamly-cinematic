@@ -12,43 +12,44 @@
 @layer base {
   :root {
     /* Warm dark monochrome – "private screening room" */
-    --background: 30 6% 10%;
-    --foreground: 35 15% 93%;
+    --background: 30 8% 7%;
+    --foreground: 40 20% 95%;
 
-    --card: 30 5% 13%;
-    --card-foreground: 35 15% 93%;
+    --card: 30 6% 11%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 30 5% 13%;
-    --popover-foreground: 35 15% 93%;
+    --popover: 30 6% 11%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 35 15% 93%;
-    --primary-foreground: 30 6% 10%;
+    --primary: 40 20% 95%;
+    --primary-foreground: 30 8% 7%;
 
-    --secondary: 30 4% 15%;
-    --secondary-foreground: 35 15% 93%;
+    --secondary: 30 5% 13%;
+    --secondary-foreground: 40 20% 95%;
 
-    --muted: 30 4% 18%;
-    --muted-foreground: 30 8% 58%;
+    --muted: 30 5% 16%;
+    --muted-foreground: 30 10% 55%;
 
-    --accent: 30 4% 20%;
-    --accent-foreground: 30 10% 90%;
+    --accent: 30 5% 18%;
+    --accent-foreground: 40 20% 95%;
 
-    /* Subtle warm accent – barely perceptible */
-    --accent-warm: 25 12% 65%;
+    /* Warm amber accent – subtle but visible */
+    --accent-warm: 35 60% 55%;
+    --accent-warm-subtle: 35 30% 40%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 30 10% 90%;
+    --destructive-foreground: 40 20% 95%;
 
-    --border: 30 6% 25%;
-    --input: 30 4% 15%;
-    --ring: 30 6% 40%;
+    --border: 30 8% 20%;
+    --input: 30 5% 13%;
+    --ring: 35 30% 40%;
 
     --radius: 0.5rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(180deg, rgba(28,27,25,0.2) 0%, rgba(28,27,25,0.65) 50%, hsl(30 6% 10%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(232,228,223,0.04), rgba(232,228,223,0.01));
-    --shadow-glow: 0 0 60px rgba(232,228,223,0.04);
+    --gradient-hero: linear-gradient(180deg, rgba(18,16,14,0.15) 0%, rgba(18,16,14,0.5) 55%, hsl(30 8% 7%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,245,230,0.04), rgba(255,245,230,0.01));
+    --shadow-glow: 0 0 60px rgba(200,170,120,0.06);
     --shadow-soft: 0 30px 60px rgba(0,0,0,0.4);
 
     /* Sidebar */
