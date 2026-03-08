@@ -27,7 +27,7 @@ const services = [
     title: 'Transmisje live i realizacje eventowe',
     description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Realizujemy na żywo bez marginu na błąd.',
     proof: '',
-    image: liveEvent,
+    image: atemMini,
     size: 'small' as const,
   },
   {
