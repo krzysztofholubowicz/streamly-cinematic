@@ -5,14 +5,14 @@ import { useCountUp } from '@/hooks/use-count-up';
 const features = [
 {
   tag: 'LIVE',
-  title: 'Transmisja w jakości broadcastowej'
+  title: 'Transmisja w jakości 4K'
 },
 {
   tag: 'VOD',
   title: 'Biblioteka materiałów 24/7'
 },
 {
-  tag: 'ANALYTICS',
+  tag: 'ANALITYKA',
   title: 'Dane o widowni w czasie rzeczywistym'
 }];
 

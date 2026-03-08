@@ -17,7 +17,7 @@ const steps = [
     number: '03',
     title: 'Produkcja i dostarczenie',
     description: 'Własny sprzęt, sprawdzony zespół, gotowy materiał w terminie.',
-    deliverable: 'Materiał ready to publish',
+    deliverable: 'Materiał gotowe do publikacji',
   },
 ];
 
