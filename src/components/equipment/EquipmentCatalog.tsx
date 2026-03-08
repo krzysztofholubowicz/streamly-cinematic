@@ -68,16 +68,13 @@ export const EquipmentCatalog = ({ selected, onToggle, onQtyChange }: Props) => 
                     {isSelected && <Check className="w-3 h-3 text-background" />}
                   </div>
 
-                  {/* Image (if available) */}
+                  {/* Image */}
                   {item.image && (
-                    <div className="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 hidden sm:block">
-                      {/* Gradient background for consistent look */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(30_8%_14%)] to-[hsl(30_6%_9%)]" />
-                      <div className="absolute inset-0 ring-1 ring-inset ring-white/[0.06] rounded-xl" />
+                    <div className="relative w-20 h-20 rounded-xl flex-shrink-0 hidden sm:block overflow-hidden bg-gradient-to-br from-white/95 to-white/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08),0_4px_12px_-4px_rgba(0,0,0,0.5)]">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="relative w-full h-full object-contain p-2.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
+                        className="w-full h-full object-contain p-2 drop-shadow-sm"
                       />
                     </div>
                   )}
