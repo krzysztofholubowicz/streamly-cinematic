@@ -17,8 +17,8 @@ const Index = () => {
         <SocialProof />
         <Portfolio />
         <Services />
-        <StreamlyStudio />
         <Process />
+        <StreamlyStudio />
         <Contact />
       </main>
       <Footer />
