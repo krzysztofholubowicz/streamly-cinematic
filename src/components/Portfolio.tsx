@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import liveImage from '@/assets/live-production.jpg';
 import cameraImage from '@/assets/camera-closeup.jpg';
 import studioImage from '@/assets/studio-camera.jpg';
 
 const projects = [
-  { title: 'Polsat Events', category: 'TV Production', year: '2024', image: liveImage, featured: true },
-  { title: 'Impact CEE Conference', category: 'Live Streaming', year: '2024', image: cameraImage },
-  { title: 'Corporate Training', category: 'Video Production', year: '2023', image: studioImage },
+  { title: 'Polsat Events', category: 'Realizacja eventowa multicam', year: '2024', image: liveImage, featured: true },
+  { title: 'Impact CEE', category: 'Transmisja konferencyjna 3-dniowa', year: '2024', image: cameraImage },
+  { title: 'Szkolenie korporacyjne', category: 'Seria onboardingowa 12 odc.', year: '2023', image: studioImage },
 ];
 
 export const Portfolio = () => {
@@ -18,12 +19,14 @@ export const Portfolio = () => {
           <div>
             <span className="eyebrow block mb-4">Portfolio</span>
             <h2 className="section-title">
-              Wybrane
+              Realizacje, które mówią
               <br />
-              <span className="gradient-text">realizacje</span>
+              <span className="gradient-text">za siebie.</span>
             </h2>
           </div>
-          <a href="#kontakt" className="text-link mt-6 md:mt-0">Zobacz więcej projektów</a>
+          <a href="#kontakt" className="btn-outline py-3 px-6 text-xs mt-6 md:mt-0 inline-flex items-center gap-2">
+            Całe portfolio <ArrowRight className="w-4 h-4" />
+          </a>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-6">
@@ -33,6 +36,11 @@ export const Portfolio = () => {
               <span className="eyebrow mb-2">{projects[0].category}</span>
               <h3 className="font-display text-3xl md:text-5xl font-bold mb-2">{projects[0].title}</h3>
               <span className="text-muted-foreground">{projects[0].year}</span>
+            </div>
+            <div className="project-hover-text">
+              <span className="text-sm text-foreground/70 flex items-center gap-2">
+                Zobacz projekt <ArrowRight className="w-3 h-3" />
+              </span>
             </div>
           </div>
         </motion.div>
@@ -46,6 +54,11 @@ export const Portfolio = () => {
                 <span className="eyebrow mb-2">{project.category}</span>
                 <h3 className="font-display text-2xl md:text-3xl font-bold mb-1">{project.title}</h3>
                 <span className="text-muted-foreground text-sm">{project.year}</span>
+              </div>
+              <div className="project-hover-text">
+                <span className="text-sm text-foreground/70 flex items-center gap-2">
+                  Zobacz projekt <ArrowRight className="w-3 h-3" />
+                </span>
               </div>
             </motion.div>
           ))}

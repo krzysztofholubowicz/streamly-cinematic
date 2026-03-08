@@ -15,10 +15,10 @@ const projectData = [
 ];
 
 const investments = [
-  'Nowoczesny sprzęt broadcastowy do realizacji wielokamerowych transmisji na żywo',
-  'Platformę Streamly Studio – własne rozwiązanie VOD/live streaming white-label',
-  'Szkolenia zespołu w zakresie realizacji eventów hybrydowych',
-  'Rozwój procesów produkcyjnych dostosowanych do targów, wystaw i kongresów',
+  'Sprzęt broadcastowy nowej generacji',
+  'Rozbudowa platformy Streamly Studio',
+  'Szkolenie zespołu w zakresie produkcji hybrydowej',
+  'Certyfikacja procesów i standardów jakości',
 ];
 
 const benefits = [
@@ -48,13 +48,16 @@ const KPOPage = () => {
             </motion.span>
 
             <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="section-title text-foreground mb-8">
-              Projekt KPO: Rozszerzenie działalności o organizację targów, wystaw i kongresów online oraz hybrydowych
+              Inwestujemy w przyszłość
+              <br />
+              <span className="text-muted-foreground">eventów online</span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-              Streamly Production realizuje przedsięwzięcie współfinansowane ze środków
-              Unii Europejskiej w ramach Krajowego Planu Odbudowy i Zwiększania Odporności.
+              Streamly Production realizuje projekt współfinansowany ze środków
+              Unii Europejskiej w ramach Krajowego Planu Odbudowy. Rozbudowujemy
+              infrastrukturę do organizacji profesjonalnych wydarzeń online i hybrydowych.
             </motion.p>
           </div>
         </section>
