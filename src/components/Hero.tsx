@@ -25,11 +25,11 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-title text-foreground mb-8 uppercase"
+            className="hero-title uppercase mb-8"
           >
-            Twoja historia.
+            <span className="text-foreground">Twoja historia.</span>
             <br />
-            Nasz obraz.
+            <span className="hero-accent">Nasz obraz.</span>
           </motion.h1>
 
           <motion.p
