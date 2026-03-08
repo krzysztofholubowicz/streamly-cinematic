@@ -34,7 +34,7 @@ const services = [
     number: '04',
     title: 'Produkcja na platformy VOD',
     description: 'Materiały zoptymalizowane pod Streamly Studio i inne platformy VOD. Kodowanie wieloformatowe, QC, metadata — gotowe do publikacji od razu.',
-    proof: 'Natywna integracja z własną platformą VOD',
+    proof: '',
     image: heroStudio,
     size: 'small' as const,
   },
