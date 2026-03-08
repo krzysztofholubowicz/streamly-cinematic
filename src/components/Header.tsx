@@ -4,9 +4,9 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
+  { href: '/#realizacje', label: 'Realizacje' },
   { href: '/#uslugi', label: 'Usługi' },
-  { href: '/#realizacje', label: 'Portfolio' },
-  { href: '/#studio', label: 'Streamly Studio' },
+  { href: '/#studio', label: 'Studio' },
   { href: '/wynajem', label: 'Wynajem' },
   { href: '/kpo', label: 'KPO' },
 ];
@@ -37,18 +37,17 @@ export const Header = () => {
 
   return (
     <>
-      {/* Scroll progress bar */}
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-background/70 backdrop-blur-2xl border-b border-border'
+            ? 'bg-background/80 backdrop-blur-2xl border-b border-border'
             : 'bg-transparent'
         }`}
       >
         <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-          <Link to="/" className="font-display text-2xl font-extrabold text-foreground hover:opacity-80 transition-opacity">
+          <Link to="/" className="font-display text-2xl font-bold text-foreground hover:opacity-80 transition-opacity">
             Streamly
           </Link>
 
@@ -69,7 +68,7 @@ export const Header = () => {
               onClick={() => handleNavClick('/#kontakt')}
               className="btn-primary py-2.5 px-7 text-xs"
             >
-              Zapytaj o wycenę
+              Porozmawiajmy
             </a>
           </div>
 
@@ -102,7 +101,7 @@ export const Header = () => {
                   )
                 ))}
                 <a href="/#kontakt" onClick={() => handleNavClick('/#kontakt')} className="btn-primary mt-4">
-                  Zapytaj o wycenę
+                  Porozmawiajmy
                 </a>
               </div>
             </motion.div>

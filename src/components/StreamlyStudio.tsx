@@ -4,17 +4,14 @@ import { useCountUp } from '@/hooks/use-count-up';
 
 const features = [
   {
-    icon: '🔴',
     tag: 'LIVE',
-    title: 'Transmisja z dowolnego miejsca, w jakości broadcastowej',
+    title: 'Transmisja w jakości broadcastowej',
   },
   {
-    icon: '📁',
     tag: 'VOD',
-    title: 'Biblioteka materiałów z dostępem 24/7 i DRM',
+    title: 'Biblioteka materiałów 24/7',
   },
   {
-    icon: '📊',
     tag: 'ANALYTICS',
     title: 'Dane o widowni w czasie rzeczywistym',
   },
@@ -24,7 +21,7 @@ export const StreamlyStudio = () => {
   const viewerStat = useCountUp(2400, 2000);
 
   return (
-    <section id="studio" className="section-padding border-t border-border relative" style={{ background: 'linear-gradient(180deg, hsl(0 0% 2%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 2%) 100%)' }}>
+    <section id="studio" className="section-padding relative" style={{ background: 'hsl(30 5% 13%)' }}>
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
@@ -35,7 +32,7 @@ export const StreamlyStudio = () => {
               transition={{ duration: 0.6 }}
               className="eyebrow block mb-4"
             >
-              Platforma VOD
+              Wasza platforma VOD
             </motion.span>
 
             <motion.h2
@@ -45,9 +42,7 @@ export const StreamlyStudio = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="section-title mb-8"
             >
-              Streamly
-              <br />
-              <span className="gradient-text">Studio</span>
+              Streamly Studio
             </motion.h2>
 
             <motion.p
@@ -57,7 +52,7 @@ export const StreamlyStudio = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-muted-foreground leading-relaxed mb-10 text-lg"
             >
-              Własna platforma streamingowa pod Twoją marką. Bez logo'ów YouTube'a.
+              Własna platforma streamingowa pod Twoją marką. Bez logo YouTube'a.
               Bez algorytmów, które decydują za Ciebie. Pełna kontrola nad treścią,
               widownią i danymi.
             </motion.p>
@@ -70,7 +65,6 @@ export const StreamlyStudio = () => {
               href="#kontakt"
               className="btn-primary inline-flex items-center gap-3"
             >
-              <Play className="w-4 h-4" />
               Poproś o demo
             </motion.a>
           </div>
@@ -85,14 +79,14 @@ export const StreamlyStudio = () => {
             {/* Browser mockup */}
             <div className="browser-mockup">
               <div className="browser-mockup-bar">
-                <div className="browser-dot" style={{ background: '#ff5f57' }} />
-                <div className="browser-dot" style={{ background: '#febc2e' }} />
-                <div className="browser-dot" style={{ background: '#28c840' }} />
+                <div className="browser-dot" style={{ background: 'hsl(var(--muted-foreground) / 0.3)' }} />
+                <div className="browser-dot" style={{ background: 'hsl(var(--muted-foreground) / 0.2)' }} />
+                <div className="browser-dot" style={{ background: 'hsl(var(--muted-foreground) / 0.15)' }} />
                 <span className="text-xs text-muted-foreground ml-3">streamly.studio</span>
               </div>
-              <div className="p-6 flex items-center justify-center" style={{ minHeight: '160px', background: 'rgba(255,255,255,0.01)' }}>
+              <div className="p-6 flex items-center justify-center" style={{ minHeight: '160px' }}>
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center mx-auto mb-3" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                  <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center mx-auto mb-3">
                     <Play className="w-6 h-6 text-muted-foreground" />
                   </div>
                   <p className="text-xs text-muted-foreground">Live preview</p>
@@ -107,13 +101,10 @@ export const StreamlyStudio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="feature-card flex items-start gap-5"
+                className="feature-card flex items-center gap-5"
               >
-                <span className="text-3xl">{feature.icon}</span>
-                <div>
-                  <span className="eyebrow block mb-1">{feature.tag}</span>
-                  <p className="text-foreground font-medium text-lg">{feature.title}</p>
-                </div>
+                <span className="eyebrow min-w-[80px]">{feature.tag}</span>
+                <p className="text-foreground font-medium">{feature.title}</p>
               </motion.div>
             ))}
 
@@ -122,7 +113,7 @@ export const StreamlyStudio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="glass-card p-6 text-center pulse-glow"
+              className="glass-card p-6 text-center"
             >
               <p className="text-muted-foreground text-sm mb-2">Aktywnych widzów miesięcznie</p>
               <span ref={viewerStat.ref as React.RefObject<HTMLSpanElement>} className="stat-number text-4xl text-foreground">
