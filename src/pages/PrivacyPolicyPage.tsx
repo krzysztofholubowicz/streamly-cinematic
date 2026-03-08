@@ -43,7 +43,7 @@ const PrivacyPolicyPage = () => {
           <section className="mb-8">
             <h2 className="font-display font-bold text-xl md:text-2xl text-foreground mb-4">3. KOMU PRZEKAZUJEMY TWOJE DANE?</h2>
             <ul className="space-y-2 ml-6">
-              <li className="list-disc"><strong>Hosting</strong>: Lovable (do obsługi strony internetowej)</li>
+              <li className="list-disc"><strong>Hosting</strong>: (do obsługi strony internetowej)</li>
               <li className="list-disc"><strong>Formularze</strong>: Web3Forms (do obsługi zapytań kontaktowych)</li>
               <li className="list-disc"><strong>Płatności</strong>: PayU (tylko przy realizacji usług)</li>
               <li className="list-disc"><strong>Marketing</strong>: dostawcy usług email marketingu (przy zgodzie)</li>
