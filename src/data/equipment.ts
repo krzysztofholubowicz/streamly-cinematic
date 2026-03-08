@@ -52,16 +52,16 @@ export const equipmentCategories: EquipmentCategory[] = [
     id: 'streaming',
     name: 'Realizacja / Streaming',
     items: [
-      { id: 'atem-hd8', name: 'Blackmagic ATEM Television Studio HD8 ISO', quantity: 1, category: 'streaming', image: '/equipment/atem-mini.jpg', note: 'W zestawie: okablowanie SDI, MacBook Pro, monitor' },
+      { id: 'atem-hd8', name: 'Blackmagic ATEM Television Studio HD8 ISO', quantity: 1, category: 'streaming', image: '/equipment/atem-mini.jpg', note: 'Opcjonalnie w zestawie: okablowanie SDI, MacBook Pro, monitor' },
       { id: 'swit-monitor', name: 'SWIT FM-215HDR 21,5" monitory', quantity: 2, category: 'streaming' },
-      { id: 'datavideo-tp650', name: 'Datavideo TP-650 MKII (teleprompter)', quantity: 1, category: 'streaming', note: 'W zestawie: iPad Pro' },
+      { id: 'datavideo-tp650', name: 'Datavideo TP-650 MKII (teleprompter)', quantity: 1, category: 'streaming', note: 'Opcjonalnie w zestawie: iPad Pro' },
     ],
   },
   {
     id: 'tripods',
     name: 'Statywy',
     items: [
-      { id: 'sachtler', name: 'Sachtler System S2064S-FTGS', quantity: 4, category: 'tripods' },
+      { id: 'sachtler', name: 'Sachtler Activ6 i Activ8', quantity: 4, category: 'tripods' },
     ],
   },
 ];
