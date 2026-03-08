@@ -4,26 +4,26 @@ const steps = [
   {
     number: '01',
     title: 'Briefing i strategia',
-    description: 'Zaczynamy od rozmowy – nie od wyceny. Chcemy zrozumieć Twój cel biznesowy, grupę docelową i kontekst. Na tej podstawie budujemy brief kreatywny i techniczny.',
+    description: 'Zaczynamy od rozmowy — nie od wyceny. Rozumiemy cel, grupę docelową, kontekst.',
     deliverable: 'Brief + wycena w 48h',
   },
   {
     number: '02',
-    title: 'Pre-produkcja i scenariusz',
-    description: 'Scenorys, harmonogram zdjęciowy, zakres techniczny, casting – wszystko zatwierdzasz przed wejściem na plan. Pełna transparentność budżetowa. Żadna pozycja nie jest ukryta.',
-    deliverable: 'Scenorys + harmonogram + budżet',
+    title: 'Pre-produkcja',
+    description: 'Scenorys, harmonogram, budżet — wszystko zatwierdzasz przed wejściem na plan.',
+    deliverable: 'Scenorys + kosztorys',
   },
   {
     number: '03',
     title: 'Produkcja i dostarczenie',
-    description: 'Profesjonalny zespół, własny sprzęt broadcastowy, sprawdzone procesy. Dostarczamy gotowy materiał w uzgodnionym terminie – zmasterowany, zoptymalizowany, ready to publish.',
-    deliverable: 'Gotowy materiał + licencje + pliki źródłowe',
+    description: 'Własny sprzęt, sprawdzony zespół, gotowy materiał w terminie.',
+    deliverable: 'Materiał ready to publish',
   },
 ];
 
 export const Process = () => {
   return (
-    <section className="section-padding border-t border-border">
+    <section className="section-padding">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,7 +41,7 @@ export const Process = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline connector line – desktop only */}
+          {/* Timeline connector line – desktop */}
           <div className="hidden md:block timeline-line">
             <div className="timeline-dot" />
             <div className="timeline-dot" style={{ animationDelay: '1.3s' }} />
@@ -59,10 +59,10 @@ export const Process = () => {
                 className="relative"
               >
                 <span className="step-number block mb-6">{step.number}</span>
-                <h3 className="font-display text-xl font-bold mb-4 text-foreground">
+                <h3 className="font-display text-xl font-bold mb-3 text-foreground">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+                <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
                   {step.description}
                 </p>
                 <span className="deliverable-pill">{step.deliverable}</span>
