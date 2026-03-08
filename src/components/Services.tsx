@@ -19,7 +19,7 @@ const services = [
     title: 'Video marketing i kampanie reklamowe',
     description: 'Spoty, które zatrzymują scrollowanie. Kampanie, które sprzedają. Każdy format projektujemy pod konkretny cel — zasięg, konwersja, świadomość marki.',
     proof: '',
-    image: videoMarketing,
+    image: sonyFx6,
     size: 'large' as const,
   },
   {
