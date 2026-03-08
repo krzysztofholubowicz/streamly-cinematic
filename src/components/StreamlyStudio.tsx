@@ -21,7 +21,7 @@ export const StreamlyStudio = () => {
   const viewerStat = useCountUp(2400, 2000);
 
   return (
-    <section id="studio" className="section-padding relative" style={{ background: 'hsl(30 5% 13%)' }}>
+    <section id="studio" className="section-padding relative" style={{ background: 'hsl(30 6% 11%)' }}>
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
