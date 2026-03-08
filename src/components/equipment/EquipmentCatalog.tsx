@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Check, Minus, Plus } from 'lucide-react';
 import { equipmentCategories, type EquipmentItem } from '@/data/equipment';
+import { KeyedImage } from '@/components/equipment/KeyedImage';
 
 export interface SelectedItem {
   item: EquipmentItem;
@@ -70,11 +71,11 @@ export const EquipmentCatalog = ({ selected, onToggle, onQtyChange }: Props) => 
 
                   {/* Image */}
                   {item.image && (
-                    <div className="relative w-[4.5rem] h-[4.5rem] rounded-xl flex-shrink-0 hidden sm:block overflow-hidden bg-gradient-to-br from-muted/50 to-muted/20 ring-1 ring-white/[0.06]">
-                      <img
+                    <div className="relative w-[4.5rem] h-[4.5rem] rounded-xl flex-shrink-0 hidden sm:block overflow-hidden border border-border/70 bg-gradient-to-br from-card via-muted/70 to-background">
+                      <KeyedImage
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-contain p-1.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain p-1.5 group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   )}
