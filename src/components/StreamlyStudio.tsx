@@ -12,7 +12,7 @@ const features = [
   title: 'Biblioteka materiałów 24/7'
 },
 {
-  tag: 'ANALYTICS',
+  tag: 'ANALITYKA',
   title: 'Dane o widowni w czasie rzeczywistym'
 }];
 
