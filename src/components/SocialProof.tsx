@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { useCountUp } from '@/hooks/use-count-up';
 
 const clients = [
-  { name: 'Polsat', subtitle: 'Produkcje eventowe i telewizyjne' },
-  { name: 'TVP', subtitle: 'Realizacje programowe i specjalne' },
-  { name: 'Impact CEE', subtitle: 'Transmisje konferencyjne na żywo' },
-  { name: 'UMCS', subtitle: 'Produkcje edukacyjne i wizerunkowe' },
+  { name: 'Polsat' },
+  { name: 'TVP' },
+  { name: 'Impact CEE' },
+  { name: 'UMCS' },
 ];
 
 export const SocialProof = () => {
@@ -20,9 +20,9 @@ export const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-muted-foreground max-w-md text-lg leading-relaxed mb-16"
+          className="text-foreground max-w-md text-xl md:text-2xl font-semibold leading-tight mb-16"
         >
-          Zaufanie budujemy na planie, nie w prezentacji.
+          Twórcze podejście. Bezkompromisowa jakość.
         </motion.p>
 
         {/* Client names marquee */}
@@ -31,7 +31,7 @@ export const SocialProof = () => {
             {[...clients, ...clients, ...clients].map((client, index) => (
               <motion.div
                 key={`${client.name}-${index}`}
-                className="client-card text-center mx-3 min-w-[220px] flex-shrink-0"
+                className="client-card text-center mx-4 min-w-[180px] flex-shrink-0"
                 whileHover={{ 
                   y: -8, 
                   scale: 1.05,
@@ -42,10 +42,9 @@ export const SocialProof = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
               >
-                <h3 className="font-display font-bold text-xl md:text-2xl text-foreground mb-1">
+                <h3 className="font-display font-bold text-2xl md:text-3xl text-foreground">
                   {client.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">{client.subtitle}</p>
               </motion.div>
             ))}
           </div>
@@ -68,8 +67,8 @@ export const SocialProof = () => {
             <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">godzin materiału</p>
           </div>
           <div>
-            <span className="stat-number text-3xl md:text-5xl text-foreground">24/7</span>
-            <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">dostępność w dniu produkcji</p>
+            <span className="stat-number text-3xl md:text-5xl text-foreground">15+</span>
+            <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">lat doświadczenia</p>
           </div>
         </motion.div>
       </div>
