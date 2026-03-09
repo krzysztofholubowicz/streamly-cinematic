@@ -22,10 +22,10 @@ export const SocialProof = () => {
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <div className="inline-block px-6 py-1.5 mb-6 border border-border rounded-full">
-            <span className="eyebrow">Nasza filozofia</span>
+          <div className="inline-block px-6 py-1.5 mb-8 border border-border/40 rounded-full backdrop-blur-sm">
+            <span className="text-xs uppercase font-medium tracking-[0.2em] text-muted-foreground">Nasza filozofia</span>
           </div>
-          <h2 className="section-title gradient-text-gold max-w-3xl">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground max-w-3xl leading-[1.1]">
             Twórcze podejście.<br />Bezkompromisowa jakość.
           </h2>
         </motion.div>
