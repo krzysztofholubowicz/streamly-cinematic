@@ -35,6 +35,13 @@ export const Header = () => {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
