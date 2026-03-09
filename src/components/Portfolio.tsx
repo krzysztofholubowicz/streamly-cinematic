@@ -23,7 +23,7 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover img-hover group-hover:scale-[1.03] transition-transform duration-700"
         />
         <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 md:p-12">
           <motion.div
