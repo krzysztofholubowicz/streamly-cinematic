@@ -1,9 +1,12 @@
 import liveImage from '@/assets/live-production.jpg';
 import cameraImage from '@/assets/camera-closeup.jpg';
 import studioImage from '@/assets/studio-camera.jpg';
+import heroStudio from '@/assets/hero-studio.jpg';
 import corporateVideo from '@/assets/services/corporate-video.jpg';
 import liveEvent from '@/assets/services/live-event.jpg';
 import tvProduction from '@/assets/services/tv-production.jpg';
+import videoMarketing from '@/assets/services/video-marketing.jpg';
+import vodPlatform from '@/assets/services/vod-platform.jpg';
 
 export interface Project {
   id: string;
@@ -64,21 +67,21 @@ export const projects: Project[] = [
     id: '7',
     title: 'Onboarding pracowniczy',
     category: 'E-learning',
-    image: studioImage,
+    image: videoMarketing,
     year: '2023'
   },
   {
     id: '8',
     title: 'Relacja z targów',
     category: 'Event coverage',
-    image: liveEvent,
+    image: vodPlatform,
     year: '2023'
   },
   {
     id: '9',
     title: 'Spot reklamowy',
     category: 'Reklama',
-    image: corporateVideo,
+    image: heroStudio,
     year: '2023'
   }
 ];
