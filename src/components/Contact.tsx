@@ -101,11 +101,6 @@ export const Contact = () => {
                 <span className="eyebrow block mb-2">Studio</span>
                 <p className="text-lg">Warszawa, Polska</p>
               </div>
-              <div className="flex gap-6 pt-4">
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">LinkedIn</a>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Instagram</a>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">YouTube</a>
-              </div>
             </motion.div>
           </div>
 
