@@ -58,6 +58,10 @@ export const Portfolio = () => {
 
         {/* Two side-by-side */}
         <div className="grid md:grid-cols-2 gap-6">
+          {projects.slice(1, 3).map((project, index) => (
+
+        {/* Two side-by-side */}
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.slice(1).map((project, index) => (
             <motion.div
               key={project.title}
