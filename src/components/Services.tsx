@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import tvProduction from '@/assets/services/tv-production.jpg';
 import videoMarketing from '@/assets/services/video-marketing.jpg';
 import liveEvent from '@/assets/services/live-event.jpg';
@@ -48,46 +49,66 @@ const services = [
   },
 ];
 
-const BentoCard = ({ service, index, className }: { service: typeof services[0]; index: number; className?: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay: index * 0.08 }}
-    className={`group relative overflow-hidden rounded-xl border border-border bg-card ${className}`}
-  >
-    {/* Background image */}
-    <div className="absolute inset-0">
-      <img
-        src={service.image}
-        alt={service.title}
-        className="w-full h-full object-cover opacity-30 grayscale group-hover:opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
-    </div>
+const BentoCard = ({ service, index, className }: { service: typeof services[0]; index: number; className?: string }) => {
+  const cardRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"]
+  });
 
-    {/* Content */}
-    <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
 
-      <h3 className="font-display text-lg md:text-xl font-bold text-foreground mb-3 leading-tight">
-        {service.title}
-      </h3>
+  return (
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      style={{ scale }}
+      className={`group relative overflow-hidden rounded-xl border border-border bg-card ${className}`}
+    >
+      {/* Background image with parallax */}
+      <div className="absolute inset-0">
+        <motion.img
+          style={{ y }}
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover opacity-30 grayscale group-hover:opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
+      </div>
 
-      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 group-hover:line-clamp-none transition-all">
-        {service.description}
-      </p>
+      {/* Content */}
+      <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+        >
+          <h3 className="font-display text-lg md:text-xl font-bold text-foreground mb-3 leading-tight">
+            {service.title}
+          </h3>
 
-      {service.proof && (
-        <span className="text-[hsl(var(--accent-warm))] text-xs font-medium tracking-wide">
-          {service.proof}
-        </span>
-      )}
-    </div>
+          <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 group-hover:line-clamp-none transition-all">
+            {service.description}
+          </p>
 
-    {/* Hover border accent */}
-    <div className="absolute top-0 left-0 w-full h-[2px] bg-[hsl(var(--accent-warm)/0.5)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-  </motion.div>
-);
+          {service.proof && (
+            <span className="text-[hsl(var(--accent-warm))] text-xs font-medium tracking-wide">
+              {service.proof}
+            </span>
+          )}
+        </motion.div>
+      </div>
+
+      {/* Hover border accent */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-[hsl(var(--accent-warm)/0.5)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+    </motion.div>
+  );
+};
 
 export const Services = () => {
   return (

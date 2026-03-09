@@ -52,10 +52,15 @@ export const Process = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                initial={{ opacity: 0, y: 30, rotateX: 20 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  duration: 0.7, 
+                  delay: index * 0.15,
+                  ease: [0.16, 1, 0.3, 1]
+                }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="relative"
               >
                 <span className="step-number block mb-6">{step.number}</span>
