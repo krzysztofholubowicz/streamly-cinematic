@@ -99,6 +99,6 @@ export const Hero = () => {
         
         <ChevronDown className="w-5 h-5 text-muted-foreground" />
       </motion.div>
-    </motion.section>);
+    </section>);
 
 };
