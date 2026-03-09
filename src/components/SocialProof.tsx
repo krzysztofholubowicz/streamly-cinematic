@@ -15,15 +15,20 @@ export const SocialProof = () => {
   return (
     <section className="section-padding">
       <div className="container mx-auto">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-foreground max-w-md text-xl md:text-2xl font-semibold leading-tight mb-16"
+          className="mb-20"
         >
-          Twórcze podejście. Bezkompromisowa jakość.
-        </motion.p>
+          <div className="inline-block px-6 py-1.5 mb-6 border border-border rounded-full">
+            <span className="eyebrow">Nasza filozofia</span>
+          </div>
+          <h2 className="section-title gradient-text-gold max-w-3xl">
+            Twórcze podejście.<br />Bezkompromisowa jakość.
+          </h2>
+        </motion.div>
 
         {/* Client names marquee */}
         <div className="marquee-container mb-16">
