@@ -58,9 +58,9 @@ export const Portfolio = () => {
 
         {/* Two side-by-side */}
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.slice(1).map((project, index) => (
+          {projects.slice(1, 3).map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
