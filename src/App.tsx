@@ -35,6 +35,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/kpo" element={<KPOPage />} />
           <Route path="/wynajem" element={<EquipmentPage />} />
+          <Route path="/realizacje" element={<PortfolioPage />} />
           <Route path="/polityka-prywatnosci" element={<PrivacyPolicyPage />} />
           <Route path="/regulamin" element={<TermsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

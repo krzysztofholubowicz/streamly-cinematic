@@ -1,14 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import liveImage from '@/assets/live-production.jpg';
-import cameraImage from '@/assets/camera-closeup.jpg';
-import studioImage from '@/assets/studio-camera.jpg';
-
-const projects = [
-  { title: 'Polsat', category: 'współpraca z telewizją', image: liveImage },
-  { title: 'Impact CEE', category: 'Relacje z konferencji', image: cameraImage },
-  { title: 'Filmy korporacyjne', category: 'PRODUKCJA', image: studioImage },
-];
+import { projects } from '@/data/projects';
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
   return (
