@@ -56,8 +56,8 @@ export const Portfolio = () => {
             <span className="eyebrow block mb-4">Portfolio</span>
             <h2 className="section-title">Wybrane realizacje</h2>
           </div>
-          <a href="#kontakt" className="text-link text-sm mt-6 md:mt-0 inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-            Zobacz wszystkie <ArrowRight className="w-4 h-4" />
+          <a href="/realizacje" className="text-link text-sm mt-6 md:mt-0 inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+            Zobacz więcej <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
 
