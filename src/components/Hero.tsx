@@ -16,12 +16,9 @@ export const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <motion.section
+    <section
       ref={ref}
-      className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden"
-      initial={{ y: 40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background Image with Parallax */}
       <div className="absolute inset-0">
@@ -45,7 +42,10 @@ export const Hero = () => {
       {/* Content with Parallax */}
       <motion.div 
         style={{ y: contentY, opacity }}
-        className="relative z-10 container mx-auto px-6 lg:px-12"
+        className="relative z-10 container mx-auto px-6 lg:px-12 pt-32 md:pt-40"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="max-w-4xl">
           <h1 className="hero-title uppercase mb-8">
@@ -67,9 +67,9 @@ export const Hero = () => {
           </h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10">
             
             Studio Streamly Production. Programy TV, video marketing,
@@ -78,9 +78,9 @@ export const Hero = () => {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}>
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}>
             
             <a href="#kontakt" className="btn-primary">
               Porozmawiajmy
@@ -99,6 +99,6 @@ export const Hero = () => {
         
         <ChevronDown className="w-5 h-5 text-muted-foreground" />
       </motion.div>
-    </motion.section>);
+    </section>);
 
 };
