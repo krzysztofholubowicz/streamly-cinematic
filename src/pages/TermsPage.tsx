@@ -10,8 +10,8 @@ const TermsPage = () => {
       <SEO
         title="Regulamin"
         description="Regulamin korzystania z usług Streamly Production – warunki współpracy, prawa i obowiązki stron."
-        path="/regulamin"
-      />
+        path="/regulamin" />
+      
       <Header />
       <main className="pt-32 section-padding">
         <Link to="/" className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors mb-12">
@@ -98,7 +98,7 @@ const TermsPage = () => {
             <h2 className="text-xl font-semibold text-foreground mb-4">§ 8. REKLAMACJE DOTYCZĄCE DZIAŁANIA SERWISU</h2>
             <p>
               Ewentualne problemy techniczne z działaniem strony (np. niedziałający formularz, błędy wyświetlania) można zgłaszać 
-              na adres: <a href="mailto:hello@streamlyproduction.pl" className="text-foreground underline hover:no-underline">hello@streamlyproduction.pl</a>
+              na adres: <a className="text-foreground underline hover:no-underline" href="mailto:hello@streamlyproduction.com">hello@streamlyproduction.com</a>
             </p>
             <p className="mt-3">
               Reklamacje rozpatrywane są w ciągu 14 dni roboczych od daty zgłoszenia.
@@ -130,15 +130,15 @@ const TermsPage = () => {
             </p>
             <p className="mt-6 pt-6 border-t border-border">
               <strong>Kontakt:</strong><br />
-              Email: <a href="mailto:hello@streamlyproduction.pl" className="text-foreground underline hover:no-underline">hello@streamlyproduction.pl</a><br />
+              Email: <a className="text-foreground underline hover:no-underline" href="mailto:hello@streamlyproduction.com">hello@streamlyproduction.com</a><br />
               Telefon: <a href="tel:+48695709701" className="text-foreground underline hover:no-underline">+48 695 709 701</a>
             </p>
           </section>
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default TermsPage;
