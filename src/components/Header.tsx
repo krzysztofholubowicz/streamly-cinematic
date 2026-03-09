@@ -35,6 +35,13 @@ export const Header = () => {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
@@ -47,7 +54,11 @@ export const Header = () => {
         }`}
       >
         <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-          <Link to="/" className="font-display text-2xl font-bold text-foreground hover:opacity-80 transition-opacity">
+          <Link 
+            to="/" 
+            onClick={handleLogoClick}
+            className="font-display text-2xl font-bold text-foreground hover:opacity-80 transition-opacity"
+          >
             Streamly Production
           </Link>
 

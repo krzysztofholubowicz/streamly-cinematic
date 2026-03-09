@@ -8,6 +8,8 @@ import { StreamlyStudio } from '@/components/StreamlyStudio';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
+import { CookieBanner } from '@/components/CookieBanner';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   return (
@@ -33,14 +35,57 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <SocialProof />
-        <Portfolio />
-        <Services />
-        <Process />
-        <StreamlyStudio />
-        <Contact />
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <SocialProof />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Portfolio />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Services />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Process />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <StreamlyStudio />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Contact />
+        </motion.div>
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 };
