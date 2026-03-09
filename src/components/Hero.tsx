@@ -100,10 +100,10 @@ export const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.2 }}
         style={{ opacity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
         
         <ChevronDown className="w-5 h-5 text-muted-foreground" />
       </motion.div>
-    </section>);
+    </motion.section>);
 
 };
