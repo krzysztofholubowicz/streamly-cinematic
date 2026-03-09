@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useRef } from 'react';
 import liveImage from '@/assets/live-production.jpg';
 import cameraImage from '@/assets/camera-closeup.jpg';
 import studioImage from '@/assets/studio-camera.jpg';
