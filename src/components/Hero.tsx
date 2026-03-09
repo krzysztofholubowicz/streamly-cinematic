@@ -16,20 +16,26 @@ export const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
+    <motion.section
+      ref={ref}
+      className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden"
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+    >
       {/* Background Image with Parallax */}
       <div className="absolute inset-0">
         <motion.div
           style={{ y: imageY }}
-          className="absolute inset-0 -top-[30%] h-[130%]"
+          className="absolute inset-0 -top-[10%] h-[115%]"
         >
           <motion.img
             src={heroImage}
             alt="Streamly Production Studio"
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.08 }}
+            className="w-full h-full object-cover object-top"
+            initial={{ scale: 1.03 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
           />
         </motion.div>
         
@@ -94,10 +100,10 @@ export const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.2 }}
         style={{ opacity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
         
         <ChevronDown className="w-5 h-5 text-muted-foreground" />
       </motion.div>
-    </section>);
+    </motion.section>);
 
 };
