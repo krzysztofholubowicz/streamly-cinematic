@@ -27,13 +27,13 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <motion.div
           style={{ y: imageY }}
-          className="absolute inset-0 -top-[10%] h-[115%]"
+          className="absolute inset-0 -top-[5%] h-[105%]"
         >
           <motion.img
             src={heroImage}
             alt="Streamly Production Studio"
-            className="w-full h-full object-cover object-top"
-            initial={{ scale: 1.03 }}
+            className="w-full h-full object-cover object-center"
+            initial={{ scale: 1.015 }}
             animate={{ scale: 1 }}
             transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
           />
