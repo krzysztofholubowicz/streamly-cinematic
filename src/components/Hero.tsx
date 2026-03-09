@@ -51,7 +51,7 @@ export const Hero = () => {
           <h1 className="hero-title uppercase mb-8">
             {[
               { text: 'OPOWIADAMY', className: 'text-foreground', delay: 0.3 },
-              { text: 'OBRAZEM', className: 'hero-accent', delay: 0.5 },
+              { text: 'OBRAZEM.', className: 'hero-accent', delay: 0.5 },
             ].map((line, i) => (
               <span key={i} className="block overflow-hidden">
                 <motion.span

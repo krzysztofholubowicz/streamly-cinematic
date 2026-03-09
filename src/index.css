@@ -90,10 +90,10 @@
   /* Hero title – bold, cinematic */
   .hero-title {
     font-family: 'Clash Display', system-ui, sans-serif;
-    font-size: clamp(4rem, 12vw, 9rem);
+    font-size: clamp(3rem, 9vw, 7.5rem);
     font-weight: 700;
-    letter-spacing: -4px;
-    line-height: 0.9;
+    letter-spacing: -3px;
+    line-height: 0.92;
   }
 
   /* Hero accent line – warm amber gradient */
