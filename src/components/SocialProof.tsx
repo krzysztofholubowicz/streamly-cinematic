@@ -65,39 +65,39 @@ export const SocialProof = () => {
         >
           <div 
             ref={stat1.ref as React.RefObject<HTMLDivElement>}
-            className="feature-card group"
+            className="glass-card p-8 md:p-10 border border-border/50 hover:border-border transition-all duration-500"
           >
             <div className="flex flex-col items-start">
-              <span className="stat-number text-5xl md:text-6xl lg:text-7xl gradient-text-gold mb-3">
+              <span className="font-display text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground mb-4">
                 {stat1.count}+
               </span>
-              <div className="h-px w-12 bg-gradient-to-r from-accent-warm to-transparent mb-4" />
-              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-wide uppercase">
+              <div className="h-[1px] w-16 bg-gradient-to-r from-foreground/20 to-transparent mb-6" />
+              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-[0.08em] uppercase">
                 Realizacji
               </p>
             </div>
           </div>
           <div 
             ref={stat2.ref as React.RefObject<HTMLDivElement>}
-            className="feature-card group"
+            className="glass-card p-8 md:p-10 border border-border/50 hover:border-border transition-all duration-500"
           >
             <div className="flex flex-col items-start">
-              <span className="stat-number text-5xl md:text-6xl lg:text-7xl gradient-text-gold mb-3">
+              <span className="font-display text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground mb-4">
                 {stat2.count}+
               </span>
-              <div className="h-px w-12 bg-gradient-to-r from-accent-warm to-transparent mb-4" />
-              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-wide uppercase">
+              <div className="h-[1px] w-16 bg-gradient-to-r from-foreground/20 to-transparent mb-6" />
+              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-[0.08em] uppercase">
                 Godzin materiału
               </p>
             </div>
           </div>
-          <div className="feature-card group">
+          <div className="glass-card p-8 md:p-10 border border-border/50 hover:border-border transition-all duration-500">
             <div className="flex flex-col items-start">
-              <span className="stat-number text-5xl md:text-6xl lg:text-7xl gradient-text-gold mb-3">
+              <span className="font-display text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground mb-4">
                 15+
               </span>
-              <div className="h-px w-12 bg-gradient-to-r from-accent-warm to-transparent mb-4" />
-              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-wide uppercase">
+              <div className="h-[1px] w-16 bg-gradient-to-r from-foreground/20 to-transparent mb-6" />
+              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-[0.08em] uppercase">
                 Lat doświadczenia
               </p>
             </div>
