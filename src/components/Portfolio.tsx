@@ -45,8 +45,7 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="eyebrow mb-2">{project.category}</span>
-            <h3 className="font-display text-2xl md:text-4xl font-bold mb-1">{project.title}</h3>
-            <span className="text-muted-foreground text-sm">{project.year}</span>
+            <h3 className="font-display text-2xl md:text-4xl font-bold">{project.title}</h3>
           </motion.div>
         </div>
       </div>
