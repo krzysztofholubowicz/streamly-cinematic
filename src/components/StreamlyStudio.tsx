@@ -43,9 +43,12 @@ export const StreamlyStudio = () => {
     <section ref={ref} id="studio" className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(30 8% 7%) 0%, hsl(30 6% 9%) 50%, hsl(30 8% 7%) 100%)' }}>
       {/* Ambient glow with parallax */}
       <motion.div 
-        style={{ y: glowY, scale: glowScale }}
+        style={{ 
+          y: glowY, 
+          scale: glowScale,
+          background: 'radial-gradient(circle, hsl(35 60% 55%), transparent 70%)'
+        }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full opacity-[0.03]" 
-        style={{ background: 'radial-gradient(circle, hsl(35 60% 55%), transparent 70%)' }} 
       />
 
       <div className="section-padding">
