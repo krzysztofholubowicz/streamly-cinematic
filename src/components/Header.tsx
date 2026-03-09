@@ -4,12 +4,12 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-  { href: '/#realizacje', label: 'Realizacje' },
-  { href: '/#uslugi', label: 'Usługi' },
-  { href: '/#studio', label: 'Streamly Studio' },
-  { href: '/wynajem', label: 'Wynajem sprzętu' },
-  { href: '/kpo', label: 'KPO' },
-];
+{ href: '/#realizacje', label: 'Realizacje' },
+{ href: '/#uslugi', label: 'Usługi' },
+{ href: '/#studio', label: 'Streamly Studio' },
+{ href: '/wynajem', label: 'Wynajem sprzętu' },
+{ href: '/kpo', label: 'KPO' }];
+
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,7 +21,7 @@ export const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
+      setScrollProgress(totalHeight > 0 ? window.scrollY / totalHeight * 100 : 0);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -48,38 +48,38 @@ export const Header = () => {
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-background/80 backdrop-blur-2xl border-b border-border'
-            : 'bg-transparent'
-        }`}
-      >
+        isScrolled ?
+        'bg-background/80 backdrop-blur-2xl border-b border-border' :
+        'bg-transparent'}`
+        }>
+        
         <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             onClick={handleLogoClick}
-            className="font-display text-2xl font-light tracking-wide text-foreground hover:opacity-80 transition-opacity"
-          >
+            className="font-display text-2xl font-light tracking-wide text-foreground hover:opacity-80 transition-opacity">
+            
             Streamly Production
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
-              link.href.startsWith('/') && !link.href.includes('#') ? (
-                <Link key={link.href} to={link.href} className="nav-item">
+            {navLinks.map((link) =>
+            link.href.startsWith('/') && !link.href.includes('#') ?
+            <Link key={link.href} to={link.href} className="nav-item">
                   {link.label}
-                </Link>
-              ) : (
-                <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)} className="nav-item">
+                </Link> :
+
+            <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)} className="nav-item">
                   {link.label}
                 </a>
-              )
-            ))}
+
+            )}
             <a
               href="/#kontakt"
               onClick={() => handleNavClick('/#kontakt')}
-              className="btn-primary py-2.5 px-7 text-xs"
-            >
-              Porozmawiajmy
+              className="btn-primary py-2.5 px-7 text-xs">
+              
+              KONTAKT
             </a>
           </div>
 
@@ -89,36 +89,36 @@ export const Header = () => {
         </nav>
 
         <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:hidden fixed inset-0 top-0 bg-background/98 backdrop-blur-2xl z-40"
-            >
+          {isMobileMenuOpen &&
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:hidden fixed inset-0 top-0 bg-background/98 backdrop-blur-2xl z-40">
+            
               <div className="flex flex-col items-center justify-center h-full gap-8">
-                {navLinks.map((link) => (
-                  link.href.startsWith('/') && !link.href.includes('#') ? (
-                    <Link key={link.href} to={link.href} onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-2xl font-display font-bold text-muted-foreground hover:text-foreground transition-colors">
+                {navLinks.map((link) =>
+              link.href.startsWith('/') && !link.href.includes('#') ?
+              <Link key={link.href} to={link.href} onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl font-display font-bold text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
-                    </Link>
-                  ) : (
-                    <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)}
-                      className="text-2xl font-display font-bold text-muted-foreground hover:text-foreground transition-colors">
+                    </Link> :
+
+              <a key={link.href} href={link.href} onClick={() => handleNavClick(link.href)}
+              className="text-2xl font-display font-bold text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
                     </a>
-                  )
-                ))}
+
+              )}
                 <a href="/#kontakt" onClick={() => handleNavClick('/#kontakt')} className="btn-primary mt-4">
                   Porozmawiajmy
                 </a>
               </div>
             </motion.div>
-          )}
+          }
         </AnimatePresence>
       </header>
-    </>
-  );
+    </>);
+
 };

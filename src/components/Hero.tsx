@@ -18,52 +18,52 @@ export const Hero = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
+      className="relative min-h-screen flex items-center overflow-hidden">
+      
       {/* Background Image with Parallax */}
       <div className="absolute inset-0">
         <motion.div
           style={{ y: imageY }}
-          className="absolute inset-0 -top-[5%] h-[105%]"
-        >
+          className="absolute inset-0 -top-[5%] h-[105%]">
+          
           <motion.img
             src={heroImage}
             alt="Streamly Production Studio"
             className="w-full h-full object-cover object-center"
             initial={{ scale: 1.015 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-          />
+            transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }} />
+          
         </motion.div>
         
         <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }} />
       </div>
 
       {/* Content with Parallax */}
-      <motion.div 
+      <motion.div
         style={{ y: contentY, opacity }}
-        className="relative z-10 container mx-auto px-6 lg:px-12 pt-32 md:pt-40"
+        className="relative z-10 container mx-auto px-6 lg:px-12 md:pt-40 pt-[16px]"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-      >
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}>
+        
         <div className="max-w-4xl">
           <h1 className="hero-title uppercase mb-8">
             {[
-              { text: 'OPOWIADAMY', className: 'text-foreground', delay: 0.3 },
-              { text: 'OBRAZEM.', className: 'hero-accent', delay: 0.5 },
-            ].map((line, i) => (
-              <span key={i} className="block overflow-hidden">
+            { text: 'OPOWIADAMY', className: 'text-foreground', delay: 0.3 },
+            { text: 'OBRAZEM.', className: 'hero-accent', delay: 0.5 }].
+            map((line, i) =>
+            <span key={i} className="block overflow-hidden">
                 <motion.span
-                  initial={{ y: '110%', opacity: 0, filter: 'blur(12px)' }}
-                  animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-                  transition={{ duration: 1, delay: line.delay, ease: [0.16, 1, 0.3, 1] }}
-                  className={`block ${line.className}`}
-                >
+                initial={{ y: '110%', opacity: 0, filter: 'blur(12px)' }}
+                animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 1, delay: line.delay, ease: [0.16, 1, 0.3, 1] }}
+                className={`block ${line.className}`}>
+                
                   {line.text}
                 </motion.span>
               </span>
-            ))}
+            )}
           </h1>
 
           <motion.p
@@ -95,7 +95,7 @@ export const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.2 }}
         style={{ opacity }}
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
         
         <ChevronDown className="w-5 h-5 text-muted-foreground" />
       </motion.div>
