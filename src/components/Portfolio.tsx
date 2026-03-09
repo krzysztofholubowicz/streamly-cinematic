@@ -94,8 +94,7 @@ export const Portfolio = () => {
               />
               <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 md:p-8">
                 <span className="eyebrow mb-2">{project.category}</span>
-                <h3 className="font-display text-xl md:text-2xl font-bold mb-1">{project.title}</h3>
-                <span className="text-muted-foreground text-sm">{project.year}</span>
+                <h3 className="font-display text-xl md:text-2xl font-bold">{project.title}</h3>
               </div>
             </motion.div>
           ))}
