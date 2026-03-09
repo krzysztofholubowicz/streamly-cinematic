@@ -4,11 +4,11 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-{ href: '/#realizacje', label: 'Realizacje' },
-{ href: '/#uslugi', label: 'Usługi' },
-{ href: '/#studio', label: 'Streamly Studio' },
-{ href: '/wynajem', label: 'Wynajem sprzętu' },
-{ href: '/kpo', label: 'KPO' }];
+{ href: '/#realizacje', label: 'REALIZACJE' },
+{ href: '/#uslugi', label: 'USŁUGI' },
+{ href: '/#studio', label: 'STREAMLY STUDIO' },
+{ href: '/wynajem', label: 'WYNAJEM SPRZĘTU' },
+{ href: '/kpo', label: 'PROJEKT KPO' }];
 
 
 export const Header = () => {
