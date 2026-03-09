@@ -30,10 +30,23 @@ const features = [
 ];
 
 export const StreamlyStudio = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const glowY = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const glowScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.8]);
+
   return (
-    <section id="studio" className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(30 8% 7%) 0%, hsl(30 6% 9%) 50%, hsl(30 8% 7%) 100%)' }}>
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full opacity-[0.03]" style={{ background: 'radial-gradient(circle, hsl(35 60% 55%), transparent 70%)' }} />
+    <section ref={ref} id="studio" className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(30 8% 7%) 0%, hsl(30 6% 9%) 50%, hsl(30 8% 7%) 100%)' }}>
+      {/* Ambient glow with parallax */}
+      <motion.div 
+        style={{ y: glowY, scale: glowScale }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full opacity-[0.03]" 
+        style={{ background: 'radial-gradient(circle, hsl(35 60% 55%), transparent 70%)' }} 
+      />
 
       <div className="section-padding">
         <div className="container mx-auto">

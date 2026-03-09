@@ -11,6 +11,49 @@ const projects = [
   { title: 'Seria onboardingowa', category: 'Produkcja korporacyjna', year: '2023', image: studioImage },
 ];
 
+const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.1]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="mb-6"
+    >
+      <div className="project-card group cursor-pointer overflow-hidden" style={{ aspectRatio: '21/9' }}>
+        <motion.img
+          style={{ y, scale }}
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 md:p-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <span className="eyebrow mb-2">{project.category}</span>
+            <h3 className="font-display text-2xl md:text-4xl font-bold mb-1">{project.title}</h3>
+            <span className="text-muted-foreground text-sm">{project.year}</span>
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 export const Portfolio = () => {
   return (
     <section id="realizacje" className="section-padding">

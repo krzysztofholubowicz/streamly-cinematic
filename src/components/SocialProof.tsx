@@ -29,15 +29,24 @@ export const SocialProof = () => {
         <div className="marquee-container mb-16">
           <div className="marquee-track">
             {[...clients, ...clients, ...clients].map((client, index) => (
-              <div
+              <motion.div
                 key={`${client.name}-${index}`}
                 className="client-card text-center mx-3 min-w-[220px] flex-shrink-0"
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.05,
+                  transition: { duration: 0.3 }
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
               >
                 <h3 className="font-display font-bold text-xl md:text-2xl text-foreground mb-1">
                   {client.name}
                 </h3>
                 <p className="text-sm text-muted-foreground">{client.subtitle}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
