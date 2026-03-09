@@ -7,7 +7,7 @@ import studioImage from '@/assets/studio-camera.jpg';
 
 const projects = [
   { title: 'Polsat', category: 'Realizacja eventowa multicam', image: liveImage },
-  { title: 'Impact CEE', category: 'Relacja z konferencji', image: cameraImage },
+  { title: 'Impact CEE', category: 'Relacje z konferencji', image: cameraImage },
   { title: 'Seria onboardingowa', category: 'Produkcja korporacyjna', image: studioImage },
 ];
 
