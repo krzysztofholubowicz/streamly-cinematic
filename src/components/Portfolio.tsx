@@ -1,6 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { useRef } from 'react';
 import liveImage from '@/assets/live-production.jpg';
 import cameraImage from '@/assets/camera-closeup.jpg';
 import studioImage from '@/assets/studio-camera.jpg';
@@ -12,18 +11,8 @@ const projects = [
 ];
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.1]);
-
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -31,8 +20,7 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
       className="mb-6"
     >
       <div className="project-card group cursor-pointer overflow-hidden" style={{ aspectRatio: '21/9' }}>
-        <motion.img
-          style={{ y, scale }}
+        <img
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover"
