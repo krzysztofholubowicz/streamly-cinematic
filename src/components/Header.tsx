@@ -57,7 +57,7 @@ export const Header = () => {
           <Link 
             to="/" 
             onClick={handleLogoClick}
-            className="font-display text-2xl font-bold text-foreground hover:opacity-80 transition-opacity"
+            className="font-display text-2xl font-light tracking-wide text-foreground hover:opacity-80 transition-opacity"
           >
             Streamly Production
           </Link>
