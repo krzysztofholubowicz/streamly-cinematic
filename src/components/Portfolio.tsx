@@ -1,14 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import liveImage from '@/assets/live-production.jpg';
-import cameraImage from '@/assets/camera-closeup.jpg';
-import studioImage from '@/assets/studio-camera.jpg';
-
-const projects = [
-  { title: 'Polsat', category: 'współpraca z telewizją', image: liveImage },
-  { title: 'Impact CEE', category: 'Relacje z konferencji', image: cameraImage },
-  { title: 'Filmy korporacyjne', category: 'PRODUKCJA', image: studioImage },
-];
+import { projects } from '@/data/projects';
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
   return (
@@ -56,8 +48,8 @@ export const Portfolio = () => {
             <span className="eyebrow block mb-4">Portfolio</span>
             <h2 className="section-title">Wybrane realizacje</h2>
           </div>
-          <a href="#kontakt" className="text-link text-sm mt-6 md:mt-0 inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-            Zobacz wszystkie <ArrowRight className="w-4 h-4" />
+          <a href="/realizacje" className="text-link text-sm mt-6 md:mt-0 inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+            Zobacz więcej <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
 

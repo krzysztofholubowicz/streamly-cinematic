@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import KPOPage from "./pages/KPOPage";
 import EquipmentPage from "./pages/EquipmentPage";
+import PortfolioPage from "./pages/PortfolioPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
 import NotFound from "./pages/NotFound";
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/kpo" element={<KPOPage />} />
           <Route path="/wynajem" element={<EquipmentPage />} />
+          <Route path="/realizacje" element={<PortfolioPage />} />
           <Route path="/polityka-prywatnosci" element={<PrivacyPolicyPage />} />
           <Route path="/regulamin" element={<TermsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
