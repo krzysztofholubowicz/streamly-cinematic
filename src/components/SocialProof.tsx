@@ -61,19 +61,46 @@ export const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-3 gap-8 max-w-2xl"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl"
         >
-          <div ref={stat1.ref as React.RefObject<HTMLDivElement>}>
-            <span className="stat-number text-3xl md:text-5xl text-foreground">{stat1.count}+</span>
-            <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">realizacji</p>
+          <div 
+            ref={stat1.ref as React.RefObject<HTMLDivElement>}
+            className="feature-card group"
+          >
+            <div className="flex flex-col items-start">
+              <span className="stat-number text-5xl md:text-6xl lg:text-7xl gradient-text-gold mb-3">
+                {stat1.count}+
+              </span>
+              <div className="h-px w-12 bg-gradient-to-r from-accent-warm to-transparent mb-4" />
+              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-wide uppercase">
+                Realizacji
+              </p>
+            </div>
           </div>
-          <div ref={stat2.ref as React.RefObject<HTMLDivElement>}>
-            <span className="stat-number text-3xl md:text-5xl text-foreground">{stat2.count}+</span>
-            <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">godzin materiału</p>
+          <div 
+            ref={stat2.ref as React.RefObject<HTMLDivElement>}
+            className="feature-card group"
+          >
+            <div className="flex flex-col items-start">
+              <span className="stat-number text-5xl md:text-6xl lg:text-7xl gradient-text-gold mb-3">
+                {stat2.count}+
+              </span>
+              <div className="h-px w-12 bg-gradient-to-r from-accent-warm to-transparent mb-4" />
+              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-wide uppercase">
+                Godzin materiału
+              </p>
+            </div>
           </div>
-          <div>
-            <span className="stat-number text-3xl md:text-5xl text-foreground">15+</span>
-            <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">lat doświadczenia</p>
+          <div className="feature-card group">
+            <div className="flex flex-col items-start">
+              <span className="stat-number text-5xl md:text-6xl lg:text-7xl gradient-text-gold mb-3">
+                15+
+              </span>
+              <div className="h-px w-12 bg-gradient-to-r from-accent-warm to-transparent mb-4" />
+              <p className="text-sm md:text-base text-muted-foreground font-medium tracking-wide uppercase">
+                Lat doświadczenia
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
