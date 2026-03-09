@@ -8,6 +8,8 @@ import { StreamlyStudio } from '@/components/StreamlyStudio';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
+import { CookieBanner } from '@/components/CookieBanner';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   return (
