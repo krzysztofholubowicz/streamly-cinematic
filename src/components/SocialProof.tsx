@@ -20,9 +20,9 @@ export const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-muted-foreground max-w-md text-lg leading-relaxed mb-16"
+          className="text-foreground max-w-md text-xl md:text-2xl font-semibold leading-tight mb-16"
         >
-          Zaufanie budujemy na planie, nie w prezentacji.
+          Twórcze podejście. Bezkompromisowa jakość.
         </motion.p>
 
         {/* Client names marquee */}
