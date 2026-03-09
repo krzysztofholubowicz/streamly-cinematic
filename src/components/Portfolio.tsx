@@ -7,7 +7,7 @@ import studioImage from '@/assets/studio-camera.jpg';
 const projects = [
   { title: 'Polsat', category: 'współpraca z telewizją', image: liveImage },
   { title: 'Impact CEE', category: 'Relacje z konferencji', image: cameraImage },
-  { title: 'Seria onboardingowa', category: 'Produkcja korporacyjna', image: studioImage },
+  { title: 'Filmy korporacyjne', category: 'PRODUKCJA', image: studioImage },
 ];
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
