@@ -6,9 +6,9 @@ import cameraImage from '@/assets/camera-closeup.jpg';
 import studioImage from '@/assets/studio-camera.jpg';
 
 const projects = [
-  { title: 'Polsat Events', category: 'Realizacja eventowa multicam', year: '2024', image: liveImage },
-  { title: 'Impact CEE', category: 'Transmisja konferencyjna 3-dniowa', year: '2024', image: cameraImage },
-  { title: 'Seria onboardingowa', category: 'Produkcja korporacyjna', year: '2023', image: studioImage },
+  { title: 'Polsat', category: 'Realizacja eventowa multicam', image: liveImage },
+  { title: 'Impact CEE', category: 'Relacja z konferencji', image: cameraImage },
+  { title: 'Seria onboardingowa', category: 'Produkcja korporacyjna', image: studioImage },
 ];
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
