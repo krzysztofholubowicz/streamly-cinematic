@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import tvProduction from '@/assets/services/tv-production.jpg';
 import videoMarketing from '@/assets/services/video-marketing.jpg';
 import liveEvent from '@/assets/services/live-event.jpg';
