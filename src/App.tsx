@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import KPOPage from "./pages/KPOPage";
 import EquipmentPage from "./pages/EquipmentPage";
+import PortfolioPage from "./pages/PortfolioPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
 import NotFound from "./pages/NotFound";
