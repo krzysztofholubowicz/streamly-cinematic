@@ -16,12 +16,9 @@ export const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <motion.section
+    <section
       ref={ref}
-      className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden"
-      initial={{ y: 40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background Image with Parallax */}
       <div className="absolute inset-0">
