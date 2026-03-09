@@ -6,9 +6,9 @@ import cameraImage from '@/assets/camera-closeup.jpg';
 import studioImage from '@/assets/studio-camera.jpg';
 
 const projects = [
-  { title: 'Polsat Events', category: 'Realizacja eventowa multicam', year: '2024', image: liveImage },
-  { title: 'Impact CEE', category: 'Transmisja konferencyjna 3-dniowa', year: '2024', image: cameraImage },
-  { title: 'Seria onboardingowa', category: 'Produkcja korporacyjna', year: '2023', image: studioImage },
+  { title: 'Polsat', category: 'Realizacja eventowa multicam', image: liveImage },
+  { title: 'Impact CEE', category: 'Relacja z konferencji', image: cameraImage },
+  { title: 'Seria onboardingowa', category: 'Produkcja korporacyjna', image: studioImage },
 ];
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
@@ -45,8 +45,7 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="eyebrow mb-2">{project.category}</span>
-            <h3 className="font-display text-2xl md:text-4xl font-bold mb-1">{project.title}</h3>
-            <span className="text-muted-foreground text-sm">{project.year}</span>
+            <h3 className="font-display text-2xl md:text-4xl font-bold">{project.title}</h3>
           </motion.div>
         </div>
       </div>
@@ -95,8 +94,7 @@ export const Portfolio = () => {
               />
               <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 md:p-8">
                 <span className="eyebrow mb-2">{project.category}</span>
-                <h3 className="font-display text-xl md:text-2xl font-bold mb-1">{project.title}</h3>
-                <span className="text-muted-foreground text-sm">{project.year}</span>
+                <h3 className="font-display text-xl md:text-2xl font-bold">{project.title}</h3>
               </div>
             </motion.div>
           ))}
