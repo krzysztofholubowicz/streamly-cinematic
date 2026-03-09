@@ -32,26 +32,7 @@ export const Portfolio = () => {
         </motion.div>
 
         {/* Featured project – full width */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-6"
-        >
-          <div className="project-card group cursor-pointer" style={{ aspectRatio: '21/9' }}>
-            <img
-              src={projects[0].image}
-              alt={projects[0].title}
-              className="w-full h-full object-cover img-hover group-hover:scale-[1.03] transition-transform duration-700"
-            />
-            <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 md:p-12">
-              <span className="eyebrow mb-2">{projects[0].category}</span>
-              <h3 className="font-display text-2xl md:text-4xl font-bold mb-1">{projects[0].title}</h3>
-              <span className="text-muted-foreground text-sm">{projects[0].year}</span>
-            </div>
-          </div>
-        </motion.div>
+        <FeaturedProject project={projects[0]} />
 
         {/* Two side-by-side */}
         <div className="grid md:grid-cols-2 gap-6">
