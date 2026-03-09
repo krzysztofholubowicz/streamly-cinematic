@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { useCountUp } from '@/hooks/use-count-up';
 
 const clients = [
-  { name: 'Polsat', subtitle: 'Produkcje eventowe i telewizyjne' },
-  { name: 'TVP', subtitle: 'Realizacje programowe i specjalne' },
-  { name: 'Impact CEE', subtitle: 'Transmisje konferencyjne na żywo' },
-  { name: 'UMCS', subtitle: 'Produkcje edukacyjne i wizerunkowe' },
+  { name: 'Polsat' },
+  { name: 'TVP' },
+  { name: 'Impact CEE' },
+  { name: 'UMCS' },
 ];
 
 export const SocialProof = () => {
