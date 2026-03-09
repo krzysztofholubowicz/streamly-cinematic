@@ -67,8 +67,8 @@ export const SocialProof = () => {
             <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">godzin materiału</p>
           </div>
           <div>
-            <span className="stat-number text-3xl md:text-5xl text-foreground">24/7</span>
-            <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">dostępność w dniu produkcji</p>
+            <span className="stat-number text-3xl md:text-5xl text-foreground">15+</span>
+            <p className="text-xs md:text-sm text-muted-foreground mt-2 tracking-wider">lat doświadczenia</p>
           </div>
         </motion.div>
       </div>
