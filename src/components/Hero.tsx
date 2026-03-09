@@ -42,16 +42,28 @@ export const Hero = () => {
         className="relative z-10 container mx-auto px-6 lg:px-12"
       >
         <div className="max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-title uppercase mb-8">
-            
-            <span className="text-foreground">TWOJA   HISTORIA</span>
-            <br />
-            <span className="hero-accent">NASZ OBRAZ</span>
-          </motion.h1>
+          <h1 className="hero-title uppercase mb-8">
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ y: '100%', opacity: 0, filter: 'blur(10px)' }}
+                animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="block text-foreground"
+              >
+                TWOJA HISTORIA
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ y: '100%', opacity: 0, filter: 'blur(10px)' }}
+                animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="block hero-accent"
+              >
+                NASZ OBRAZ
+              </motion.span>
+            </span>
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
