@@ -31,7 +31,7 @@ export const SocialProof = () => {
             {[...clients, ...clients, ...clients].map((client, index) => (
               <motion.div
                 key={`${client.name}-${index}`}
-                className="client-card text-center mx-3 min-w-[220px] flex-shrink-0"
+                className="client-card text-center mx-4 min-w-[180px] flex-shrink-0"
                 whileHover={{ 
                   y: -8, 
                   scale: 1.05,
@@ -42,10 +42,9 @@ export const SocialProof = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
               >
-                <h3 className="font-display font-bold text-xl md:text-2xl text-foreground mb-1">
+                <h3 className="font-display font-bold text-2xl md:text-3xl text-foreground">
                   {client.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">{client.subtitle}</p>
               </motion.div>
             ))}
           </div>
