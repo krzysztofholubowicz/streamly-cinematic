@@ -22,12 +22,12 @@ export const Hero = () => {
           initial={{ y: 60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl"
+          className="max-w-5xl"
         >
           <h1 className="hero-title uppercase mb-8">
             {[
-              { text: 'OPOWIADAMY', className: 'text-foreground', delay: 0.3 },
-              { text: 'OBRAZEM.', className: 'hero-accent', delay: 0.5 },
+              { text: 'WYDARZENIA ONLINE', className: 'text-foreground', delay: 0.3 },
+              { text: 'I HYBRYDOWE.', className: 'hero-accent', delay: 0.5 },
             ].map((line, i) => (
               <span key={i} className="block overflow-hidden">
                 <motion.span
@@ -48,17 +48,24 @@ export const Hero = () => {
             transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10"
           >
-            Studio Streamly Production. Programy TV, video marketing, transmisje live i własna platforma VOD — dla marek,
-            które nie idą na kompromisy.
+            Organizujemy targi, wystawy i kongresy online oraz hybrydowe. Kompletna obsługa produkcyjna, transmisje na żywo
+            i archiwizacja na własnej platformie VOD — Streamly Studio.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap gap-4"
           >
-            <a href="#kontakt" className="btn-primary">
-              Porozmawiajmy
+            <a href="#uslugi" className="btn-primary">
+              Oferta wydarzeń online i hybrydowych
+            </a>
+            <a href="#studio" className="btn-primary" style={{ background: 'transparent', border: '1px solid hsl(35 60% 55% / 0.4)', color: 'hsl(35 60% 55%)' }}>
+              Poznaj platformę StreamlyStudio
+            </a>
+            <a href="#realizacje" className="btn-primary" style={{ background: 'transparent', border: '1px solid hsl(var(--border))', color: 'hsl(var(--foreground))' }}>
+              Realizacje i możliwości VOD
             </a>
           </motion.div>
         </motion.div>

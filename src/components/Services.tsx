@@ -9,40 +9,40 @@ import corporateVideo from '@/assets/services/corporate-video.jpg';
 const services = [
   {
     number: '01',
-    title: 'Programy TV i serie video',
-    description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
+    title: 'Targi online',
+    description: 'Kompleksowa organizacja targów w formule online — sceny wirtualne, stoiska wystawców, panele dyskusyjne, transmisje wielokamerowe i moduł networkingowy w jednej platformie.',
     proof: '',
     image: tvProduction,
     size: 'large' as const,
   },
   {
     number: '02',
-    title: 'Video marketing i kampanie reklamowe',
-    description: 'Spoty, które zatrzymują scrollowanie. Kampanie, które sprzedają. Każdy format projektujemy pod konkretny cel — zasięg, konwersja, świadomość marki.',
+    title: 'Wystawy hybrydowe',
+    description: 'Łączymy przestrzeń fizyczną z transmisją online. Realizacja techniczna wystawy na miejscu plus dedykowana wersja cyfrowa — jedna wystawa, dwie widownie, wspólne dane.',
     proof: '',
     image: videoMarketing,
     size: 'large' as const,
   },
   {
     number: '03',
-    title: 'Transmisje live i realizacje eventowe',
-    description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Realizujemy na żywo bez marginu na błąd.',
+    title: 'Kongresy online i hybrydowe',
+    description: 'Wielosalowe kongresy z prelegentami zdalnymi i lokalnymi. Reżyserka wielokamerowa, tłumaczenia, Q&A, głosowania — bez marginu na błąd.',
     proof: '',
     image: liveEvent,
     size: 'small' as const,
   },
   {
     number: '04',
-    title: 'Produkcja na platformy VOD',
-    description: 'Materiały zoptymalizowane pod Streamly Studio i inne platformy VOD. Kodowanie wieloformatowe, QC, metadata — gotowe do publikacji od razu.',
+    title: 'Streaming i rejestracja wydarzeń',
+    description: 'Transmisje na żywo w jakości 4K z adaptacyjnym bitrate, wielokamerowa rejestracja i mastering — gotowe do publikacji zaraz po zakończeniu wydarzenia.',
     proof: '',
     image: vodPlatform,
     size: 'small' as const,
   },
   {
     number: '05',
-    title: 'Video korporacyjne i onboarding',
-    description: 'Szkolenia, które ludzie oglądają do końca. Onboarding HR, filmy wizerunkowe, komunikacja wewnętrzna.',
+    title: 'Archiwizacja i dystrybucja VOD',
+    description: 'Wszystkie materiały z wydarzenia trafiają na platformę Streamly Studio — dostęp na żądanie, kontrola widowni, analityka i dystrybucja pod marką klienta.',
     proof: '',
     image: corporateVideo,
     size: 'small' as const,
@@ -122,12 +122,15 @@ export const Services = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 md:mb-20"
         >
-          <span className="eyebrow block mb-4">Usługi</span>
+          <span className="eyebrow block mb-4">Zakres działalności</span>
           <h2 className="section-title">
-            Pięć specjalizacji.
+            Wydarzenia online i hybrydowe.
             <br />
-            <span className="hero-accent">Jeden standard.</span>
+            <span className="hero-accent">Kompleksowa obsługa.</span>
           </h2>
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed mt-6">
+            Dzięki inwestycji z Krajowego Planu Odbudowy rozwijamy nową usługę — organizację targów, wystaw i kongresów w formule online oraz hybrydowej. Produkcja telewizyjna pozostaje naszą kompetencją techniczną wspierającą realizację wydarzeń.
+          </p>
         </motion.div>
 
         {/* Bento Grid */}
