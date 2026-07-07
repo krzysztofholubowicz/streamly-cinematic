@@ -5,6 +5,8 @@ import { Portfolio } from '@/components/Portfolio';
 import { Services } from '@/components/Services';
 import { Process } from '@/components/Process';
 import { StreamlyStudio } from '@/components/StreamlyStudio';
+import { TechBackbone } from '@/components/TechBackbone';
+import { KpoFunding } from '@/components/KpoFunding';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -15,15 +17,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden noise-overlay">
       <SEO
-        title="Streamly Production | Produkcja wideo, TV, transmisje online | Warszawa"
-        description="Profesjonalna produkcja wideo, programy TV, video marketing, transmisje online i relacje z eventów. 15+ lat doświadczenia. Polsat, TVP, Impact CEE."
+        title="Streamly Production | Targi, wystawy i kongresy online i hybrydowe | Warszawa"
+        description="Organizacja targów, wystaw i kongresów online oraz hybrydowych. Streaming 4K, rejestracja i platforma VOD Streamly Studio. Projekt KPO / Unia Europejska."
         path="/"
         jsonLd={{
           '@context': 'https://schema.org',
-          '@type': 'VideoProductionCompany',
+          '@type': 'Organization',
           name: 'Streamly Production',
           url: 'https://streamlyproduction.lovable.app',
-          description: 'Studio Streamly Production. Programy TV, video marketing, transmisje live i własna platforma VOD.',
+          description: 'Organizacja targów, wystaw i kongresów online oraz hybrydowych. Streaming, rejestracja i platforma VOD Streamly Studio.',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Warszawa',
@@ -49,7 +51,7 @@ const Index = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Portfolio />
+          <Services />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -57,7 +59,23 @@ const Index = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Services />
+          <TechBackbone />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <StreamlyStudio />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Portfolio />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -73,7 +91,7 @@ const Index = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <StreamlyStudio />
+          <KpoFunding />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
