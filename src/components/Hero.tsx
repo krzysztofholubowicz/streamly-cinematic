@@ -26,8 +26,8 @@ export const Hero = () => {
         >
           <h1 className="hero-title uppercase mb-8">
             {[
-              { text: 'WYDARZENIA ONLINE', className: 'text-foreground', delay: 0.3 },
-              { text: 'I HYBRYDOWE.', className: 'hero-accent', delay: 0.5 },
+              { text: 'OPOWIADAMY', className: 'text-foreground', delay: 0.3 },
+              { text: 'OBRAZEM.', className: 'hero-accent', delay: 0.5 },
             ].map((line, i) => (
               <span key={i} className="block overflow-hidden">
                 <motion.span
@@ -48,8 +48,8 @@ export const Hero = () => {
             transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10"
           >
-            Organizujemy targi, wystawy i kongresy online oraz hybrydowe. Kompletna obsługa produkcyjna, transmisje na żywo
-            i archiwizacja na własnej platformie VOD — Streamly Studio.
+            Studio Streamly Production. Programy TV, video marketing, transmisje live i własna platforma VOD — dla marek,
+            które nie idą na kompromisy.
           </motion.p>
 
           <motion.div
@@ -58,14 +58,8 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap gap-4"
           >
-            <a href="#uslugi" className="btn-primary">
-              Oferta wydarzeń online i hybrydowych
-            </a>
-            <a href="#studio" className="btn-primary" style={{ background: 'transparent', border: '1px solid hsl(35 60% 55% / 0.4)', color: 'hsl(35 60% 55%)' }}>
-              Poznaj platformę StreamlyStudio
-            </a>
-            <a href="#realizacje" className="btn-primary" style={{ background: 'transparent', border: '1px solid hsl(var(--border))', color: 'hsl(var(--foreground))' }}>
-              Realizacje i możliwości VOD
+            <a href="#kontakt" className="btn-primary">
+              Porozmawiajmy
             </a>
           </motion.div>
         </motion.div>

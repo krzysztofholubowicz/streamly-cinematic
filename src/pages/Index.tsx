@@ -6,7 +6,6 @@ import { Services } from '@/components/Services';
 import { Process } from '@/components/Process';
 import { StreamlyStudio } from '@/components/StreamlyStudio';
 import { TechBackbone } from '@/components/TechBackbone';
-import { KpoFunding } from '@/components/KpoFunding';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -84,14 +83,6 @@ const Index = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <Process />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <KpoFunding />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}

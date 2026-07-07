@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import tvProduction from '@/assets/services/tv-production.jpg';
+import liveProduction from '@/assets/live-production.jpg';
 import videoMarketing from '@/assets/services/video-marketing.jpg';
 import liveEvent from '@/assets/services/live-event.jpg';
 import vodPlatform from '@/assets/services/vod-platform.jpg';
@@ -10,15 +10,15 @@ const services = [
   {
     number: '01',
     title: 'Targi online',
-    description: 'Kompleksowa organizacja targów w formule online — sceny wirtualne, stoiska wystawców, panele dyskusyjne, transmisje wielokamerowe i moduł networkingowy w jednej platformie.',
+    description: 'Kompleksowa organizacja targów w formule online — sceny wirtualne, panele dyskusyjne, transmisje wielokamerowe i moduł networkingowy w jednej platformie.',
     proof: '',
-    image: tvProduction,
+    image: liveProduction,
     size: 'large' as const,
   },
   {
     number: '02',
-    title: 'Wystawy hybrydowe',
-    description: 'Łączymy przestrzeń fizyczną z transmisją online. Realizacja techniczna wystawy na miejscu plus dedykowana wersja cyfrowa — jedna wystawa, dwie widownie, wspólne dane.',
+    title: 'Programy TV i serie video',
+    description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
     proof: '',
     image: videoMarketing,
     size: 'large' as const,
@@ -26,7 +26,7 @@ const services = [
   {
     number: '03',
     title: 'Kongresy online i hybrydowe',
-    description: 'Wielosalowe kongresy z prelegentami zdalnymi i lokalnymi. Reżyserka wielokamerowa, tłumaczenia, Q&A, głosowania — bez marginu na błąd.',
+    description: 'Wielosalowe kongresy z prelegentami zdalnymi i lokalnymi. Reżyserka wielokamerowa, tłumaczenia, Q&A, głosowania — bez marginesu na błąd.',
     proof: '',
     image: liveEvent,
     size: 'small' as const,
