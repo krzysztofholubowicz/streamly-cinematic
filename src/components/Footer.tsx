@@ -54,7 +54,7 @@ export const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 Streamly Production. Wszystkie prawa zastrzeżone.
+            © 2025 Streamly Production. Wszystkie prawa zastrzeżone.
           </p>
           <p className="text-xs text-muted-foreground max-w-md">
 
