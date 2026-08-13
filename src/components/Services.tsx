@@ -1,12 +1,23 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import liveProduction from '@/assets/live-production.jpg';
 import videoMarketing from '@/assets/services/video-marketing.jpg';
 import liveEvent from '@/assets/services/live-event.jpg';
 import vodPlatform from '@/assets/services/vod-platform.jpg';
 import corporateVideo from '@/assets/services/corporate-video.jpg';
 
-const services = [
+type Service = {
+  number: string;
+  title: string;
+  description: string;
+  proof: string;
+  image: string;
+  size: 'large' | 'small';
+  href?: string;
+};
+
+const services: Service[] = [
   {
     number: '01',
     title: 'Targi online',
@@ -47,9 +58,18 @@ const services = [
     image: corporateVideo,
     size: 'small' as const,
   },
+  {
+    number: '06',
+    title: 'Wynajem sprzętu produkcyjnego',
+    description: 'Kamery Sony FX9 i FX6, miksery Blackmagic ATEM, optyka, audio i osprzęt streamingowy. Sprawdź katalog i zarezerwuj termin online.',
+    proof: 'Katalog i rezerwacja →',
+    image: liveProduction,
+    size: 'small' as const,
+    href: '/wynajem',
+  },
 ];
 
-const BentoCard = ({ service, index, className }: { service: typeof services[0]; index: number; className?: string }) => {
+const BentoCard = ({ service, index, className }: { service: Service; index: number; className?: string }) => {
   const cardRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -59,7 +79,7 @@ const BentoCard = ({ service, index, className }: { service: typeof services[0];
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
 
-  return (
+  const card = (
     <motion.div
       ref={cardRef}
       initial={{ opacity: 0, y: 30 }}
@@ -67,7 +87,7 @@ const BentoCard = ({ service, index, className }: { service: typeof services[0];
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       style={{ scale }}
-      className={`group relative overflow-hidden rounded-xl border border-border bg-card ${className}`}
+      className={`group relative overflow-hidden rounded-xl border border-border bg-card h-full ${service.href ? 'cursor-pointer' : ''} ${className}`}
     >
       {/* Background image with parallax */}
       <div className="absolute inset-0">
@@ -108,6 +128,16 @@ const BentoCard = ({ service, index, className }: { service: typeof services[0];
       <div className="absolute top-0 left-0 w-full h-[2px] bg-[hsl(var(--accent-warm)/0.5)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
     </motion.div>
   );
+
+  if (service.href) {
+    return (
+      <Link to={service.href} className={className}>
+        {card}
+      </Link>
+    );
+  }
+
+  return card;
 };
 
 export const Services = () => {
@@ -124,12 +154,12 @@ export const Services = () => {
         >
           <span className="eyebrow block mb-4">Zakres działalności</span>
           <h2 className="section-title">
-            Wydarzenia online i hybrydowe.
+            Produkcja video, telewizja
             <br />
-            <span className="hero-accent">Kompleksowa obsługa.</span>
+            <span className="hero-accent">i wydarzenia hybrydowe.</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed mt-6">
-            Dzięki inwestycji z Krajowego Planu Odbudowy rozwijamy nową usługę — organizację targów, wystaw i kongresów w formule online oraz hybrydowej. Produkcja telewizyjna pozostaje naszą kompetencją techniczną wspierającą realizację wydarzeń.
+            Realizujemy programy telewizyjne, serie video i kampanie wizerunkowe, a dzięki inwestycji z Krajowego Planu Odbudowy organizujemy również targi, wystawy i kongresy online oraz hybrydowe. Nasz sprzęt produkcyjny udostępniamy także w wynajmie.
           </p>
         </motion.div>
 
@@ -145,6 +175,11 @@ export const Services = () => {
           <BentoCard service={services[2]} index={2} className="min-h-[280px] md:min-h-[320px]" />
           <BentoCard service={services[3]} index={3} className="min-h-[280px] md:min-h-[320px]" />
           <BentoCard service={services[4]} index={4} className="min-h-[280px] md:min-h-[320px]" />
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 mt-4">
+          {/* Row 3: rental highlight */}
+          <BentoCard service={services[5]} index={5} className="min-h-[280px] md:min-h-[300px]" />
         </div>
       </div>
     </section>

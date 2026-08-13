@@ -4,9 +4,10 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-{ href: '/#uslugi', label: 'WYDARZENIA' },
+{ href: '/#uslugi', label: 'USŁUGI' },
 { href: '/#studio', label: 'STREAMLY STUDIO' },
 { href: '/#realizacje', label: 'REALIZACJE' },
+{ href: '/wynajem', label: 'WYNAJEM SPRZĘTU' },
 { href: '/kpo', label: 'PROJEKT KPO' }];
 
 
