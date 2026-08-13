@@ -7,7 +7,17 @@ import liveEvent from '@/assets/services/live-event.jpg';
 import vodPlatform from '@/assets/services/vod-platform.jpg';
 import corporateVideo from '@/assets/services/corporate-video.jpg';
 
-const services = [
+type Service = {
+  number: string;
+  title: string;
+  description: string;
+  proof: string;
+  image: string;
+  size: 'large' | 'small';
+  href?: string;
+};
+
+const services: Service[] = [
   {
     number: '01',
     title: 'Targi online',
@@ -59,7 +69,7 @@ const services = [
   },
 ];
 
-const BentoCard = ({ service, index, className }: { service: typeof services[number] & { href?: string }; index: number; className?: string }) => {
+const BentoCard = ({ service, index, className }: { service: Service; index: number; className?: string }) => {
   const cardRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
