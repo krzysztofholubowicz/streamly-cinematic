@@ -28,17 +28,18 @@ export const Footer = () => {
               Streamly Production
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm leading-relaxed">
-              Organizacja targów, wystaw i kongresów online oraz hybrydowych.
-              Transmisje, produkcja i własna platforma VOD Streamly Studio.
+              Produkcja video i telewizyjna, organizacja targów, wystaw i kongresów online oraz hybrydowych.
+              Transmisje, wynajem sprzętu i własna platforma VOD Streamly Studio.
             </p>
           </div>
 
           <div>
             <span className="eyebrow block mb-4">Nawigacja</span>
             <div className="space-y-3">
-              <a href="/#uslugi" className="block text-muted-foreground hover:text-foreground transition-colors">Wydarzenia</a>
+              <a href="/#uslugi" className="block text-muted-foreground hover:text-foreground transition-colors">Usługi</a>
               <a href="/#realizacje" className="block text-muted-foreground hover:text-foreground transition-colors">Portfolio</a>
               <a href="/#studio" className="block text-muted-foreground hover:text-foreground transition-colors">Streamly Studio</a>
+              <Link to="/wynajem" className="block text-muted-foreground hover:text-foreground transition-colors">Wynajem sprzętu</Link>
               <Link to="/kpo" className="block text-muted-foreground hover:text-foreground transition-colors">Projekt KPO</Link>
             </div>
           </div>

@@ -11,26 +11,26 @@
 
 @layer base {
   :root {
-    /* Warm dark monochrome – "private screening room" */
-    --background: 30 8% 7%;
+    /* Warm dark monochrome – "private screening room" (lifted off pure black) */
+    --background: 30 7% 12%;
     --foreground: 40 20% 95%;
 
-    --card: 30 6% 11%;
+    --card: 30 6% 16%;
     --card-foreground: 40 20% 95%;
 
-    --popover: 30 6% 11%;
+    --popover: 30 6% 16%;
     --popover-foreground: 40 20% 95%;
 
     --primary: 40 20% 95%;
-    --primary-foreground: 30 8% 7%;
+    --primary-foreground: 30 7% 12%;
 
-    --secondary: 30 5% 13%;
+    --secondary: 30 5% 18%;
     --secondary-foreground: 40 20% 95%;
 
-    --muted: 30 5% 16%;
-    --muted-foreground: 30 10% 55%;
+    --muted: 30 5% 21%;
+    --muted-foreground: 30 10% 62%;
 
-    --accent: 30 5% 18%;
+    --accent: 30 5% 23%;
     --accent-foreground: 40 20% 95%;
 
     /* Warm amber accent – subtle but visible */
@@ -40,26 +40,26 @@
     --destructive: 0 70% 50%;
     --destructive-foreground: 40 20% 95%;
 
-    --border: 30 8% 20%;
-    --input: 30 5% 13%;
+    --border: 30 8% 25%;
+    --input: 30 5% 18%;
     --ring: 35 30% 40%;
 
     --radius: 0.5rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(180deg, rgba(18,16,14,0.15) 0%, rgba(18,16,14,0.5) 55%, hsl(30 8% 7%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(30 7% 12% / 0.15) 0%, hsl(30 7% 12% / 0.5) 55%, hsl(30 7% 12%) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255,245,230,0.04), rgba(255,245,230,0.01));
     --shadow-glow: 0 0 60px rgba(200,170,120,0.06);
     --shadow-soft: 0 30px 60px rgba(0,0,0,0.4);
 
     /* Sidebar */
-    --sidebar-background: 30 6% 10%;
+    --sidebar-background: 30 6% 15%;
     --sidebar-foreground: 30 10% 90%;
     --sidebar-primary: 30 10% 90%;
-    --sidebar-primary-foreground: 30 6% 10%;
-    --sidebar-accent: 30 4% 18%;
+    --sidebar-primary-foreground: 30 6% 15%;
+    --sidebar-accent: 30 4% 23%;
     --sidebar-accent-foreground: 30 10% 90%;
-    --sidebar-border: 30 5% 22%;
+    --sidebar-border: 30 5% 27%;
     --sidebar-ring: 30 6% 40%;
   }
 }
