@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import liveProduction from '@/assets/live-production.jpg';
+import tvProduction from '@/assets/services/tv-production.jpg';
 import videoMarketing from '@/assets/services/video-marketing.jpg';
 import liveEvent from '@/assets/services/live-event.jpg';
 import vodPlatform from '@/assets/services/vod-platform.jpg';
@@ -20,46 +21,54 @@ type Service = {
 const services: Service[] = [
   {
     number: '01',
-    title: 'Targi online',
-    description: 'Kompleksowa organizacja targów w formule online — sceny wirtualne, panele dyskusyjne, transmisje wielokamerowe i moduł networkingowy w jednej platformie.',
+    title: 'Programy TV i serie video',
+    description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz emisji nie wybacza opóźnień. My ich nie mamy.',
     proof: '',
-    image: liveProduction,
+    image: tvProduction,
     size: 'large' as const,
   },
   {
     number: '02',
-    title: 'Programy TV i serie video',
-    description: 'Realizujemy formaty telewizyjne od A do Z — scenariusz, plan zdjęciowy, montaż, mastering. Terminarz broadcastowy nie wybacza opóźnień. My ich nie mamy.',
+    title: 'Video marketing i kampanie reklamowe',
+    description: 'Spoty, które przyciągają uwagę, i kampanie, które sprzedają. Każdy format projektujemy pod konkretny cel: zasięg, konwersję albo rozpoznawalność marki.',
     proof: '',
     image: videoMarketing,
     size: 'large' as const,
   },
   {
     number: '03',
-    title: 'Kongresy online i hybrydowe',
-    description: 'Wielosalowe kongresy z prelegentami zdalnymi i lokalnymi. Reżyserka wielokamerowa, tłumaczenia, Q&A, głosowania — bez marginesu na błąd.',
+    title: 'Transmisje live i realizacje eventowe',
+    description: 'Wielokamerowa reżyserka, sprawdzone łącza, zespół, który wie, że drugiego ujęcia nie będzie. Realizujemy na żywo bez marginesu na błąd.',
     proof: '',
     image: liveEvent,
     size: 'small' as const,
   },
   {
     number: '04',
-    title: 'Streaming i rejestracja wydarzeń',
-    description: 'Transmisje na żywo w jakości 4K z adaptacyjnym bitrate, wielokamerowa rejestracja i mastering — gotowe do publikacji zaraz po zakończeniu wydarzenia.',
+    title: 'Produkcja na platformy VOD',
+    description: 'Materiały zoptymalizowane pod Streamly Studio i inne platformy VOD — kodowanie w wielu formatach i kontrola jakości przed publikacją.',
     proof: '',
     image: vodPlatform,
     size: 'small' as const,
   },
   {
     number: '05',
-    title: 'Archiwizacja i dystrybucja VOD',
-    description: 'Wszystkie materiały z wydarzenia trafiają na platformę Streamly Studio — dostęp na żądanie, kontrola widowni, analityka i dystrybucja pod marką klienta.',
+    title: 'Video korporacyjne i onboarding',
+    description: 'Szkolenia, które ludzie oglądają do końca. Onboarding HR, filmy wizerunkowe, komunikacja wewnętrzna.',
     proof: '',
     image: corporateVideo,
     size: 'small' as const,
   },
   {
     number: '06',
+    title: 'Kongresy online i hybrydowe',
+    description: 'Wielosalowe kongresy z prelegentami zdalnymi i lokalnymi. Reżyserka wielokamerowa, tłumaczenia, Q&A, głosowania — bez marginesu na błąd.',
+    proof: '',
+    image: liveProduction,
+    size: 'small' as const,
+  },
+  {
+    number: '07',
     title: 'Wynajem sprzętu produkcyjnego',
     description: 'Kamery Sony FX9 i FX6, miksery Blackmagic ATEM, optyka, audio i osprzęt streamingowy. Sprawdź katalog i zarezerwuj termin online.',
     proof: 'Katalog i rezerwacja →',
@@ -156,10 +165,10 @@ export const Services = () => {
           <h2 className="section-title">
             Produkcja video, telewizja
             <br />
-            <span className="hero-accent">i wydarzenia hybrydowe.</span>
+            <span className="hero-accent">i wydarzenia online</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed mt-6">
-            Realizujemy programy telewizyjne, serie video i kampanie wizerunkowe, a dzięki inwestycji z Krajowego Planu Odbudowy organizujemy również targi, wystawy i kongresy online oraz hybrydowe. Nasz sprzęt produkcyjny udostępniamy także w wynajmie.
+            Produkujemy video dla marek, formaty telewizyjne i transmisje wydarzeń. Z własnym zespołem i na własnym sprzęcie broadcastowym, który udostępniamy także w wynajmie. Targi i kongresy online oraz hybrydowe realizujemy na platformie Streamly Studio.
           </p>
         </motion.div>
 
@@ -177,9 +186,10 @@ export const Services = () => {
           <BentoCard service={services[4]} index={4} className="min-h-[280px] md:min-h-[320px]" />
         </div>
 
-        <div className="grid grid-cols-1 gap-4 mt-4">
-          {/* Row 3: rental highlight */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          {/* Row 3: congresses + rental */}
           <BentoCard service={services[5]} index={5} className="min-h-[280px] md:min-h-[300px]" />
+          <BentoCard service={services[6]} index={6} className="min-h-[280px] md:min-h-[300px]" />
         </div>
       </div>
     </section>

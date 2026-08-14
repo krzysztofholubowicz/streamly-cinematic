@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
 import { useCountUp } from '@/hooks/use-count-up';
+import impactLogo from '@/assets/logos/impact.png.asset.json';
+import umcsLogo from '@/assets/logos/umcs.png.asset.json';
+import polsatLogo from '@/assets/logos/polsat.png.asset.json';
+import tvpLogo from '@/assets/logos/tvp.png.asset.json';
 
 const clients = [
-  { name: 'Polsat' },
-  { name: 'TVP' },
-  { name: 'Impact CEE' },
-  { name: 'UMCS' },
+  { name: 'Impact CEE', src: impactLogo.url },
+  { name: 'UMCS', src: umcsLogo.url },
+  { name: 'Polsat', src: polsatLogo.url },
+  { name: 'TVP', src: tvpLogo.url },
 ];
 
 export const SocialProof = () => {
@@ -30,29 +34,21 @@ export const SocialProof = () => {
           </h2>
         </motion.div>
 
-        {/* Client names marquee */}
-        <div className="marquee-container mb-16">
-          <div className="marquee-track">
-            {[...clients, ...clients, ...clients].map((client, index) => (
-              <motion.div
-                key={`${client.name}-${index}`}
-                className="client-card text-center mx-4 min-w-[180px] flex-shrink-0"
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-              >
-                <h3 className="font-display font-bold text-2xl md:text-3xl text-foreground">
-                  {client.name}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
+        {/* Client logos */}
+        <div className="mb-16 flex flex-wrap items-center gap-x-12 gap-y-8 md:gap-x-20">
+          {clients.map((client, index) => (
+            <motion.img
+              key={client.name}
+              src={client.src}
+              alt={client.name}
+              loading="lazy"
+              className="h-8 md:h-10 w-auto object-contain opacity-50 hover:opacity-90 transition-opacity duration-300"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 0.5, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+            />
+          ))}
         </div>
 
         {/* Stats – moved from hero */}
