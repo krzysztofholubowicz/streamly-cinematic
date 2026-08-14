@@ -7,8 +7,7 @@ const navLinks = [
 { href: '/#uslugi', label: 'USŁUGI' },
 { href: '/#studio', label: 'STREAMLY STUDIO' },
 { href: '/#realizacje', label: 'REALIZACJE' },
-{ href: '/wynajem', label: 'WYNAJEM SPRZĘTU' },
-{ href: '/kpo', label: 'PROJEKT KPO' }];
+{ href: '/wynajem', label: 'WYNAJEM SPRZĘTU' }];
 
 
 export const Header = () => {
