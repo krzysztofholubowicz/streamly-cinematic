@@ -6,13 +6,16 @@ export const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12 py-16">
         {/* EU / KPO funding bar */}
         <div className="mb-16">
-          <div className="px-8 py-5 rounded-2xl flex items-center justify-center bg-white max-w-4xl mx-auto">
+          <Link
+            to="/kpo"
+            className="block px-6 py-4 rounded-xl bg-white max-w-2xl mx-auto opacity-90 hover:opacity-100 transition-opacity"
+          >
             <img
               src="/images/kpo/kpo-banner.jpg"
               alt="Krajowy Plan Odbudowy – Rzeczpospolita Polska – Sfinansowane przez Unię Europejską NextGenerationEU"
-              className="w-full max-w-3xl object-contain"
+              className="w-full max-w-xl mx-auto object-contain"
             />
-          </div>
+          </Link>
           <p className="text-center mt-4 text-xs text-muted-foreground tracking-wider uppercase">
             Finansowane przez Unię Europejską — NextGenerationEU
           </p>

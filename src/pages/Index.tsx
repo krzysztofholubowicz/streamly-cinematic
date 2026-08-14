@@ -16,15 +16,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden noise-overlay">
       <SEO
-        title="Streamly Production | Targi, wystawy i kongresy online i hybrydowe | Warszawa"
-        description="Organizacja targów, wystaw i kongresów online oraz hybrydowych. Streaming 4K, rejestracja i platforma VOD Streamly Studio. Projekt KPO / Unia Europejska."
+        title="Streamly Production — produkcja video, programy TV i transmisje live"
+        description="Produkcja video dla marek, formaty telewizyjne, transmisje wydarzeń i własna platforma VOD Streamly Studio."
         path="/"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'Streamly Production',
           url: 'https://streamlyproduction.lovable.app',
-          description: 'Organizacja targów, wystaw i kongresów online oraz hybrydowych. Streaming, rejestracja i platforma VOD Streamly Studio.',
+          description: 'Produkcja video dla marek, formaty telewizyjne, transmisje wydarzeń i własna platforma VOD Streamly Studio.',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Warszawa',

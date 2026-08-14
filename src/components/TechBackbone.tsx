@@ -40,8 +40,8 @@ export const TechBackbone = () => {
             Sprzęt i platforma <span className="hero-accent">w jednym zespole.</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed mt-6">
-            Sprzęt zakupiony w ramach projektu KPO wykorzystujemy do realizacji wydarzeń online i hybrydowych.
-            Każda transmisja i rejestracja trafia bezpośrednio na platformę Streamly Studio.
+            Sprzęt filmowy najwyższej klasy i doświadczony zespół w jednym miejscu. Gotową realizację wyemitujesz
+            na platformie Streamly Studio, kiedy jej potrzebujesz.
           </p>
         </motion.div>
 
