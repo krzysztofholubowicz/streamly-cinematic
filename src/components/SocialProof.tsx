@@ -1,15 +1,10 @@
 import { motion } from 'framer-motion';
 import { useCountUp } from '@/hooks/use-count-up';
-import impactLogo from '@/assets/logos/impact.png.asset.json';
-import umcsLogo from '@/assets/logos/umcs.png.asset.json';
-import polsatLogo from '@/assets/logos/polsat.png.asset.json';
-import tvpLogo from '@/assets/logos/tvp.png.asset.json';
-
 const clients = [
-  { name: 'Impact CEE', src: impactLogo.url },
-  { name: 'UMCS', src: umcsLogo.url },
-  { name: 'Polsat', src: polsatLogo.url },
-  { name: 'TVP', src: tvpLogo.url },
+  { name: 'Impact CEE', src: '/images/logos/impact.png' },
+  { name: 'UMCS', src: '/images/logos/umcs.png' },
+  { name: 'Polsat', src: '/images/logos/polsat.png' },
+  { name: 'TVP', src: '/images/logos/tvp.png' },
 ];
 
 export const SocialProof = () => {
